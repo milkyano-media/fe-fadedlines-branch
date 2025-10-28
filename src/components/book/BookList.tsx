@@ -267,16 +267,15 @@ const BookList = () => {
                 <div className="flex flex-col md:grid md:grid-cols-[300px,1fr] gap-6 md:gap-12">
                   {/* Barber Image Section */}
                   <div className="relative">
-                    <div className="w-[90%] mx-auto md:w-[300px] h-[250px] md:h-[300px] rounded-lg overflow-hidden">
+                    <div className="w-[90%] mx-auto aspect-[1/1] md:w-[300px] rounded-lg overflow-hidden">
                       <img
-                        src={
-                          getBarberImage(item.barber.display_name) ?? undefined
-                        }
+                        src={getBarberImage(item.barber.display_name) ?? undefined}
                         alt={item.barber.display_name}
                         className="w-full h-full object-cover"
                       />
                     </div>
                   </div>
+
 
                   {/* Vertical Line - Hidden on mobile */}
                   <div className="hidden md:block absolute left-[300px] top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-green-500 to-transparent ml-6" />
