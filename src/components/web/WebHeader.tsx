@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from "react";
-import Logo from "@/components/react-svg/logo";
 import { Link, useLocation } from "react-router-dom";
 
 import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTrigger } from "@/components/ui/sheet";
@@ -83,7 +82,10 @@ const Header: React.FC = () => {
                 <h1 className="text-2xl font-bold text-transparent hidden ">Barber Shop</h1>
                 <div className="flex flex-col justify-center items-center">
                     <Link to={generateRoute("/home")}>
-                        <Logo className="w-48 md:w-36 h-auto opacity-90 " />
+                        <img
+                            src="/fadedlines-bentleigh-logo.png"
+                            className="w-24 md:w-18 h-auto opacity-90"
+                        />
                     </Link>
                 </div>
                 <nav className="hidden lg:block sticky top-0">
