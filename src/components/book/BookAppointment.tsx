@@ -226,7 +226,7 @@ const BookAppointment = () => {
           <>
             <section className='grid grid-cols-1 md:grid-cols-3 gap-4 relative z-40 w-full pt-12 md:pt-0'>
               <div className='absolute top-24 md:top-12 h-8 w-full px-4'>
-                <hr className='absolute top-0 left-0 w-[10rem] h-[3px] bg-[#42FF00] transform  z-10' />
+                <hr className='absolute top-0 left-0 w-[10rem] h-[3px] bg-lime transform  z-10' />
                 <hr className='absolute top-[1px] left-0 w-full h-[2px] bg-[#038101] z-0 opacity-50' />
               </div>
               <div className='col-span-2'>

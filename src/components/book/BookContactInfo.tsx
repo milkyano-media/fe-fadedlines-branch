@@ -419,8 +419,8 @@ const BookContactInfo = () => {
                 <Spinner />
               ) : status === 'succeeded' ? (
                 <div className='flex justify-center items-center p-4  md:p-12 animate-scaleIn'>
-                  <div className='p-1  rounded-full border border-[#24FF00]'>
-                    <Check className='h-24 w-auto md:h-24 md:w-24 text-[#24FF00] ' />
+                  <div className='p-1  rounded-full border border-lime'>
+                    <Check className='h-24 w-auto md:h-24 md:w-24 text-lime ' />
                   </div>
                 </div>
               ) : status === 'failed' ? (
@@ -444,7 +444,7 @@ const BookContactInfo = () => {
             </p>
           </div>
           <div className='relative  h-8 w-full px-4'>
-            <hr className='absolute top-0 left-1/2 -translate-x-1/2 w-[15rem] h-[3px] bg-[#42FF00] transform  z-10' />
+            <hr className='absolute top-0 left-1/2 -translate-x-1/2 w-[15rem] h-[3px] bg-lime transform  z-10' />
             <hr className='absolute top-[1px] left-0 w-full h-[2px] bg-[#038101] z-0 opacity-50' />
           </div>
         </div>

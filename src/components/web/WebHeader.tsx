@@ -73,10 +73,10 @@ const Header: React.FC = () => {
     return (
         <header
             ref={headerRef}
-            className="text-white shadow-lg shadow-[#33FF00]/10 border-b-[0.5px] border-[#33FF00] z-[999999999999999] py-4 sticky top-0"
+            className="text-white shadow-lg shadow-[#33FF00]/10 border-b-[0.5px] border-lime z-[999999999999999] py-4 sticky top-0 backdrop-blur-md"
             style={{
                 marginBottom: `-${height}px`,
-                background: "linear-gradient(180deg, rgba(3, 18, 13, 0.75) 14.29%, rgba(3, 18, 13, 0.6) 100%)",
+                background: "linear-gradient(180deg, rgba(67, 67, 67, 0.85) 0%, rgba(40, 40, 40, 0.75) 100%)",
             }}
         >
             <div className="container mx-auto flex justify-between items-center relative z-10 border-none px-2 md:px-4">

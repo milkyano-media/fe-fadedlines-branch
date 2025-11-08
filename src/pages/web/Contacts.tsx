@@ -100,7 +100,7 @@ export default function Contacts() {
         <div className="flex flex-col justify-center items-center text-center gap-6 z-10">
           <div className="flex flex-col mb-12">
             <h2>HAVE SOME</h2>
-            <h2 className="text-[#33FF00]">QUESTIONS?</h2>
+            <h2 className="text-lime">QUESTIONS?</h2>
           </div>
 
           <svg
@@ -128,8 +128,8 @@ export default function Contacts() {
                 <Spinner />
               ) : status === "succeeded" ? (
                 <div className="flex justify-center items-center p-4  md:p-12 animate-scaleIn">
-                  <div className="p-1  rounded-full border border-[#24FF00]">
-                    <Check className="h-24 w-auto md:h-24 md:w-24 text-[#24FF00] " />
+                  <div className="p-1  rounded-full border border-lime">
+                    <Check className="h-24 w-auto md:h-24 md:w-24 text-lime " />
                   </div>
                 </div>
               ) : status === "failed" ? (
@@ -259,7 +259,7 @@ export default function Contacts() {
                 />
               </div>
               <Button
-                className="w-full bg-[#33FF00] rounded-xl text-black py-7 text-xl"
+                className="w-full bg-lime rounded-xl text-black py-7 text-xl"
                 type="submit"
               >
                 CONTINUE
@@ -274,7 +274,7 @@ export default function Contacts() {
           <div className="flex flex-col gap-6">
             <a
               href="https://mail.google.com/mail/u/0/?fs=1&to=dejan@fadelinesbarbeshop.com&su=Hello,+I+Want+to+Collaborate&body&bcc=%22&tf=cm"
-              className="bg-[#33FF00] text-black rounded-full p-4 flex gap-2 w-96"
+              className="bg-lime text-black rounded-full p-4 flex gap-2 w-96"
             >
               <svg
                 className="w-12"
@@ -316,7 +316,7 @@ export default function Contacts() {
             </a>
             <a
               href="tel:0390021055"
-              className="bg-[#33FF00] text-black rounded-full p-4 flex gap-2 w-96"
+              className="bg-lime text-black rounded-full p-4 flex gap-2 w-96"
             >
               <svg
                 className="w-12"
@@ -354,7 +354,7 @@ export default function Contacts() {
             </a>
             <a
               href="https://www.instagram.com/fadedlinesbarbershop"
-              className="bg-[#33FF00] text-black rounded-full p-4 flex gap-2 w-96"
+              className="bg-lime text-black rounded-full p-4 flex gap-2 w-96"
             >
               <svg
                 className="w-12"

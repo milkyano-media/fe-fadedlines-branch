@@ -99,11 +99,11 @@ export default function GalleriesPage() {
           <div className="w-full md:w-10/12 flex flex-col justify-end md:pb-24 h-full">
             <h3 className="text-3xl md:text-4xl font-extrabold tracking-wider flex flex-col  md:gap-2 text-center md:text-right">
               <span>BE OUR NEXT</span>
-              <span className="text-transparent bg-[#33FF00] bg-clip-text">
+              <span className="text-transparent bg-lime bg-clip-text">
                 MASTERPIECE
               </span>
             </h3>
-            <Button className="bg-[#454545] border-[0.5px] border-white text-2xl text-[#33FF00] font-bold px-16 py-7 w-max self-center md:self-end mt-6 hover:bg-[#454545]/80">
+            <Button className="bg-concrete border-[0.5px] border-white text-2xl text-lime font-bold px-16 py-7 w-max self-center md:self-end mt-6 hover:bg-concrete/80">
               {generateLink("BOOK NOW")}
             </Button>
           </div>
@@ -129,9 +129,9 @@ export default function GalleriesPage() {
           <section className=" w-full relative flex flex-col items-center text-center  container">
             <div className="w-full px-4 md:px-0 flex flex-col gap-4 ">
               <h3 className="text-2xl md:text-3xl tracking-wider font-extrabold w-full md:w-1/3 mx-auto font-poppins">
-                WE’VE DONE ALL
+                WE'VE DONE ALL
                 <br />
-                <span className="text-transparent bg-[#33FF00] bg-clip-text">
+                <span className="text-transparent bg-lime bg-clip-text">
                   YOU EVER NEED
                 </span>
               </h3>

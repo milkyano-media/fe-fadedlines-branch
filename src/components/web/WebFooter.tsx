@@ -21,19 +21,19 @@ const WebFooter: React.FC = () => {
           src={BgHero2}
           className="top-0 absolute w-full h-full object-cover -z-10"
         />
-        <div className="top-0 absolute w-full h-full object-cover z-0 bg-gradient-to-b from-black/80 to-black/90" />
+        <div className="top-0 absolute w-full h-full object-cover z-0 bg-gradient-to-b from-black/85 via-concrete-dark/40 to-black/90" />
         <div className="flex flex-col justify-center items-center text-center gap-6 z-10">
           <div className="flex flex-col mb-6">
             <h2>SAVE TIME AND</h2>
-            <h1 className="text-[#33FF00]">BOOK NOW</h1>
+            <h1 className="text-lime">BOOK NOW</h1>
           </div>
-          <Button className="bg-[#454545] border-[0.5px] border-white text-2xl text-[#33FF00] font-bold px-20 md:px-40 py-7 w-max self-center hover:bg-[#454545]/80">
+          <Button className="bg-concrete border-[0.5px] border-white text-2xl text-lime font-bold px-20 md:px-40 py-7 w-max self-center hover:bg-concrete/80">
             {generateLink("BOOK NOW")}
           </Button>
 
           <div className="flex gap-4 md:gap-10">
             <p>
-              We served over <span className="text-[#33FF00]">5000+</span>
+              We served over <span className="text-lime">5000+</span>
             </p>
             <p className="flex gap-2">
               Happy Customers+{" "}
@@ -112,7 +112,7 @@ const WebFooter: React.FC = () => {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 w-full md:w-2/3 gap-4 md:gap-0 text-sm">
             <div className="flex flex-col gap-4 relative z-40">
-              <h3 className="text-[#33FF00]">Pages</h3>
+              <h3 className="text-lime">Pages</h3>
               <ul className="flex flex-col font-light gap-2 text-stone-400">
                 <li>
                   <Link to="/" className="hover:text-white">
@@ -150,7 +150,7 @@ const WebFooter: React.FC = () => {
               </ul>
             </div>
             <div className="col-span-2">
-              <h3 className="text-[#33FF00] mb-4">Address</h3>
+              <h3 className="text-lime mb-4">Address</h3>
               <ul className="flex flex-col font-light gap-2 text-stone-400 mb-10">
                 <li>
                   <Link
@@ -162,7 +162,7 @@ const WebFooter: React.FC = () => {
                   </Link>
                 </li>
               </ul>
-              <h3 className="text-[#33FF00] mb-4">Hours</h3>
+              <h3 className="text-lime mb-4">Hours</h3>
               <ul className="flex flex-col font-light gap-2 text-stone-400">
                 <li>
                   <Link

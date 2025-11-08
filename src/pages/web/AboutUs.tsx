@@ -92,7 +92,7 @@ export default function AboutUs() {
         <div className="top-0 absolute w-full h-full object-cover z-0 bg-gradient-to-b from-black/80 to-black" />
         <div className="flex flex-col justify-center items-center text-center gap-6 z-10">
           <div className="flex flex-col mb-12">
-            <h2 className="text-[#33FF00]">AWARD WINNING</h2>
+            <h2 className="text-lime">AWARD WINNING</h2>
             <h2>BARBERSHOP</h2>
             <sub className="mt-6">
               55 PORTMAN ST; OAKLEIGH VIC 3166; AUSTRALIA
@@ -127,7 +127,7 @@ export default function AboutUs() {
           <div className="flex flex-col md:flex-row gap-10 mt-10 md:mt-0 md:w-2/4">
             <h2 className="w-full">
               Hey, I'm <br />
-              <span className="text-[#33FF00]">Dejan</span>
+              <span className="text-lime">Dejan</span>
             </h2>
             <p>
               Faded Lines Barbershop wants to bring convivence back into peoples
@@ -153,7 +153,7 @@ export default function AboutUs() {
             />
           </svg>
 
-          <h1 className="text-transparent bg-gradient-to-b from-[#33FF00] to-[#24B300] bg-clip-text">
+          <h1 className="text-transparent bg-gradient-to-b from-lime to-[#24B300] bg-clip-text">
             Not Luck Of <br />
             The Draw.
           </h1>
@@ -181,7 +181,7 @@ export default function AboutUs() {
         <div className="md:w-4/12 flex flex-col gap-8 md:pl-24">
           <h3 className="text-4xl flex flex-col font-extrabold w-8/12">
             WE ARE WELL KNOWN ON
-            <span className="text-[#33FF00]">TIKTOK</span>
+            <span className="text-lime">TIKTOK</span>
           </h3>
           <p className="text-sm font-light md:w-8/12">
             Still doubt our ability to create the best haircuts in Melbourne?
@@ -190,7 +190,7 @@ export default function AboutUs() {
 
           <AlertDialog>
             <AlertDialogTrigger asChild>
-              <Button className="border absolute md:relative bottom-[.5rem] md:bottom-[1rem] w-max px-7 py-5 rounded-lg border-[#184937] hover:border-white text-[#33FF00] bg-transparent backdrop-blur-md z-30 transform hover:scale-110 transition-transform duration-400 ease-in-out hover:shadow-md hover:bg-[#14FF00] hover:shadow-[#14FF00] text-xs md:text-base hover:text-white">
+              <Button className="border absolute md:relative bottom-[.5rem] md:bottom-[1rem] w-max px-7 py-5 rounded-lg border-[#184937] hover:border-white text-lime bg-transparent backdrop-blur-md z-30 transform hover:scale-110 transition-transform duration-400 ease-in-out hover:shadow-md hover:bg-lime hover:shadow-lime text-xs md:text-base hover:text-white">
                 FOLLOW US
               </Button>
             </AlertDialogTrigger>

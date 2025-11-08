@@ -146,11 +146,11 @@ export default function Careers() {
         <div className="top-0 absolute w-full h-full object-cover z-0 bg-gradient-to-b from-black/80 to-black" />
         <div className="flex flex-col justify-center items-center text-center gap-6 z-10">
           <div className="flex flex-col mb-12">
-            <h2 className="text-[#33FF00]">JOIN THE BEST</h2>
+            <h2 className="text-lime">JOIN THE BEST</h2>
             <h2>BARBERSHOP IN MELBOURNE</h2>
             <sub className="mt-6">
               Are you qualified to be in our{" "}
-              <span className="text-[#33FF00]">team?</span>
+              <span className="text-lime">team?</span>
             </sub>
           </div>
 
@@ -180,8 +180,8 @@ export default function Careers() {
                   <Spinner />
                 ) : status === "succeeded" ? (
                   <div className="flex justify-center items-center p-4  md:p-12 animate-scaleIn">
-                    <div className="p-1  rounded-full border border-[#24FF00]">
-                      <Check className="h-24 w-auto md:h-24 md:w-24 text-[#24FF00] " />
+                    <div className="p-1  rounded-full border border-lime">
+                      <Check className="h-24 w-auto md:h-24 md:w-24 text-lime " />
                     </div>
                   </div>
                 ) : status === "failed" ? (
@@ -271,7 +271,7 @@ export default function Careers() {
                   )}
                 />
                 <Button
-                  className="w-full bg-[#33FF00] rounded-xl text-black py-7 text-xl"
+                  className="w-full bg-lime rounded-xl text-black py-7 text-xl"
                   type="submit"
                 >
                   CONTINUE

@@ -213,7 +213,7 @@ export default function Barbers() {
         <div className="flex flex-col justify-center items-center text-center gap-6 z-10">
           <div className="flex flex-col mb-12">
             <h2>MEET OUR</h2>
-            <h2 className="text-[#33FF00]">BARBERS</h2>
+            <h2 className="text-lime">BARBERS</h2>
           </div>
 
           <svg
@@ -251,7 +251,7 @@ export default function Barbers() {
                     "linear-gradient(90deg, rgba(36,255,0,0) 0%, rgba(36,255,0,1) 50%, rgba(36,255,0,0.0) 100%)",
                 }}
               /> */}
-              <Button className="border absolute md:relative bottom-[.5rem] md:bottom-[1rem] px-7 py-5 rounded-lg border-[#184937] hover:border-white text-[#33FF00] bg-transparent backdrop-blur-md z-30 transform hover:scale-110 transition-transform duration-400 ease-in-out hover:shadow-md hover:bg-[#14FF00] hover:shadow-[#14FF00] text-xs md:text-base hover:text-white">
+              <Button className="border absolute md:relative bottom-[.5rem] md:bottom-[1rem] px-7 py-5 rounded-lg border-[#184937] hover:border-white text-lime bg-transparent backdrop-blur-md z-30 transform hover:scale-110 transition-transform duration-400 ease-in-out hover:shadow-md hover:bg-lime hover:shadow-lime text-xs md:text-base hover:text-white">
                 LEARN MORE
               </Button>
             </Link>

@@ -29,8 +29,8 @@ const Maintenance: React.FC = () => {
 
             <div className="mt-8 p-6 bg-[#262626] rounded-lg border border-gray-800">
               <div className="flex items-center justify-center space-x-2 mb-4">
-                <div className="w-3 h-3 bg-[#33FF00] rounded-full animate-pulse"></div>
-                <p className="text-lg font-semibold text-[#33FF00]">
+                <div className="w-3 h-3 bg-lime rounded-full animate-pulse"></div>
+                <p className="text-lg font-semibold text-lime">
                   Maintenance in Progress
                 </p>
               </div>
@@ -48,7 +48,7 @@ const Maintenance: React.FC = () => {
                 Contact us at{' '}
                 <a
                   href="mailto:info@fadedlinesbarbershop.com"
-                  className="text-[#33FF00] hover:underline"
+                  className="text-lime hover:underline"
                 >
                   info@fadedlinesbarbershop.com
                 </a>

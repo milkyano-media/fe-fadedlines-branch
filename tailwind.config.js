@@ -52,6 +52,12 @@ module.exports = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        concrete: {
+          light: "hsl(var(--concrete-light))",
+          DEFAULT: "hsl(var(--concrete))",
+          dark: "hsl(var(--concrete-dark))",
+        },
+        lime: "#33FF00",
       },
       borderRadius: {
         lg: "var(--radius)",

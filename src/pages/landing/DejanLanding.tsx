@@ -178,7 +178,7 @@ export default function DejanLanding() {
                 WebkitBackdropFilter: "blur(16px) contrast(100%)",
               }}
             >
-              <h2 className="text-4xl md:text-5xl uppercase font-poppins font-extrabold mb-2 text-[#42FF00] tracking-wider">
+              <h2 className="text-4xl md:text-5xl uppercase font-poppins font-extrabold mb-2 text-lime tracking-wider">
                 Hi, I&apos;m josh
               </h2>
               <h2 className="text-xl font-bold mb-4">
@@ -263,7 +263,7 @@ export default function DejanLanding() {
             <div className="flex gap-10 justify-center items-center flex-col w-full ">
               <Button
                 variant={"ghost"}
-                className="border border-[#00FF1A] rounded-full font-extrabold font-poppins px-12 py-10 uppercase  text-xl md:text-3xl transform hover:scale-110 transition-transform duration-200 ease-in-out hover:bg-[#24FF00] hover:shadow-md hover:text-stone-950 hover:shadow-[#44813a] "
+                className="border border-lime rounded-full font-extrabold font-poppins px-12 py-10 uppercase  text-xl md:text-3xl transform hover:scale-110 transition-transform duration-200 ease-in-out hover:bg-lime hover:shadow-md hover:text-stone-950 hover:shadow-[#44813a] "
               >
                 {generateLink("BOOK NOW")}
               </Button>
@@ -295,7 +295,7 @@ export default function DejanLanding() {
           </div>
           <Button
             variant={"ghost"}
-            className="border border-[#00FF19] px-12 py-8 text-2xl font-bold font-poppins rounded-full my-24 transform hover:scale-110 transition-transform duration-200 ease-in-out hover:bg-[#24FF00] hover:shadow-md hover:text-stone-950 hover:shadow-[#44813a] "
+            className="border border-lime px-12 py-8 text-2xl font-bold font-poppins rounded-full my-24 transform hover:scale-110 transition-transform duration-200 ease-in-out hover:bg-lime hover:shadow-md hover:text-stone-950 hover:shadow-[#44813a] "
           >
             {generateLink("LIMITED SLOT ONLY!")}
           </Button>
@@ -314,7 +314,7 @@ export default function DejanLanding() {
             <h3 className="text-3xl md:text-4xl font-black font-poppins w-10/12 tracking-wider leading-[3rem] md:leading-10  mt-4 mb-12 uppercase">
               Book an Appoinment Now.
               <br className="hidden md:block" />
-              <span className="text-[#24FF00]">LIMITED </span>
+              <span className="text-lime">LIMITED </span>
               SLOT ONLY!
             </h3>
             <div className="flex justify-center items-center text-center flex-col  ">
@@ -324,7 +324,7 @@ export default function DejanLanding() {
               <div className="flex flex-col md:flex-row gap-2 py-4 uppercase">
                 <Button
                   variant={"ghost"}
-                  className="border border-stone-400 rounded-full uppercase px-12 py-6 bg-[#1ABC00]/5 transform hover:scale-110 transition-transform duration-200 ease-in-out hover:shadow-lg hover:shadow-stone-800 hover:bg-[#24FF00] hover:text-stone-950"
+                  className="border border-stone-400 rounded-full uppercase px-12 py-6 bg-lime/5 transform hover:scale-110 transition-transform duration-200 ease-in-out hover:shadow-lg hover:shadow-stone-800 hover:bg-lime hover:text-stone-950"
                 >
                   {generateLink("BOOK NOW")}
                 </Button>

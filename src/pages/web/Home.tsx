@@ -178,16 +178,16 @@ export default function Home() {
                 <div className="top-0 absolute w-full h-full object-cover z-0 bg-gradient-to-b from-black/80 to-black" />
                 <div className="flex flex-col justify-center items-center text-center gap-6 z-10">
                     <div className="flex flex-col mb-12">
-                        <h1 className="text-[#33FF00]">THE BEST</h1>
+                        <h1 className="text-lime">THE BEST</h1>
                         <h2>FOR YOUR HAIR</h2>
                     </div>
-                    <Button className="bg-[#454545] border-[0.5px] border-white text-2xl text-[#33FF00] font-bold px-16 py-7 w-max self-center hover:bg-[#454545]/80">
+                    <Button className="bg-concrete border-[0.5px] border-white text-2xl text-lime font-bold px-16 py-7 w-max self-center hover:bg-concrete/80">
                         {generateLink("BOOK NOW")}
                     </Button>
 
                     <div className="flex flex-col md:flex-row gap-6 md:gap-10">
                         <p>
-                            We served over <span className="text-[#33FF00]">5000+</span>
+                            We served over <span className="text-lime">5000+</span>
                         </p>
                         <p className="flex gap-2">
                             Happy Customers+{" "}
@@ -211,7 +211,7 @@ export default function Home() {
             </section>
 
             <section className="flex flex-col justify-center items-center">
-                <h2 className="text-[#33FF00]">OUR SERVICES</h2>
+                <h2 className="text-lime">OUR SERVICES</h2>
                 <p>Simple and Effective Pricing for that Fresh Looks</p>
 
                 <div className="flex gap-8 mt-20 px-6 md:w-max w-full overflow-x-auto">
@@ -223,7 +223,7 @@ export default function Home() {
                         </div>
 
                         <div className="flex gap-8 justify-between mt-6">
-                            <h2 className="text-[#33FF00]">$50</h2>
+                            <h2 className="text-lime">$50</h2>
                             <Button>{generateLink("PRICING PLANS")}</Button>
                         </div>
                     </div>
@@ -234,7 +234,7 @@ export default function Home() {
                         <p>Men's haircut and beard trims starts from $75 depending on which barber you would like.</p>
 
                         <div className="flex gap-8 justify-between mt-6">
-                            <h2 className="text-[#33FF00]">$75</h2>
+                            <h2 className="text-lime">$75</h2>
                             <Button>{generateLink("PRICING PLANS")}</Button>
                         </div>
                     </div>
@@ -242,7 +242,7 @@ export default function Home() {
             </section>
 
             <section className="flex flex-col justify-center items-center">
-                <h2 className="text-[#33FF00]">GALLERY</h2>
+                <h2 className="text-lime">GALLERY</h2>
                 <p>Our Results</p>
 
                 <InstagramSection
@@ -252,7 +252,7 @@ export default function Home() {
             </section>
 
             <section className="flex flex-col justify-center items-center md:pb-40">
-                <h2 className="text-[#33FF00] text-center">
+                <h2 className="text-lime text-center">
                     FREQUENTLY ASKED <br />
                     QUESTIONS
                 </h2>
@@ -260,7 +260,7 @@ export default function Home() {
                     <Accordion
                         type="single"
                         collapsible
-                        className="flex border pb-12 border-[#05FF00] rounded-[36px] p-12 pt-6 flex-col gap-8 bg-[#101010] shadow-[0px_4px_39px_31px_rgba(0,244,24,0.1)] font-light"
+                        className="flex border pb-12 border-lime rounded-[36px] p-12 pt-6 flex-col gap-8 bg-[#101010] shadow-[0px_4px_39px_31px_rgba(0,244,24,0.1)] font-light"
                     >
                         <AccordionItem
                             value="item-1"

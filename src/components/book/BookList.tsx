@@ -363,7 +363,7 @@ const BookList = () => {
                                 </div>
                                 <Button
                                   onClick={() => handleBookNowClick(service)}
-                                  className="bg-[#155601] text-[#3CE800] hover:text-[#155601] hover:bg-[#42FF00] w-full md:w-auto min-w-[120px] h-12"
+                                  className="bg-[#155601] text-lime hover:text-[#155601] hover:bg-lime w-full md:w-auto min-w-[120px] h-12"
                                 >
                                   Book Now
                                 </Button>
