@@ -84,23 +84,6 @@ export default function Home() {
         localStorage.setItem("booking_origin", "organic");
     }
 
-    // const generateRoute = (route: string): string => {
-    //   const parts = location.pathname.split("/");
-    //   if (parts[1] === "meta") {
-    //     return `/meta${route}`;
-    //   } else {
-    //     return route;
-    //   }
-    // };
-
-    // const ref = useRef(null);
-    // const { scrollYProgress } = useScroll({
-    //   target: ref,
-    // });
-    // const scaleY = useTransform(scrollYProgress, [0, 1], [1, 0]);
-    // const [screenHeight, setScreenHeight] = useState(window.innerHeight);
-    // const [headerHeight, setHeaderHeight] = useState(0);
-
     const instagram_images_desktop = [
         { image: instagramPhotosDesktop1, name: "Mid Burst Fade" },
         { image: instagramPhotosDesktop2, name: "Mid Drop Fade" },
@@ -116,38 +99,6 @@ export default function Home() {
         instagramPhotosMobile4,
         instagramPhotosMobile5,
     ];
-
-    // useEffect(() => {
-    //   const style = document.createElement("style");
-
-    //   style.innerHTML = `
-    //       @keyframes move {
-    //           0% { transform: translateX(100%); opacity: 0; }
-    //           50% { opacity: 1; }
-    //           100% { transform: translateX(-100%); opacity: 0; }
-    //       }`;
-
-    //   document.head.appendChild(style);
-
-    //   const handleResize = () => {
-    //     setScreenHeight(window.innerHeight);
-    //     const header = document.querySelector("header");
-    //     if (header) {
-    //       // setHeaderHeight(header.clientHeight);
-    //     }
-    //   };
-
-    //   handleResize();
-
-    //   window.addEventListener("resize", handleResize);
-    //   console.log("screenHeight", screenHeight);
-    //   return () => {
-    //     window.removeEventListener("resize", handleResize);
-    //     document.head.removeChild(style);
-    //   };
-    // }, [screenHeight]);
-
-    // const availableHeight = screenHeight - headerHeight - 1;
 
     return (
         <Layout>
@@ -173,9 +124,9 @@ export default function Home() {
                     width={500}
                     height={500}
                     src={BgHero2}
-                    className="top-0 absolute w-full h-full object-cover -z-10"
+                    className="top-0 absolute w-full h-full object-cover"
                 />
-                <div className="top-0 absolute w-full h-full object-cover z-0 bg-gradient-to-b from-black/80 to-black" />
+                <div className="top-0 absolute w-full h-full object-cover z-0 bg-gradient-to-b from-concrete-dark-90/80 to-concrete-dark-90" />
                 <div className="flex flex-col justify-center items-center text-center gap-6 z-10">
                     <div className="flex flex-col mb-12">
                         <h1 className="text-lime">THE BEST</h1>
@@ -200,7 +151,7 @@ export default function Home() {
                         </p>
                     </div>
                     <p>Elevate your look, define your presence</p>
-                    <sub>55 PORTMAN ST; OAKLEIGH VIC 3166; AUSTRALIA</sub>
+                    <sub>shop 7-271/275 Centre Rd, Bentleigh VIC 3204, Australia</sub>
                     <svg className="w-7 mt-20" viewBox="0 0 55 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path
                             d="M50.582 0.216618L54.9987 4.63745L30.9279 28.7166C30.5422 29.1048 30.0835 29.4128 29.5783 29.623C29.0731 29.8332 28.5313 29.9414 27.9841 29.9414C27.4369 29.9414 26.8951 29.8332 26.3899 29.623C25.8847 29.4128 25.4261 29.1048 25.0404 28.7166L0.957032 4.63745L5.3737 0.220782L27.9779 22.8208L50.582 0.216618Z"
@@ -210,12 +161,12 @@ export default function Home() {
                 </div>
             </section>
 
-            <section className="flex flex-col justify-center items-center">
+            <section className="flex flex-col justify-center items-center bg-concrete-dark-90">
                 <h2 className="text-lime">OUR SERVICES</h2>
                 <p>Simple and Effective Pricing for that Fresh Looks</p>
 
                 <div className="flex gap-8 mt-20 px-6 md:w-max w-full overflow-x-auto">
-                    <div className="flex flex-col justify-between bg-[#262626] rounded-xl w-[250px] p-2">
+                    <div className="flex flex-col justify-between bg-concrete-dark-80 rounded-xl w-[250px] p-2">
                         <div className="flex flex-col">
                             <img className="mb-4" src={haircut} width={500} height={500} alt="haircut" />
                             <h3>Haircut</h3>
@@ -228,7 +179,7 @@ export default function Home() {
                         </div>
                     </div>
 
-                    <div className="flex flex-col bg-[#262626] rounded-xl w-[250px] p-2">
+                    <div className="flex flex-col bg-concrete-dark-80 rounded-xl w-[250px] p-2">
                         <img className="mb-4" src={beard} width={500} height={500} alt="haircut" />
                         <h3>Haircut & Beard</h3>
                         <p>Men's haircut and beard trims starts from $75 depending on which barber you would like.</p>
