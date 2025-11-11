@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
 import Logo from "@/assets/web/icons/logo.svg";
 import Facebook from "@/assets/web/icons/Facebook.svg";
 import Instagram from "@/assets/web/icons/Instagram.svg";
@@ -9,6 +8,21 @@ import Tiktok from "@/assets/web/icons/Tiktok.svg";
 import BgHero2 from "@/assets/web/home/hero.svg";
 import { Button } from "../ui/button";
 import { generateLink } from "@/pages/web/Home";
+
+function isIOS() {
+    return [
+        /iPad|iPhone|iPod/.test(navigator.userAgent),
+        navigator.maxTouchPoints && navigator.maxTouchPoints > 2,
+    ].some(Boolean);
+}
+
+function getMapsLink() {
+    if (isIOS()) {
+        return "https://maps.apple/p/C27MbUAz9ZIsQB";
+    } else {
+        return "https://maps.app.goo.gl/x4J7RE2sqtXZJq5w7?g_st=iw";
+    }
+}
 
 const WebFooter: React.FC = () => {
     return (
@@ -144,7 +158,7 @@ const WebFooter: React.FC = () => {
                             <h3 className="text-lime mb-4">Address</h3>
                             <ul className="flex flex-col font-light gap-2 text-stone-400 mb-10">
                                 <li>
-                                    <Link to="https://g.co/kgs/sdqFwMj" target="_blank" className="hover:text-white">
+                                    <Link to={getMapsLink()} target="_blank" className="hover:text-white">
                                         shop 7-271/275 Centre Rd, Bentleigh VIC 3204, Australia
                                     </Link>
                                 </li>
@@ -152,37 +166,37 @@ const WebFooter: React.FC = () => {
                             <h3 className="text-lime mb-4">Hours</h3>
                             <ul className="flex flex-col font-light gap-2 text-stone-400">
                                 <li>
-                                    <Link to="https://g.co/kgs/sdqFwMj" target="_blank" className="hover:text-white">
+                                    <Link to={getMapsLink()} target="_blank" className="hover:text-white">
                                         Monday 12 AM - 8 PM
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link to="https://g.co/kgs/sdqFwMj" target="_blank" className="hover:text-white">
+                                    <Link to={getMapsLink()} target="_blank" className="hover:text-white">
                                         Tuesday 12 AM - 8 PM
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link to="https://g.co/kgs/sdqFwMj" target="_blank" className="hover:text-white">
+                                    <Link to={getMapsLink()} target="_blank" className="hover:text-white">
                                         Wednesday 12 AM - 8 PM
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link to="https://g.co/kgs/sdqFwMj" target="_blank" className="hover:text-white">
+                                    <Link to={getMapsLink()} target="_blank" className="hover:text-white">
                                         Thursday 10 AM - 8 PM
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link to="https://g.co/kgs/sdqFwMj" target="_blank" className="hover:text-white">
+                                    <Link to={getMapsLink()} target="_blank" className="hover:text-white">
                                         Friday 10 AM - 8 PM
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link to="https://g.co/kgs/sdqFwMj" target="_blank" className="hover:text-white">
+                                    <Link to={getMapsLink()} target="_blank" className="hover:text-white">
                                         Saturday 10 AM - 5 PM
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link to="https://g.co/kgs/sdqFwMj" target="_blank" className="hover:text-white">
+                                    <Link to={getMapsLink()} target="_blank" className="hover:text-white">
                                         Sunday Closed
                                     </Link>
                                 </li>

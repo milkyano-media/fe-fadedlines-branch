@@ -1,4 +1,3 @@
-import AboutUsDejan1 from "@/assets/web/about-us/about_us_dejan_1.png";
 import TiktokAboutUs from "@/assets/web/about-us/about_us_tiktok.png";
 import plus from "@/assets/web/about-us/plus.svg";
 import BgHero2 from "@/assets/web/home/hero.svg";
@@ -107,7 +106,7 @@ export default function AboutUs() {
                 <div className="md:w-1/3">
                     <img
                         alt="background about us"
-                        src={AboutUsDejan1}
+                        src="https://s3.milkyano.com/milkyano/fadedlines-bentleigh/about-us/anthony.JPG"
                         className="hover:scale-110 transform transition-transform ease-out duration-500 cursor-pointer delay-75"
                     />
                 </div>
@@ -117,7 +116,7 @@ export default function AboutUs() {
                     <div className="flex flex-col md:flex-row gap-10 mt-10 md:mt-0 md:w-2/4">
                         <h2 className="w-full">
                             Hey, I'm <br />
-                            <span className="text-lime">Dejan</span>
+                            <span className="text-lime">Anthony</span>
                         </h2>
                         <p>
                             Faded Lines Barbershop wants to bring convivence back into peoples lives. With appointments

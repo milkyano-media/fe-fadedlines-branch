@@ -41,6 +41,29 @@ export const generateLink = (text: string): JSX.Element => {
     }
 };
 
+const faqs = [
+    {
+        id: 1,
+        question: "What services do you offer?",
+        answer: `We specialize in all types of hair textures and offer men's haircuts starting from $50, and haircut & beard trims starting from $75 (depending on your chosen barber). We provide traditional styled & dapper haircuts, smooth razor shaves, and close fades in a clean & safe environment.`,
+    },
+    {
+        id: 2,
+        question: "Where are you located and how can I contact you?",
+        answer: `We're located at shop 7-271/275 Centre Rd, Bentleigh VIC 3204, Australia. You can contact us via phone at +6135 249 543, email us at fadedlinesbentleigh@gmail.com, or follow us on Instagram @fadedlinesbentleigh for updates and our latest work.`,
+    },
+    {
+        id: 3,
+        question: "Do you accept walk-ins or appointments only?",
+        answer: `Faded Lines Barbershop offers both appointments and walk-ins to bring convenience back into people's lives. We recommend booking an appointment for guaranteed service times, but we also welcome walk-ins based on availability. Our pricing is determined by demand and the experience level of your chosen barber.`,
+    },
+    {
+        id: 4,
+        question: "What makes Faded Lines Barbershop special?",
+        answer: `We're an award-winning barbershop that provides great services at a professional standard. Our team is committed to making clients feel welcome in a clean & safe environment. We've served over 5000+ happy customers and are well-known on TikTok for our quality work. Our goal is to ensure you leave feeling confident with every visit.`,
+    },
+];
+
 export default function Home() {
     localStorage.removeItem("booking_source");
 
@@ -213,45 +236,22 @@ export default function Home() {
                         collapsible
                         className="flex border pb-12 border-lime rounded-[36px] p-12 pt-6 flex-col gap-8 bg-[#101010] shadow-[0px_4px_39px_31px_rgba(0,244,24,0.1)] font-light"
                     >
-                        <AccordionItem
-                            value="item-1"
-                            className="py-2 px-4 border-b border-white/30 font-light group ease-in-out duration-300"
-                        >
-                            <AccordionTrigger className="relative z-10 ">
-                                <div className="font-bold text-lg group-hover:translate-x-2 ease-in-out duration-300">
-                                    Is it accessible?
-                                </div>
-                            </AccordionTrigger>
-                            <AccordionContent className="text-stone-300 group-hover:translate-x-2 ease-in-out duration-300">
-                                Yes. It adheres to the WAI-ARIA design pattern.
-                            </AccordionContent>
-                        </AccordionItem>
-                        <AccordionItem
-                            value="item-2"
-                            className="py-2 px-4 border-b border-white/30 font-light group ease-in-out duration-300"
-                        >
-                            <AccordionTrigger className="relative z-10 ">
-                                <div className="font-bold text-lg group-hover:translate-x-2 ease-in-out duration-300">
-                                    Is it accessible?
-                                </div>
-                            </AccordionTrigger>
-                            <AccordionContent className="text-stone-300 group-hover:translate-x-2 ease-in-out duration-300">
-                                Yes. It adheres to the WAI-ARIA design pattern.
-                            </AccordionContent>
-                        </AccordionItem>
-                        <AccordionItem
-                            value="item-3"
-                            className="py-2 px-4 border-b border-white/30 font-light group ease-in-out duration-300"
-                        >
-                            <AccordionTrigger className="relative z-10 ">
-                                <div className="font-bold text-lg group-hover:translate-x-2 ease-in-out duration-300">
-                                    Is it accessible?
-                                </div>
-                            </AccordionTrigger>
-                            <AccordionContent className="text-stone-300 group-hover:translate-x-2 ease-in-out duration-300">
-                                Yes. It adheres to the WAI-ARIA design pattern.
-                            </AccordionContent>
-                        </AccordionItem>
+                        {faqs.map((faq) => (
+                            <AccordionItem
+                                key={faq.id}
+                                value={faq.id.toString()}
+                                className="py-2 px-4 border-b border-white/30 font-light group ease-in-out duration-300"
+                            >
+                                <AccordionTrigger className="relative z-10 ">
+                                    <div className="font-bold text-lg group-hover:translate-x-2 ease-in-out duration-300">
+                                        {faq.question}
+                                    </div>
+                                </AccordionTrigger>
+                                <AccordionContent className="text-stone-300 group-hover:translate-x-2 ease-in-out duration-300">
+                                    {faq.answer}
+                                </AccordionContent>
+                            </AccordionItem>
+                        ))}
                     </Accordion>
                 </div>
             </section>

@@ -307,8 +307,9 @@ export default function Contacts() {
                             </div>
                         </a>
                         <a
-                            href="https://www.instagram.com/fadedlinesbarbershop"
+                            href="https://www.instagram.com/fadedlinesbentleigh"
                             className="bg-lime text-black rounded-full p-4 flex gap-2 w-96"
+                            target="_blank"
                         >
                             <svg className="w-12" viewBox="0 0 73 72" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <rect
@@ -328,7 +329,7 @@ export default function Contacts() {
 
                             <div className="flex flex-col gap-2">
                                 <p>Instagram Page: </p>
-                                <sub>@fadedlinesbarbershop</sub>
+                                <sub>@fadedlinesbentleigh</sub>
                             </div>
                         </a>
                     </div>
