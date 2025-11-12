@@ -91,7 +91,7 @@ export default function Contacts() {
                     <svg className="w-7 mt-20" viewBox="0 0 55 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path
                             d="M50.582 0.216618L54.9987 4.63745L30.9279 28.7166C30.5422 29.1048 30.0835 29.4128 29.5783 29.623C29.0731 29.8332 28.5313 29.9414 27.9841 29.9414C27.4369 29.9414 26.8951 29.8332 26.3899 29.623C25.8847 29.4128 25.4261 29.1048 25.0404 28.7166L0.957032 4.63745L5.3737 0.220782L27.9779 22.8208L50.582 0.216618Z"
-                            fill="#33FF00"
+                            fill="#f97f06"
                         />
                     </svg>
                 </div>
@@ -138,7 +138,7 @@ export default function Contacts() {
                                         </FormLabel>
                                         <FormControl>
                                             <Input
-                                                className="placeholder:text-[#114330] bg-transparent focus-visible:outline-none"
+                                                className="placeholder:text-[#8f5b24] bg-transparent focus-visible:outline-none"
                                                 placeholder="Johnathan"
                                                 {...field}
                                             />
@@ -159,7 +159,7 @@ export default function Contacts() {
                                         </FormLabel>
                                         <FormControl>
                                             <Input
-                                                className="placeholder:text-[#114330] bg-transparent focus-visible:outline-none"
+                                                className="placeholder:text-[#8f5b24] bg-transparent focus-visible:outline-none"
                                                 placeholder="Doe"
                                                 {...field}
                                             />
@@ -180,7 +180,7 @@ export default function Contacts() {
                                         </FormLabel>
                                         <FormControl>
                                             <Input
-                                                className="placeholder:text-[#114330] bg-transparent focus-visible:outline-none"
+                                                className="placeholder:text-[#8f5b24] bg-transparent focus-visible:outline-none"
                                                 placeholder="mail@fade.com"
                                                 {...field}
                                             />
@@ -201,7 +201,7 @@ export default function Contacts() {
                                         </FormLabel>
                                         <FormControl>
                                             <Input
-                                                className="placeholder:text-[#114330] bg-transparent focus-visible:outline-none"
+                                                className="placeholder:text-[#8f5b24] bg-transparent focus-visible:outline-none"
                                                 placeholder="+12555"
                                                 {...field}
                                             />
@@ -223,7 +223,7 @@ export default function Contacts() {
                                             </FormLabel>
                                             <FormControl>
                                                 <Textarea
-                                                    className="placeholder:text-[#114330] bg-transparent focus-visible:outline-none"
+                                                    className="placeholder:text-[#8f5b24] bg-transparent focus-visible:outline-none"
                                                     placeholder="Type Here..."
                                                     {...field}
                                                 />
