@@ -50,8 +50,8 @@ const InstagramSection: React.FC<InstagramSectionProps> = ({ instagram_images_de
         localStorage.setItem("booking_origin", "organic");
     }
 
-    const squareLink: string = "https://book.squareup.com/appointments/ud9yhcwfqc1fg0/location/LY7BZ89WAQ2QS/services";
-    const customize: boolean = true;
+    const squareLink: string = "https://book.squareup.com/appointments/jy2gksgbixkv5v/location/LEWYVQ46HQREW/services";
+    const customize: boolean = false;
 
     let bookLink: string;
     const parts = location.pathname.split("/");

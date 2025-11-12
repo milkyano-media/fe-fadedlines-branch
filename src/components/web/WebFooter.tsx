@@ -84,7 +84,7 @@ const WebFooter: React.FC = () => {
 
                                 <li>
                                     <a
-                                        href="https://www.facebook.com/p/Faded-Lines-Barbershop-100066737611092/"
+                                        href="https://www.facebook.com/people/Fadedlinesbentleigh/61583679056994/"
                                         className="text-md uppercase font-black hover:text-stone-50 opacity-40 hover:opacity-100 "
                                         target="_blank"
                                     >

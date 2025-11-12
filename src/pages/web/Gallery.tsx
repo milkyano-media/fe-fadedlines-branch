@@ -50,9 +50,9 @@ export default function GalleriesPage() {
     }
 
     const generateLink = (text: string): JSX.Element => {
-        const customize: boolean = true;
+        const customize: boolean = false;
         const squareLink: string =
-            "https://book.squareup.com/appointments/ud9yhcwfqc1fg0/location/LY7BZ89WAQ2QS/services";
+            "https://book.squareup.com/appointments/jy2gksgbixkv5v/location/LEWYVQ46HQREW/start";
 
         let bookLink: string;
         const parts = location.pathname.split("/");
