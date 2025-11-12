@@ -3,8 +3,6 @@ import { useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 
-import { EmblaOptionsType } from "embla-carousel";
-import EmblaCarousel from "@/components/landing/CarouselScaled";
 import Srolled from "@/components/landing/Scrolled";
 import getAsset from "@/utils/getAssets";
 import LandingLayout from "@/components/landing/LandingLayout";
@@ -19,7 +17,6 @@ import Mid from "@/assets/landing/mid_line.svg";
 import Bottom from "@/assets/landing/bottom_line.svg";
 
 import ParticlesTwo from "@/assets/landing/section_2_particles.svg";
-import ParticlesThree from "@/assets/landing/section_3_particles.svg";
 
 import SwipeGif from "@/assets/landing/arrow_animation.gif";
 import SwipedtoSee from "@/assets/landing/swipe_to_see.svg";
@@ -49,15 +46,6 @@ import useUtmTracking from "@/hooks/utmTrackingHook";
 
 const Hero = getAsset("/assets/landing/videos/rafael/hero.mp4");
 
-const video1 = getAsset("/assets/landing/videos/rafael/tiktok_1.mp4");
-const video2 = getAsset("/assets/landing/videos/rafael/tiktok_2.mp4");
-const video3 = getAsset("/assets/landing/videos/rafael/tiktok_3.mp4");
-const video4 = getAsset("/assets/landing/videos/rafael/tiktok_1.mp4");
-const video5 = getAsset("/assets/landing/videos/rafael/tiktok_2.mp4");
-const video6 = getAsset("/assets/landing/videos/rafael/tiktok_3.mp4");
-
-const videos = [video1, video2, video3, video4, video5, video6];
-
 const cutsImages = [
   { src: highBurstFadeMullet, name: "High Burst Fade Mullet" },
   { src: highDropFade1, name: "High Drop Fade 1" },
@@ -79,9 +67,6 @@ const cutsImages = [
   { src: midToHighSkinFade, name: "Mid to High Skin Fade" },
 ];
 
-const OPTIONS: EmblaOptionsType = { loop: true, inViewThreshold: 1 };
-const SLIDE_COUNT = 5;
-const SLIDES = Array.from(Array(SLIDE_COUNT).keys());
 const imagesReviews = [cardOne, cardTwo, cardThree, cardFour];
 
 export default function RafaelLanding() {
