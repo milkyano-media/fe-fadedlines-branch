@@ -3,16 +3,16 @@ import { useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 
-// import { EmblaOptionsType } from 'embla-carousel'
-// import EmblaCarousel from "@/components/landing/CarouselScaled";
+import { EmblaOptionsType } from "embla-carousel";
+import EmblaCarousel from "@/components/landing/CarouselScaled";
 import Srolled from "@/components/landing/Scrolled";
 import getAsset from "@/utils/getAssets";
 import LandingLayout from "@/components/landing/LandingLayout";
 
-import cardOne from "@/assets/landing/reviews/jay/card1.svg";
-import cardTwo from "@/assets/landing/reviews/jay/card2.svg";
-import cardThree from "@/assets/landing/reviews/jay/card3.svg";
-import cardFour from "@/assets/landing/reviews/jay/card4.svg";
+import cardOne from "@/assets/landing/reviews/ej/card1.svg";
+import cardTwo from "@/assets/landing/reviews/ej/card2.svg";
+import cardThree from "@/assets/landing/reviews/ej/card3.svg";
+import cardFour from "@/assets/landing/reviews/ej/card4.svg";
 
 import Top from "@/assets/landing/top_line.svg";
 import Mid from "@/assets/landing/mid_line.svg";
@@ -27,59 +27,52 @@ import SwipedtoSee from "@/assets/landing/swipe_to_see.svg";
 import HeroTop from "@/assets/landing/hero_top_line.svg";
 import HeroBottom from "@/assets/landing/hero_bottom_line.svg";
 
-import highDropFade1 from "@/assets/landing/cuts/jay/high_drop_fade_1.png";
-import midBurstFade1 from "@/assets/landing/cuts/jay/mid_burst_fade_1.png";
-import midDropFade from "@/assets/landing/cuts/jay/mid_drop_fade.png";
-import midToHighBurstFade2 from "@/assets/landing/cuts/jay/mid_to_high_burst_fade_2.png";
-import highDropFade from "@/assets/landing/cuts/jay/high_drop_fade.png";
-import midBurstFade2 from "@/assets/landing/cuts/jay/mid_burst_fade_2.png";
-import midSkinFadeMullet1 from "@/assets/landing/cuts/jay/mid_skin_fade_mullet_1.png";
-import midToHighBurstFade from "@/assets/landing/cuts/jay/mid_to_high_burst_fade.png";
-import highSkinFadeMullet from "@/assets/landing/cuts/jay/high_skin_fade_mullet.png";
-import highSkinFade1 from "@/assets/landing/cuts/jay/high_skin_fade_1.png";
-import highSkinFade from "@/assets/landing/cuts/jay/high_skin_fade.png";
-import midDropFade1 from "@/assets/landing/cuts/jay/mid_drop_fade_1.png";
-import midBurstFade3 from "@/assets/landing/cuts/jay/mid_burst_fade_3.png";
-import midBurstFade from "@/assets/landing/cuts/jay/mid_burst_fade.png";
-import midTaper from "@/assets/landing/cuts/jay/mid_taper.png";
-import midToHighBurstFade1 from "@/assets/landing/cuts/jay/mid_to_high_burst_fade_1.png";
-import midToHighDropFade from "@/assets/landing/cuts/jay/mid_to_high_drop_fade.png";
-import midToHighSkinFade from "@/assets/landing/cuts/jay/mid_to_high_skin_fade.png";
-import midToLowBurstFade from "@/assets/landing/cuts/jay/mid_to_low_burst_fade.png";
+import lowTaperFade from "@/assets/landing/cuts/ej/low_taper_fade.jpg";
+import midHighBurstFade from "@/assets/landing/cuts/ej/mid_high_burst_fade.jpg";
+import highDropFade from "@/assets/landing/cuts/ej/high_drop_fade.jpg";
+import highDropFade1 from "@/assets/landing/cuts/ej/high_drop_fade_1.jpg";
+import highSkinFade from "@/assets/landing/cuts/ej/high_skin_fade.jpg";
+import highSkinFade1 from "@/assets/landing/cuts/ej/high_skin_fade_1.jpg";
+import highSkinFade2 from "@/assets/landing/cuts/ej/high_skin_fade_2.jpg";
+import lowTaperFade1 from "@/assets/landing/cuts/ej/low_taper_fade_1.jpg";
+import midDropFade from "@/assets/landing/cuts/ej/mid_drop_fade.jpg";
+import midTaperFade from "@/assets/landing/cuts/ej/mid_taper_fade.jpg";
+import pompadourTaperFade from "@/assets/landing/cuts/ej/pompadour_taper_fade.jpg";
+import texturedFringe from "@/assets/landing/cuts/ej/textured_fringe.jpg";
 import useUtmTracking from "@/hooks/utmTrackingHook";
 
-const Hero = getAsset("/assets/landing/videos/jay/hero.mp4");
+const Hero = getAsset("/assets/landing/videos/ej/hero.mp4");
 
-const video1 = getAsset("/assets/landing/videos/jay/tiktok_1.mp4");
+const video1 = getAsset("/assets/landing/videos/ej/tiktok_1.mp4");
+const video2 = getAsset("/assets/landing/videos/ej/tiktok_2.mp4");
+const video3 = getAsset("/assets/landing/videos/ej/tiktok_3.mp4");
+const video4 = getAsset("/assets/landing/videos/ej/tiktok_1.mp4");
+const video5 = getAsset("/assets/landing/videos/ej/tiktok_2.mp4");
+const video6 = getAsset("/assets/landing/videos/ej/tiktok_3.mp4");
+
+const videos = [video1, video2, video3, video4, video5, video6];
 
 const cutsImages = [
-  { src: highDropFade1, name: "High Drop Fade 1" },
-  { src: midBurstFade1, name: "Mid Burst Fade 1" },
-  { src: midDropFade, name: "Mid Drop Fade" },
-  { src: midToHighBurstFade2, name: "Mid to High Burst Fade 2" },
+  { src: lowTaperFade, name: "Low Taper Fade" },
+  { src: midHighBurstFade, name: "Mid High Burst Fade" },
   { src: highDropFade, name: "High Drop Fade" },
-  { src: midBurstFade2, name: "Mid Burst Fade 2" },
-  { src: midSkinFadeMullet1, name: "Mid Skin Fade Mullet 1" },
-  { src: midToHighBurstFade, name: "Mid to High Burst Fade" },
-  { src: highSkinFadeMullet, name: "High Skin Fade Mullet" },
-  { src: highSkinFade1, name: "High Skin Fade 1" },
+  { src: highDropFade1, name: "High Drop Fade 1" },
   { src: highSkinFade, name: "High Skin Fade" },
-  { src: midDropFade1, name: "Mid Drop Fade 1" },
-  { src: midBurstFade3, name: "Mid Burst Fade 3" },
-  { src: midBurstFade, name: "Mid Burst Fade" },
-  { src: midTaper, name: "Mid Taper" },
-  { src: midToHighBurstFade1, name: "Mid to High Burst Fade 1" },
-  { src: midToHighDropFade, name: "Mid to High Drop Fade" },
-  { src: midToHighSkinFade, name: "Mid to High Skin Fade" },
-  { src: midToLowBurstFade, name: "Mid to Low Burst Fade" },
+  { src: highSkinFade1, name: "High Skin Fade 1" },
+  { src: highSkinFade2, name: "High Skin Fade 2" },
+  { src: lowTaperFade1, name: "Low Taper Fade 1" },
+  { src: midDropFade, name: "Mid Drop Fade" },
+  { src: midTaperFade, name: "Mid Taper Fade" },
+  { src: pompadourTaperFade, name: "Pompadour Taper Fade" },
+  { src: texturedFringe, name: "Textured Fringe" },
 ];
 
-// const OPTIONS: EmblaOptionsType = { loop: true, inViewThreshold: 1 }
-// const SLIDE_COUNT = 5
-// const SLIDES = Array.from(Array(SLIDE_COUNT).keys())
+const OPTIONS: EmblaOptionsType = { loop: true, inViewThreshold: 1 };
+const SLIDE_COUNT = 5;
+const SLIDES = Array.from(Array(SLIDE_COUNT).keys());
 const imagesReviews = [cardOne, cardTwo, cardThree, cardFour];
 
-export default function JayLanding() {
+export default function EjLanding() {
   useUtmTracking();
   const location = useLocation();
 
@@ -111,23 +104,25 @@ export default function JayLanding() {
   }, []);
 
   const description =
-    "Pushing the boundaries of traditional barbering, I blend innovative techniques with classic skills to create unique, personalized styles.";
+    "Precision cuts, personalized for you: I take the time to understand your style preferences and deliver tailored haircuts  exceed your expectations";
 
   return (
     <LandingLayout>
       <Helmet>
-        <title>jay Fadelines BEST BARBER/HAIRDRESSER IN MELBOURNE</title>
+        <title>
+          ej Fadelines
+        </title>
         <meta
           name="description"
-          content={`Jay Fadelines BEST BARBER IN MELBOURNE - ${description}`}
+          content={`Ej Fadelines BEST BARBER IN MELBOURNE - ${description}`}
         />
         <meta
           property="og:title"
-          content="Jay Fadelines BEST BARBER IN MELBOURNE"
+          content="Ej Fadelines BEST BARBER IN MELBOURNE"
         />
         <meta
           property="og:description"
-          content={`Jay Fadelines BEST BARBER IN MELBOURNE - ${description}`}
+          content={`Ej Fadelines BEST BARBER IN MELBOURNE - ${description}`}
         />
         <meta property="og:image" content="URL to Fadelines' preview image" />
         <meta property="og:url" content="URL to Fadelines' website" />
@@ -169,17 +164,17 @@ export default function JayLanding() {
           </video>
           <div className="max-w-screen-lg mx-auto w-full">
             <div
-              className="relative z-30 backdrop-blur-lg text-white rounded-3xl py-12 px-12 my-12 mb-10 mx-6 md:mx-12 border border-stone-50 md:w-1/2"
+              className="relative z-30 backdrop-blur-lg text-white rounded-3xl py-12 px-12 my-12 mb-10 mx-6 md:mx-12 border border-stone-50 md:w-1/2 bg-black/40"
               style={{
                 backdropFilter: "blur(16px) contrast(100%)",
                 WebkitBackdropFilter: "blur(16px) contrast(100%)",
               }}
             >
               <h2 className="text-4xl md:text-5xl uppercase font-poppins font-extrabold mb-2 text-lime tracking-wider">
-                Hi, I&apos;m jay
+                Hi, I&apos;m ej
               </h2>
               <h2 className="text-xl font-bold mb-4">
-                BEST BARBER/HAIRDRESSER IN MELBOURNE
+                Will be in{" "}Fadedlines Benthleigh
               </h2>
               <p className="text-lg mb-8">{description}</p>
               <div className="bg-black"></div>
@@ -240,42 +235,6 @@ export default function JayLanding() {
             height={500}
             alt="Your img"
             className="absolute z-0 w-auto h-full object-fill bottom-[0]"
-          />
-        </section>
-        <section className="container relative z-10 text-stone-50 pt-0 py-12 ">
-          <div className="relative z-10">
-            <h3 className=" text-4xl md:text-6xl  font-poppins font-extrabold text-center py-2 uppercase text-transparent bg-gradient-to-r from-[#19F456] via-[#44D140] to-[#A1FF80] bg-clip-text">
-              Our Videos
-            </h3>
-            <p className="text-center text-lg w-10/12 md:w-full mx-auto">
-              well known on TIktok with millions of views
-            </p>
-            <div className="py-12 md:py-0 w-full md:px-12 justify-center items-center flex m md:my-32">
-              <video
-                autoPlay
-                muted
-                loop
-                playsInline
-                className="w-fit rounded-3xl relative z-0  h-[23rem] md:h-[35rem] "
-              >
-                <source type="video/mp4" src={video1} />
-              </video>
-            </div>
-            <div className="flex gap-10 justify-center items-center flex-col w-full ">
-              <Button
-                variant={"ghost"}
-                className="border border-lime rounded-full font-extrabold font-poppins px-12 py-10 uppercase  text-xl md:text-3xl transform hover:scale-110 transition-transform duration-200 ease-in-out hover:bg-lime hover:shadow-md hover:text-stone-950 hover:shadow-[#44813a] "
-              >
-                {generateLink("BOOK NOW")}
-              </Button>
-            </div>
-          </div>
-          <img
-            src={ParticlesThree}
-            width={500}
-            height={500}
-            alt="Your img"
-            className="absolute left-0 z-0 w-auto h-full object-fill bottom-[0]"
           />
         </section>
 

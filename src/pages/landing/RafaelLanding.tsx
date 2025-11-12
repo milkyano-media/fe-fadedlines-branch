@@ -9,10 +9,10 @@ import Srolled from "@/components/landing/Scrolled";
 import getAsset from "@/utils/getAssets";
 import LandingLayout from "@/components/landing/LandingLayout";
 
-import cardOne from "@/assets/landing/reviews/emman/card1.svg";
-import cardTwo from "@/assets/landing/reviews/emman/card2.svg";
-import cardThree from "@/assets/landing/reviews/emman/card3.svg";
-import cardFour from "@/assets/landing/reviews/emman/card4.svg";
+import cardOne from "@/assets/landing/reviews/rafael/card1.svg";
+import cardTwo from "@/assets/landing/reviews/rafael/card2.svg";
+import cardThree from "@/assets/landing/reviews/rafael/card3.svg";
+import cardFour from "@/assets/landing/reviews/rafael/card4.svg";
 
 import Top from "@/assets/landing/top_line.svg";
 import Mid from "@/assets/landing/mid_line.svg";
@@ -27,34 +27,34 @@ import SwipedtoSee from "@/assets/landing/swipe_to_see.svg";
 import HeroTop from "@/assets/landing/hero_top_line.svg";
 import HeroBottom from "@/assets/landing/hero_bottom_line.svg";
 
-import highBurstFadeMullet from "@/assets/landing/cuts/emman/high_burst_fade_mullet.png";
-import highDropFade1 from "@/assets/landing/cuts/emman/high_drop_fade_1.png";
-import highDropFade2 from "@/assets/landing/cuts/emman/high_drop_fade_2.png";
-import highDropFade3 from "@/assets/landing/cuts/emman/high_drop_fade_3.png";
-import highDropFade from "@/assets/landing/cuts/emman/high_drop_fade.png";
-import highFade from "@/assets/landing/cuts/emman/high_fade.png";
-import highSkinFade1 from "@/assets/landing/cuts/emman/high_skin_fade_1.png";
-import highSkinFade2 from "@/assets/landing/cuts/emman/high_skin_fade_2.png";
-import highSkinFade3 from "@/assets/landing/cuts/emman/high_skin_fade_3.png";
-import highSkinFade4 from "@/assets/landing/cuts/emman/high_skin_fade_4.png";
-import highSkinFade5 from "@/assets/landing/cuts/emman/high_skin_fade_5.png";
-import highSkinFade6 from "@/assets/landing/cuts/emman/high_skin_fade_6.png";
-import highSkinFade from "@/assets/landing/cuts/emman/high_skin_fade.png";
-import lowTaper from "@/assets/landing/cuts/emman/low_taper.png";
-import midBurstFade from "@/assets/landing/cuts/emman/mid_burst_fade.png";
-import midToHighBurstFade1 from "@/assets/landing/cuts/emman/mid_to_high_burst_fade_1.png";
-import midToHighBurstFade from "@/assets/landing/cuts/emman/mid_to_high_burst_fade.png";
-import midToHighSkinFade from "@/assets/landing/cuts/emman/mid_to_high_skin_fade.png";
+import highBurstFadeMullet from "@/assets/landing/cuts/rafael/high_burst_fade_mullet.png";
+import highDropFade1 from "@/assets/landing/cuts/rafael/high_drop_fade_1.png";
+import highDropFade2 from "@/assets/landing/cuts/rafael/high_drop_fade_2.png";
+import highDropFade3 from "@/assets/landing/cuts/rafael/high_drop_fade_3.png";
+import highDropFade from "@/assets/landing/cuts/rafael/high_drop_fade.png";
+import highFade from "@/assets/landing/cuts/rafael/high_fade.png";
+import highSkinFade1 from "@/assets/landing/cuts/rafael/high_skin_fade_1.png";
+import highSkinFade2 from "@/assets/landing/cuts/rafael/high_skin_fade_2.png";
+import highSkinFade3 from "@/assets/landing/cuts/rafael/high_skin_fade_3.png";
+import highSkinFade4 from "@/assets/landing/cuts/rafael/high_skin_fade_4.png";
+import highSkinFade5 from "@/assets/landing/cuts/rafael/high_skin_fade_5.png";
+import highSkinFade6 from "@/assets/landing/cuts/rafael/high_skin_fade_6.png";
+import highSkinFade from "@/assets/landing/cuts/rafael/high_skin_fade.png";
+import lowTaper from "@/assets/landing/cuts/rafael/low_taper.png";
+import midBurstFade from "@/assets/landing/cuts/rafael/mid_burst_fade.png";
+import midToHighBurstFade1 from "@/assets/landing/cuts/rafael/mid_to_high_burst_fade_1.png";
+import midToHighBurstFade from "@/assets/landing/cuts/rafael/mid_to_high_burst_fade.png";
+import midToHighSkinFade from "@/assets/landing/cuts/rafael/mid_to_high_skin_fade.png";
 import useUtmTracking from "@/hooks/utmTrackingHook";
 
-const Hero = getAsset("/assets/landing/videos/emman/hero.mp4");
+const Hero = getAsset("/assets/landing/videos/rafael/hero.mp4");
 
-const video1 = getAsset("/assets/landing/videos/emman/tiktok_1.mp4");
-const video2 = getAsset("/assets/landing/videos/emman/tiktok_2.mp4");
-const video3 = getAsset("/assets/landing/videos/emman/tiktok_3.mp4");
-const video4 = getAsset("/assets/landing/videos/emman/tiktok_1.mp4");
-const video5 = getAsset("/assets/landing/videos/emman/tiktok_2.mp4");
-const video6 = getAsset("/assets/landing/videos/emman/tiktok_3.mp4");
+const video1 = getAsset("/assets/landing/videos/rafael/tiktok_1.mp4");
+const video2 = getAsset("/assets/landing/videos/rafael/tiktok_2.mp4");
+const video3 = getAsset("/assets/landing/videos/rafael/tiktok_3.mp4");
+const video4 = getAsset("/assets/landing/videos/rafael/tiktok_1.mp4");
+const video5 = getAsset("/assets/landing/videos/rafael/tiktok_2.mp4");
+const video6 = getAsset("/assets/landing/videos/rafael/tiktok_3.mp4");
 
 const videos = [video1, video2, video3, video4, video5, video6];
 
@@ -84,7 +84,7 @@ const SLIDE_COUNT = 5;
 const SLIDES = Array.from(Array(SLIDE_COUNT).keys());
 const imagesReviews = [cardOne, cardTwo, cardThree, cardFour];
 
-export default function EmmanLanding() {
+export default function RafaelLanding() {
   useUtmTracking();
   const location = useLocation();
   const generateLink = (text: string): JSX.Element => {
@@ -120,18 +120,18 @@ export default function EmmanLanding() {
   return (
     <LandingLayout>
       <Helmet>
-        <title>emman Fadelines BEST BARBER/HAIRDRESSER IN MELBOURNE</title>
+        <title>rafael Fadelines BEST BARBER/HAIRDRESSER IN MELBOURNE</title>
         <meta
           name="description"
-          content={`Emman Fadelines BEST BARBER IN MELBOURNE - ${description}`}
+          content={`Rafael Fadelines BEST BARBER IN MELBOURNE - ${description}`}
         />
         <meta
           property="og:title"
-          content="Emman Fadelines BEST BARBER IN MELBOURNE"
+          content="Rafael Fadelines BEST BARBER IN MELBOURNE"
         />
         <meta
           property="og:description"
-          content={`Emman Fadelines BEST BARBER IN MELBOURNE - ${description}`}
+          content={`Rafael Fadelines BEST BARBER IN MELBOURNE - ${description}`}
         />
         <meta property="og:image" content="URL to Fadelines' preview image" />
         <meta property="og:url" content="URL to Fadelines' website" />
@@ -180,7 +180,7 @@ export default function EmmanLanding() {
               }}
             >
               <h2 className="text-4xl md:text-5xl uppercase font-poppins font-extrabold mb-2 text-lime tracking-wider">
-                Hi, I&apos;m emman
+                Hi, I&apos;m rafael
               </h2>
               <h2 className="text-xl font-bold mb-4">
                 BEST BARBER/HAIRDRESSER IN MELBOURNE
@@ -244,38 +244,6 @@ export default function EmmanLanding() {
             height={500}
             alt="Your img"
             className="absolute z-0 w-auto h-full object-fill bottom-[0]"
-          />
-        </section>
-        <section className="container relative z-10 text-stone-50 pt-0 py-12 ">
-          <div className="relative z-10">
-            <h3 className=" text-4xl md:text-6xl  font-poppins font-extrabold text-center py-2 uppercase text-transparent bg-gradient-to-r from-[#19F456] via-[#44D140] to-[#A1FF80] bg-clip-text">
-              Our Videos
-            </h3>
-            <p className="text-center text-lg w-10/12 md:w-full mx-auto">
-              well known on TIktok with millions of views
-            </p>
-            <div className="py-12 md:py-0 w-full md:px-12  ">
-              <EmblaCarousel
-                slides={SLIDES}
-                options={OPTIONS}
-                videos={videos}
-              />
-            </div>
-            <div className="flex gap-10 justify-center items-center flex-col w-full ">
-              <Button
-                variant={"ghost"}
-                className="border border-lime rounded-full font-extrabold font-poppins px-12 py-10 uppercase  text-xl md:text-3xl transform hover:scale-110 transition-transform duration-200 ease-in-out hover:bg-lime hover:shadow-md hover:text-stone-950 hover:shadow-[#44813a] "
-              >
-                {generateLink("BOOK NOW")}
-              </Button>
-            </div>
-          </div>
-          <img
-            src={ParticlesThree}
-            width={500}
-            height={500}
-            alt="Your img"
-            className="absolute left-0 z-0 w-auto h-full object-fill bottom-[0]"
           />
         </section>
 

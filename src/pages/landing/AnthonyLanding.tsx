@@ -251,38 +251,6 @@ export default function AnthonyLanding() {
             className="absolute z-0 w-auto h-full object-fill bottom-[0]"
           />
         </section>
-        <section className="container relative z-10 text-stone-50 pt-0 py-12 ">
-          <div className="relative z-10">
-            <h3 className=" text-4xl md:text-6xl  font-poppins font-extrabold text-center py-2 uppercase text-transparent bg-gradient-to-r from-[#19F456] via-[#44D140] to-[#A1FF80] bg-clip-text">
-              Our Videos
-            </h3>
-            <p className="text-center text-lg w-10/12 md:w-full mx-auto">
-              well known on TIktok with millions of views
-            </p>
-            <div className="py-12 md:py-0 w-full md:px-12  ">
-              <EmblaCarousel
-                slides={SLIDES}
-                videos={videos}
-                options={OPTIONS}
-              />
-            </div>
-            <div className="flex gap-10 justify-center items-center flex-col w-full ">
-              <Button
-                variant={"ghost"}
-                className="border border-lime rounded-full font-extrabold font-poppins px-12 py-10 uppercase  text-xl md:text-3xl transform hover:scale-110 transition-transform duration-200 ease-in-out hover:bg-lime hover:shadow-md hover:text-stone-950 hover:shadow-[#44813a] "
-              >
-                {generateLink("BOOK NOW")}
-              </Button>
-            </div>
-          </div>
-          <img
-            src={ParticlesThree}
-            width={500}
-            height={500}
-            alt="Your img"
-            className="absolute left-0 z-0 w-auto h-full object-fill bottom-[0]"
-          />
-        </section>
 
         <section className="container mx-auto px-6 sm:px-6 lg:px-8 py-12 text-stone-50 rounded-lg relative z-10 flex flex-col justify-center items-center">
           <h4 className="text-4xl md:text-7xl my-6 md:my-12 uppercase   items-center justify-center text-center font-extrabold text-transparent bg-gradient-to-r from-[#19F456] via-[#44D140] to-[#A1FF80] bg-clip-text">

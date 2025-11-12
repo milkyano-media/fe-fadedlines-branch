@@ -1,14 +1,6 @@
-import Amir from "@/assets/web/barbers/amir.png";
-import Anthony from "@/assets/web/barbers/anthony.png";
-import Christos from "@/assets/web/barbers/christos.png";
-import Dejan from "@/assets/web/barbers/dejan.png";
-import Emman from "@/assets/web/barbers/emman.png";
-import Jamie from "@/assets/web/barbers/jamie.png";
-import Jay from "@/assets/web/barbers/jay.png";
-import Josh from "@/assets/web/barbers/josh.png";
-import Niko from "@/assets/web/barbers/niko.png";
-import Noah from "@/assets/web/barbers/noah.png";
-import Rayhan from "@/assets/web/barbers/rayhan.png";
+import Anth from "@/assets/web/barbers/anth.png";
+import Ej from "@/assets/web/barbers/ej.png";
+import Rafael from "@/assets/web/barbers/rafael.png";
 import BgHero2 from "@/assets/web/home/hero.svg";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/web/WebLayout";
@@ -90,59 +82,19 @@ export default function Barbers() {
 
     const barberSvgs = [
         {
-            svg: Jamie,
-            link: generateRoute("/jamie"),
-            landing: false,
-        },
-        {
-            svg: Amir,
-            link: generateRoute("/amir"),
-            landing: true,
-        },
-        {
-            svg: Rayhan,
-            link: generateRoute("/rayhan"),
-            landing: true,
-        },
-        {
-            svg: Anthony,
+            svg: Anth,
             link: generateRoute("/anthony"),
             landing: true,
         },
         {
-            svg: Josh,
-            link: generateRoute("/josh"),
+            svg: Ej,
+            link: generateRoute("/ej"),
             landing: true,
         },
         {
-            svg: Noah,
-            link: generateRoute("/noah"),
+            svg: Rafael,
+            link: generateRoute("/rafael"),
             landing: true,
-        },
-        {
-            svg: Jay,
-            link: generateRoute("/jay"),
-            landing: true,
-        },
-        {
-            svg: Emman,
-            link: generateRoute("/emman"),
-            landing: true,
-        },
-        {
-            svg: Christos,
-            link: generateRoute("/christos"),
-            landing: true,
-        },
-        {
-            svg: Niko,
-            link: generateRoute("/niko"),
-            landing: true,
-        },
-        {
-            svg: Dejan,
-            link: generateRoute("/dejan"),
-            landing: false,
         },
     ];
 
@@ -220,7 +172,7 @@ export default function Barbers() {
                             <img
                                 src={barber.svg}
                                 alt={`Svg ${index}`}
-                                className="transition-transform duration-500 ease-in-out hover:scale-110 z-30 px-4 md:px-0 mb-12"
+                                className="h-[400px] md:h-[450px] transition-transform duration-500 ease-in-out hover:scale-110 z-30 px-4 md:px-0 mb-12"
                             />
                             {/* <div
                 className="mt-12 relative bottom-[-0rem] md:bottom-[-0.2rem] w-[110%] "
