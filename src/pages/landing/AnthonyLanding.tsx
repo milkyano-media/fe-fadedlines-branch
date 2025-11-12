@@ -3,8 +3,6 @@ import { useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 
-import { EmblaOptionsType } from "embla-carousel";
-import EmblaCarousel from "@/components/landing/CarouselScaled";
 import Srolled from "@/components/landing/Scrolled";
 import getAsset from "@/utils/getAssets";
 import LandingLayout from "@/components/landing/LandingLayout";
@@ -19,7 +17,6 @@ import Mid from "@/assets/landing/mid_line.svg";
 import Bottom from "@/assets/landing/bottom_line.svg";
 
 import ParticlesTwo from "@/assets/landing/section_2_particles.svg";
-import ParticlesThree from "@/assets/landing/section_3_particles.svg";
 
 import SwipeGif from "@/assets/landing/arrow_animation.gif";
 import SwipedtoSee from "@/assets/landing/swipe_to_see.svg";
@@ -51,15 +48,6 @@ import useUtmTracking from "@/hooks/utmTrackingHook";
 
 const Hero = getAsset("/assets/landing/videos/anthony/hero.mp4");
 
-const video1 = getAsset("/assets/landing/videos/anthony/tiktok_1.mp4");
-const video2 = getAsset("/assets/landing/videos/anthony/tiktok_2.mp4");
-const video3 = getAsset("/assets/landing/videos/anthony/tiktok_3.mp4");
-const video4 = getAsset("/assets/landing/videos/anthony/tiktok_1.mp4");
-const video5 = getAsset("/assets/landing/videos/anthony/tiktok_2.mp4");
-const video6 = getAsset("/assets/landing/videos/anthony/tiktok_3.mp4");
-
-const videos = [video1, video2, video3, video4, video5, video6];
-
 const cutsImages = [
   { src: highDropFade1, name: "High Drop Fade 1" },
   { src: highDropFade, name: "High Drop Fade" },
@@ -83,9 +71,6 @@ const cutsImages = [
   { src: midToLowBurstFade, name: "Mid To Low Burst Fade" },
 ];
 
-const OPTIONS: EmblaOptionsType = { loop: true, inViewThreshold: 1 };
-const SLIDE_COUNT = 5;
-const SLIDES = Array.from(Array(SLIDE_COUNT).keys());
 const imagesReviews = [cardFour, cardOne, cardTwo, cardThree];
 
 export default function AnthonyLanding() {
@@ -249,38 +234,6 @@ export default function AnthonyLanding() {
             height={500}
             alt="Your img"
             className="absolute z-0 w-auto h-full object-fill bottom-[0]"
-          />
-        </section>
-        <section className="container relative z-10 text-stone-50 pt-0 py-12 ">
-          <div className="relative z-10">
-            <h3 className=" text-4xl md:text-6xl  font-poppins font-extrabold text-center py-2 uppercase text-transparent bg-gradient-to-r from-[#19F456] via-[#44D140] to-[#A1FF80] bg-clip-text">
-              Our Videos
-            </h3>
-            <p className="text-center text-lg w-10/12 md:w-full mx-auto">
-              well known on TIktok with millions of views
-            </p>
-            <div className="py-12 md:py-0 w-full md:px-12  ">
-              <EmblaCarousel
-                slides={SLIDES}
-                videos={videos}
-                options={OPTIONS}
-              />
-            </div>
-            <div className="flex gap-10 justify-center items-center flex-col w-full ">
-              <Button
-                variant={"ghost"}
-                className="border border-lime rounded-full font-extrabold font-poppins px-12 py-10 uppercase  text-xl md:text-3xl transform hover:scale-110 transition-transform duration-200 ease-in-out hover:bg-lime hover:shadow-md hover:text-stone-950 hover:shadow-[#44813a] "
-              >
-                {generateLink("BOOK NOW")}
-              </Button>
-            </div>
-          </div>
-          <img
-            src={ParticlesThree}
-            width={500}
-            height={500}
-            alt="Your img"
-            className="absolute left-0 z-0 w-auto h-full object-fill bottom-[0]"
           />
         </section>
 
