@@ -303,7 +303,7 @@ export default function Contacts() {
 
                             <div className="flex flex-col gap-2">
                                 <p>Phone: </p>
-                                <sub>+6135 249 543</sub>
+                                <sub>+61 3 8383 8367</sub>
                             </div>
                         </a>
                         <a
