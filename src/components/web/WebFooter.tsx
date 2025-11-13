@@ -147,8 +147,9 @@ const WebFooter: React.FC = () => {
                                 </li>
                                 <li>
                                     <a
-                                        href=" https://book.squareup.com/appointments/ud9yhcwfqc1fg0/location/LY7BZ89WAQ2QS/services"
+                                        href="https://app.squareup.com/appointments/book/jy2gksgbixkv5v/LEWYVQ46HQREW/start"
                                         className="hover:text-white"
+                                        target="_blank"
                                     >
                                         CONTACT US
                                     </a>

@@ -1,5 +1,3 @@
-import beard from "@/assets/web/home/beard.png";
-import haircut from "@/assets/web/home/haircut.png";
 import BgHero2 from "@/assets/web/home/hero.svg";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
@@ -11,12 +9,10 @@ import instagramPhotosDesktop1 from "/src/assets/follow-us/desktop/instagram_pho
 import instagramPhotosDesktop2 from "/src/assets/follow-us/desktop/instagram_photo_2.png";
 import instagramPhotosDesktop3 from "/src/assets/follow-us/desktop/instagram_photo_3.png";
 import instagramPhotosDesktop4 from "/src/assets/follow-us/desktop/instagram_photo_4.png";
-import instagramPhotosDesktop5 from "/src/assets/follow-us/desktop/instagram_photo_5.png";
 import instagramPhotosMobile1 from "/src/assets/follow-us/mobile/instagram_photo_1.png";
 import instagramPhotosMobile2 from "/src/assets/follow-us/mobile/instagram_photo_2.png";
 import instagramPhotosMobile3 from "/src/assets/follow-us/mobile/instagram_photo_3.png";
 import instagramPhotosMobile4 from "/src/assets/follow-us/mobile/instagram_photo_4.png";
-import instagramPhotosMobile5 from "/src/assets/follow-us/mobile/instagram_photo_5.png";
 
 const isBookingRedirect = import.meta.env.VITE_IS_BOOKING_REDIRECT;
 const bookingRedirectUrl = import.meta.env.VITE_BOOKING_REDIRECT_URL;
@@ -112,7 +108,6 @@ export default function Home() {
         { image: instagramPhotosDesktop2, name: "Mid Drop Fade" },
         { image: instagramPhotosDesktop3, name: "Mid Taper" },
         { image: instagramPhotosDesktop4, name: "V Low Drop Fade" },
-        { image: instagramPhotosDesktop5, name: "" },
     ];
 
     const instagram_images_mobile = [
@@ -120,7 +115,6 @@ export default function Home() {
         instagramPhotosMobile2,
         instagramPhotosMobile3,
         instagramPhotosMobile4,
-        instagramPhotosMobile5,
     ];
 
     return (
@@ -141,7 +135,7 @@ export default function Home() {
                 <meta name="twitter:card" content="summary_large_image" />
             </Helmet>
 
-            <section className="flex flex-col justify-center items-center relative pt-60 md:pt-40">
+            <section className="flex flex-col justify-center items-center relative pt-24 md:pt-32">
                 <img
                     alt="hero image"
                     width={500}
@@ -151,6 +145,13 @@ export default function Home() {
                 />
                 <div className="top-0 absolute w-full h-full object-cover z-0 bg-gradient-to-b from-concrete-dark-90/80 to-concrete-dark-90" />
                 <div className="flex flex-col justify-center items-center text-center gap-6 z-10">
+                    <div className="w-full md:w-64">
+                        <img
+                            src="https://s3.milkyano.com/milkyano/fadedlines-bentleigh/global/logo.png"
+                            alt="Fadedlines Bentleigh Logo"
+                            className="w-full"
+                        />
+                    </div>
                     <div className="flex flex-col mb-12">
                         <h1 className="text-lime">THE BEST</h1>
                         <h2>FOR YOUR HAIR</h2>
@@ -181,37 +182,6 @@ export default function Home() {
                             fill="#f97f06"
                         />
                     </svg>
-                </div>
-            </section>
-
-            <section className="flex flex-col justify-center items-center bg-concrete-dark-90">
-                <h2 className="text-lime">OUR SERVICES</h2>
-                <p>Simple and Effective Pricing for that Fresh Looks</p>
-
-                <div className="flex gap-8 mt-20 px-6 md:w-max w-full overflow-x-auto">
-                    <div className="flex flex-col justify-between bg-concrete-dark-80 rounded-xl w-[250px] p-2">
-                        <div className="flex flex-col">
-                            <img className="mb-4" src={haircut} width={500} height={500} alt="haircut" />
-                            <h3>Haircut</h3>
-                            <p>Men's haircut start from $50 depending on which barber you would like.</p>
-                        </div>
-
-                        <div className="flex gap-8 justify-between mt-6">
-                            <h2 className="text-lime">$50</h2>
-                            <Button>{generateLink("PRICING PLANS")}</Button>
-                        </div>
-                    </div>
-
-                    <div className="flex flex-col bg-concrete-dark-80 rounded-xl w-[250px] p-2">
-                        <img className="mb-4" src={beard} width={500} height={500} alt="haircut" />
-                        <h3>Haircut & Beard</h3>
-                        <p>Men's haircut and beard trims starts from $75 depending on which barber you would like.</p>
-
-                        <div className="flex gap-8 justify-between mt-6">
-                            <h2 className="text-lime">$75</h2>
-                            <Button>{generateLink("PRICING PLANS")}</Button>
-                        </div>
-                    </div>
                 </div>
             </section>
 

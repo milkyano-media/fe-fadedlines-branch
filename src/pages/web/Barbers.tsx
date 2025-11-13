@@ -1,6 +1,3 @@
-import Anth from "@/assets/web/barbers/anth.png";
-import Ej from "@/assets/web/barbers/ej.png";
-import Rafael from "@/assets/web/barbers/rafael.png";
 import BgHero2 from "@/assets/web/home/hero.svg";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/web/WebLayout";
@@ -61,8 +58,7 @@ export default function Barbers() {
     };
 
     const generateLink = () => {
-        const squareLink: string =
-            "https://book.squareup.com/appointments/ud9yhcwfqc1fg0/location/LY7BZ89WAQ2QS/services";
+        const squareLink: string = "https://app.squareup.com/appointments/book/jy2gksgbixkv5v/LEWYVQ46HQREW/start";
 
         let bookLink: string;
         const parts = location.pathname.split("/");
@@ -72,7 +68,7 @@ export default function Barbers() {
             bookLink = "/book/services";
         }
 
-        const customize: boolean = true;
+        const customize: boolean = false;
         if (customize) {
             return bookLink;
         } else {
@@ -82,17 +78,17 @@ export default function Barbers() {
 
     const barberSvgs = [
         {
-            svg: Anth,
+            svg: "https://s3.milkyano.com/milkyano/fadedlines-bentleigh/barbers/anth.png",
             link: generateRoute("/anthony"),
             landing: false,
         },
         {
-            svg: Ej,
+            svg: "https://s3.milkyano.com/milkyano/fadedlines-bentleigh/barbers/ej.png",
             link: generateRoute("/ej"),
             landing: false,
         },
         {
-            svg: Rafael,
+            svg: "https://s3.milkyano.com/milkyano/fadedlines-bentleigh/barbers/rafael.png",
             link: generateRoute("/rafael"),
             landing: false,
         },
@@ -174,14 +170,6 @@ export default function Barbers() {
                                 alt={`Svg ${index}`}
                                 className="h-[400px] md:h-[450px] transition-transform duration-500 ease-in-out hover:scale-110 z-30 px-4 md:px-0 mb-12"
                             />
-                            {/* <div
-                className="mt-12 relative bottom-[-0rem] md:bottom-[-0.2rem] w-[110%] "
-                style={{
-                  height: "4px ",
-                  background:
-                    "linear-gradient(90deg, rgba(36,255,0,0) 0%, rgba(36,255,0,1) 50%, rgba(36,255,0,0.0) 100%)",
-                }}
-              /> */}
                             <Button className="border absolute md:relative bottom-[.5rem] md:bottom-[1rem] px-7 py-5 rounded-lg border-[#184937] hover:border-white text-lime bg-transparent backdrop-blur-md z-30 transform hover:scale-110 transition-transform duration-400 ease-in-out hover:shadow-md hover:bg-lime hover:shadow-lime text-xs md:text-base hover:text-white">
                                 LEARN MORE
                             </Button>
