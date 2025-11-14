@@ -119,7 +119,7 @@ export default function AboutUs() {
                             <span className="text-lime">Anthony</span>
                         </h2>
                         <p>
-                            Faded Lines Barbershop wants to bring convivence back into peoples lives. With appointments
+                            Faded Lines Barbershop wants to bring convenience back into peoples lives. With appointments
                             and Walk-ins. Prices determined by demand and experience.
                         </p>
                     </div>

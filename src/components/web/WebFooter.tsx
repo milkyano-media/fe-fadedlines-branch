@@ -171,17 +171,17 @@ const WebFooter: React.FC = () => {
                             <ul className="flex flex-col font-light gap-2 text-stone-400">
                                 <li>
                                     <Link to={getMapsLink()} target="_blank" className="hover:text-white">
-                                        Monday 12 AM - 8 PM
+                                        Monday 12 PM - 8 PM
                                     </Link>
                                 </li>
                                 <li>
                                     <Link to={getMapsLink()} target="_blank" className="hover:text-white">
-                                        Tuesday 12 AM - 8 PM
+                                        Tuesday 12 PM - 8 PM
                                     </Link>
                                 </li>
                                 <li>
                                     <Link to={getMapsLink()} target="_blank" className="hover:text-white">
-                                        Wednesday 12 AM - 8 PM
+                                        Wednesday 12 PM - 8 PM
                                     </Link>
                                 </li>
                                 <li>
