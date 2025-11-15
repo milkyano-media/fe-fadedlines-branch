@@ -40,7 +40,7 @@ const WebFooter: React.FC = () => {
                         <h2>SAVE TIME AND</h2>
                         <h1 className="text-lime">BOOK NOW</h1>
                     </div>
-                    <Button className="bg-concrete border-[0.5px] border-white text-2xl text-lime font-bold px-20 md:px-40 py-7 w-max self-center hover:bg-concrete/80">
+                    <Button className="bg-concrete border-[0.5px] border-white text-2xl text-white font-bold px-20 md:px-40 py-7 w-max self-center hover:bg-concrete/80">
                         {generateLink("BOOK NOW")}
                     </Button>
 

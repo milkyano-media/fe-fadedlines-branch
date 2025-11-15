@@ -97,7 +97,7 @@ export default function GalleriesPage() {
                             <span>BE OUR NEXT</span>
                             <span className="text-transparent bg-lime bg-clip-text">MASTERPIECE</span>
                         </h3>
-                        <Button className="bg-concrete border-[0.5px] border-white text-2xl text-lime font-bold px-16 py-7 w-max self-center md:self-end mt-6 hover:bg-concrete/80">
+                        <Button className="bg-concrete border-[0.5px] border-white text-2xl text-white font-bold px-16 py-7 w-max self-center md:self-end mt-6 hover:bg-concrete/80">
                             {generateLink("BOOK NOW")}
                         </Button>
                     </div>

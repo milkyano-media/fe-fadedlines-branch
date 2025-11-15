@@ -135,7 +135,7 @@ export default function AboutUs() {
                         />
                     </svg>
 
-                    <h1 className="text-transparent bg-gradient-to-b from-lime to-[#ae5904] bg-clip-text">
+                    <h1 className="text-transparent bg-gradient-to-b from-lime to-[#595959] bg-clip-text">
                         Not Luck Of <br />
                         The Draw.
                     </h1>

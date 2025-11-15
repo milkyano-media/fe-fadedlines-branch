@@ -156,7 +156,7 @@ export default function Home() {
                         <h1 className="text-lime">THE BEST</h1>
                         <h2>FOR YOUR HAIR</h2>
                     </div>
-                    <Button className="bg-concrete border-[0.5px] border-white text-2xl text-lime font-bold px-16 py-7 w-max self-center hover:bg-concrete/80">
+                    <Button className="bg-concrete border-[0.5px] border-white text-2xl text-white font-bold px-16 py-7 w-max self-center hover:bg-concrete/80">
                         {generateLink("BOOK NOW")}
                     </Button>
 
@@ -204,7 +204,7 @@ export default function Home() {
                     <Accordion
                         type="single"
                         collapsible
-                        className="flex border pb-12 border-lime rounded-[36px] p-12 pt-6 flex-col gap-8 bg-[#101010] shadow-[0px_4px_39px_31px_rgba(249,127,6,0.1)] font-light"
+                        className="flex border pb-12 border-lime rounded-[36px] p-12 pt-6 flex-col gap-8 bg-[#101010] shadow-[0px_4px_39px_31px_rgba(135,135,135,0.1)] font-light"
                     >
                         {faqs.map((faq) => (
                             <AccordionItem
