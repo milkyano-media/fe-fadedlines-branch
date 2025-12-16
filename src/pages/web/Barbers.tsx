@@ -78,7 +78,7 @@ export default function Barbers() {
 
     const barberSvgs = [
         {
-            svg: "https://s3.milkyano.com/milkyano/fadedlines-bentleigh/barbers/anth.png",
+            svg: "https://s3.milkyano.com/milkyano/fadedlines-bentleigh/barbers/anth1.png",
             link: generateRoute("/anthony"),
             landing: false,
         },
@@ -92,11 +92,6 @@ export default function Barbers() {
             link: generateRoute("/jamie"),
             landing: false,
         },
-        // {
-        //     svg: "https://s3.milkyano.com/milkyano/fadedlines-bentleigh/barbers/rafael.png",
-        //     link: generateRoute("/rafael"),
-        //     landing: false,
-        // },
     ];
 
     useEffect(() => {
