@@ -339,7 +339,7 @@ const ThankYouPage = () => {
               <div className='flex flex-col gap-2'>
                 <h3 className='text-sm md:text-xl'>Fadedlines Barbershop</h3>
                 <p className='text-xs font-light text-stone-400'>
-                  55 Portman Street, Oakleigh, VIC 3166
+                  shop 7-271/275 Centre Rd, Bentleigh VIC 3204, Australia
                 </p>
               </div>
               <Button className='rounded bg-stone-700 '>

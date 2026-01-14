@@ -43,12 +43,6 @@ const BookAppointment = () => {
   const endAt = new Date(currentDate);
   endAt.setDate(endAt.getDate() + 30);
 
-  const formatPrice = (priceAmount: number, currency: string = "AUD"): string => {
-    // Convert from cents to dollars
-    const dollars = priceAmount / 100;
-    return `$${dollars.toFixed(2)} ${currency}`;
-  };
-
   const generateRoute = (route: string): string => {
     const parts = location.pathname.split("/");
     if (parts[1] === 'meta') {
@@ -232,7 +226,7 @@ const BookAppointment = () => {
           <>
             <section className='grid grid-cols-1 md:grid-cols-3 gap-4 relative z-40 w-full pt-12 md:pt-0'>
               <div className='absolute top-24 md:top-12 h-8 w-full px-4'>
-                <hr className='absolute top-0 left-0 w-[10rem] h-[3px] bg-[#42FF00] transform  z-10' />
+                <hr className='absolute top-0 left-0 w-[10rem] h-[3px] bg-lime transform  z-10' />
                 <hr className='absolute top-[1px] left-0 w-full h-[2px] bg-[#038101] z-0 opacity-50' />
               </div>
               <div className='col-span-2'>
@@ -254,14 +248,7 @@ const BookAppointment = () => {
                       <div key={item.id}>
                         <h4 className='font-medium'>{item.item_data.name}</h4>
                         <div className='flex gap-2 text-xs font-light'>
-                          <p>
-                            {formatPrice(
-                              item.item_data.variations[0].item_variation_data.price_money.amount,
-                              item.item_data.variations[0].item_variation_data.price_money.currency
-                            )}
-                          </p>
-                          {/* <span>•</span>
-                          <p>{item.item_data.variations[0].item_variation_data.service_duration} Mins</p> */}
+                          <p>{item.item_data.variations[0].item_variation_data.price_description} Mins</p>
                         </div>
                       </div>
                     ))

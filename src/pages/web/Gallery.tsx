@@ -1,10 +1,12 @@
-import { Button } from "@/components/ui/button";
+import BookNowButton from "@/components/web/BookNowButton";
 import CardStack from "@/components/web/CardStack";
 import CarauselGallery from "@/components/web/OurWorks";
 import Layout from "@/components/web/WebLayout";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Helmet } from "react-helmet-async";
-import { Link, useLocation } from "react-router-dom";
+import { 
+    // Link, 
+    useLocation } from "react-router-dom";
 
 export default function GalleriesPage() {
     localStorage.removeItem("booking_source");
@@ -49,24 +51,24 @@ export default function GalleriesPage() {
         localStorage.setItem("booking_origin", "organic");
     }
 
-    const generateLink = (text: string): JSX.Element => {
-        const customize: boolean = false;
-        const squareLink: string = "https://book.squareup.com/appointments/jy2gksgbixkv5v/location/LEWYVQ46HQREW/start";
+    // const generateLink = (text: string): JSX.Element => {
+    //     const customize: boolean = false;
+    //     const squareLink: string = "https://book.squareup.com/appointments/jy2gksgbixkv5v/location/LEWYVQ46HQREW/start";
 
-        let bookLink: string;
-        const parts = location.pathname.split("/");
-        if (parts[1] === "meta") {
-            bookLink = `/meta/book/services`;
-        } else {
-            bookLink = "/book/services";
-        }
+    //     let bookLink: string;
+    //     const parts = location.pathname.split("/");
+    //     if (parts[1] === "meta") {
+    //         bookLink = `/meta/book/services`;
+    //     } else {
+    //         bookLink = "/book/services";
+    //     }
 
-        if (customize) {
-            return <Link to={bookLink}>{text}</Link>;
-        } else {
-            return <a href={squareLink}>{text}</a>;
-        }
-    };
+    //     if (customize) {
+    //         return <Link to={bookLink}>{text}</Link>;
+    //     } else {
+    //         return <a href={squareLink}>{text}</a>;
+    //     }
+    // };
 
     const { scrollYProgress } = useScroll();
     const scaleY = useTransform(scrollYProgress, [0, 1], [0, 1]);
@@ -96,9 +98,13 @@ export default function GalleriesPage() {
                             <span>BE OUR NEXT</span>
                             <span className="text-transparent bg-lime bg-clip-text">MASTERPIECE</span>
                         </h3>
-                        <Button className="bg-concrete border-[0.5px] border-white text-2xl text-white font-bold px-16 py-7 w-max self-center md:self-end mt-6 hover:bg-concrete/80">
-                            {generateLink("BOOK NOW")}
-                        </Button>
+                        <div className="self-center md:self-end mt-6">
+                            <a href="https://book.squareup.com/appointments/jy2gksgbixkv5v/location/LEWYVQ46HQREW/start">
+                                <BookNowButton className="px-14 md:px-16 py-4 md:py-5 text-xl md:text-2xl">
+                                    BOOK NOW
+                                </BookNowButton>
+                            </a>
+                        </div>
                     </div>
                     <div className="relative w-full min-h-[25rem] md:min-h-[40rem]">
                         <div className="absolute inset-0 overflow-hidden bg-concrete-dark-70">

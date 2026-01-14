@@ -1,4 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
+import IconNavbarGreen from "@/assets/svg/icon-navbar-green.svg";
+import BentleighLogo from "@/assets/web/bentleigh.png";
 import { Link, useLocation } from "react-router-dom";
 
 import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTrigger } from "@/components/ui/sheet";
@@ -31,7 +33,7 @@ const NavLink: React.FC<NavLinkProps> = ({ to, label }) => {
 
 const links = [
     { to: "/", label: "Home" },
-    { to: "/barbers", label: "Barbers" },
+    // { to: "/barbers", label: "Barbers" },
     { to: "/gallery", label: "Gallery" },
     { to: "/about-us", label: "About Us" },
     { to: "/careers", label: "Careers" },
@@ -80,10 +82,23 @@ const Header: React.FC = () => {
         >
             <div className="container mx-auto flex justify-between items-center relative z-10 border-none px-2 md:px-4">
                 <h1 className="text-2xl font-bold text-transparent hidden ">Barber Shop</h1>
+                {/* Logo Kiri - Icon Home */}
                 <div className="flex flex-col justify-center items-center">
                     <Link to={generateRoute("/home")}>
-                        <img src="/fadedlines-bentleigh-logo.png" className="w-24 md:w-18 h-auto opacity-90" />
+                        <img
+                            src={IconNavbarGreen}
+                            alt="Fadedlines Barber Shop"
+                            className="w-8 md:w-10 h-auto opacity-100"
+                        />
                     </Link>
+                </div>
+                {/* Logo Utama di Tengah - Hanya tampil di mobile */}
+                <div className="lg:hidden absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-0 pointer-events-none">
+                    <img
+                        src={BentleighLogo}
+                        alt="Bentleigh"
+                        className="h-20 md:h-24 w-auto opacity-100"
+                    />
                 </div>
                 <nav className="hidden lg:block sticky top-0">
                     <ul className="flex text-white/80">
@@ -95,16 +110,6 @@ const Header: React.FC = () => {
                                 }`}
                             >
                                 HOME
-                            </Link>
-                        </li>
-                        <li>
-                            <Link
-                                to={generateRoute("/barbers")}
-                                className={`text-md uppercase font-bold px-4 hover:text-white ${
-                                    location.pathname === "/barbers" ? "text-white" : ""
-                                }`}
-                            >
-                                BARBERS
                             </Link>
                         </li>
                         <li>

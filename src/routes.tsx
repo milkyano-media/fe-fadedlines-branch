@@ -3,7 +3,7 @@ import AnthonyLanding from "@/pages/landing/AnthonyLanding";
 import EjLanding from "@/pages/landing/EjLanding";
 // import RafaelLanding from "@/pages/landing/RafaelLanding";
 import AboutUs from "@/pages/web/AboutUs";
-import Barbers from "@/pages/web/Barbers";
+// import Barbers from "@/pages/web/Barbers";
 import Careers from "@/pages/web/Careers";
 import Contacts from "@/pages/web/Contacts";
 import Gallery from "@/pages/web/Gallery";
@@ -22,7 +22,7 @@ import ThankYou from "./components/book/ThankYou";
 const webRoutes = [
     { path: "", component: Home },
     { path: "home", component: Home },
-    { path: "barbers", component: Barbers },
+    // { path: "barbers", component: Barbers },
     { path: "gallery", component: Gallery },
     { path: "about-us", component: AboutUs },
     { path: "careers", component: Careers },
@@ -38,7 +38,7 @@ const webRoutes = [
 const metaWebRoutes = [
     { path: "meta", component: Home },
     { path: "meta/home", component: Home },
-    { path: "meta/barbers", component: Barbers },
+    // { path: "meta/barbers", component: Barbers },
     { path: "meta/gallery", component: Gallery },
     { path: "meta/about-us", component: AboutUs },
     { path: "meta/careers", component: Careers },
@@ -60,12 +60,14 @@ const landingRoutes = [
 const bookRoutes = [
     { path: "anthony/book/services", component: BookList },
     { path: "ej/book/services", component: BookList },
+    { path: "jamie/book/services", component: BookList },
     // { path: "rafael/book/services", component: BookList },
 ];
 
 const appointmentRoutes = [
     { path: "anthony/book/appointment", component: BookAppointment },
     { path: "ej/book/appointment", component: BookAppointment },
+    { path: "jamie/book/appointment", component: BookAppointment },
     // { path: "rafael/book/appointment", component: BookAppointment },
     { path: "emman/book/appointment", component: BookAppointment },
     // { path: "mustafa/book/appointment", component: BookAppointment },
@@ -74,12 +76,14 @@ const appointmentRoutes = [
 const contactInfoRoutes = [
     { path: "anthony/book/contact-info", component: BookContactInfo },
     { path: "ej/book/contact-info", component: BookContactInfo },
+    { path: "jamie/book/contact-info", component: BookContactInfo },
     // { path: "rafael/book/contact-info", component: BookContactInfo },
 ];
 
 const ThankYouRoutes = [
     { path: "anthony/book/thank-you", component: ThankYou },
     { path: "ej/book/thank-you", component: ThankYou },
+    { path: "jamie/book/thank-you", component: ThankYou },
     // { path: "rafael/book/thank-you", component: ThankYou },
 ];
 

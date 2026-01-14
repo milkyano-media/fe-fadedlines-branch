@@ -1,0 +1,18 @@
+<svg width="300" height="130" viewBox="0 0 300 130" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background with gradient -->
+  <defs>
+    <linearGradient id="jamieGradient" x1="0" y1="0" x2="300" y2="0">
+      <stop offset="0%" style="stop-color:#187700;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#33FF00;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="300" height="130" rx="8" fill="url(#jamieGradient)"/>
+
+  <!-- Text -->
+  <text x="150" y="65" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="700" fill="#19181E" text-anchor="middle" dominant-baseline="middle">
+    BOOK WITH
+  </text>
+  <text x="150" y="95" font-family="Inter, Arial, sans-serif" font-size="32" font-weight="800" fill="#19181E" text-anchor="middle" dominant-baseline="middle">
+    JAMIE
+  </text>
+</svg>
