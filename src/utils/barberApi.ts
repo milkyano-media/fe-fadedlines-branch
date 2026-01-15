@@ -59,10 +59,10 @@ export interface CancelBookingResponse {
   canceledAt: string;
 }
 
-export const cancelBooking = async (bookingId: string, bookingVersion: number): Promise<CancelBookingResponse> => {
+export const cancelBooking = async (bookingId: string): Promise<CancelBookingResponse> => {
   const response: AxiosResponse<CancelBookingResponse> = await apiSquare.post(
     `/bookings/${bookingId}/cancel`,
-    { bookingVersion }
+    {}
   );
   return response.data;
 };

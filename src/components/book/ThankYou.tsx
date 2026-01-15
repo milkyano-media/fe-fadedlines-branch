@@ -41,10 +41,9 @@ const ThankYouPage = () => {
 
   const handleCancelBooking = async () => {
     const bookingId = localStorage.getItem('booking_id');
-    const bookingVersion = localStorage.getItem('booking_version');
 
-    if (!bookingId || !bookingVersion) {
-      console.error('Missing booking_id or booking_version');
+    if (!bookingId) {
+      console.error('Missing booking_id');
       setCancelStatus('error');
       return;
     }
@@ -53,7 +52,7 @@ const ThankYouPage = () => {
     setCancelStatus('loading');
 
     try {
-      await cancelBooking(bookingId, parseInt(bookingVersion, 10));
+      await cancelBooking(bookingId);
       setCancelStatus('success');
       setIsCancelled(true);
 
