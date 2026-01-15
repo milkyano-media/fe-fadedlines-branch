@@ -200,7 +200,7 @@ const ThankYouPage = () => {
   }
   const [dialog, setDialog] = useState(false);
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const _unused = dialog; // Keep for reschedule functionality
+  // const _unused = dialog; // Keep for reschedule functionality
   let bookedItems = [];
   let formattedDate = '';
   let dateObject: ContactInfo = {};
