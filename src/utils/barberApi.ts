@@ -52,3 +52,18 @@ export const postUtmRecord = async (data: CreateRecordInput): Promise<CreateReco
   return data; // Return input data as fallback
 };
 
+export interface CancelBookingResponse {
+  id: string;
+  status: string;
+  updatedAt: string;
+  canceledAt: string;
+}
+
+export const cancelBooking = async (bookingId: string, bookingVersion: number): Promise<CancelBookingResponse> => {
+  const response: AxiosResponse<CancelBookingResponse> = await apiSquare.post(
+    `/bookings/${bookingId}/cancel`,
+    { bookingVersion }
+  );
+  return response.data;
+};
+

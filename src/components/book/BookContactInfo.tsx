@@ -344,6 +344,7 @@ const BookContactInfo = () => {
         localStorage.setItem('purchase_value', total.toString());
         localStorage.setItem('new_customer', customerStatus.toString());
         localStorage.setItem('booking_id', booking.booking.id);
+        localStorage.setItem('booking_version', booking.booking.version.toString());
         localStorage.setItem(
           'barber_id',
           booking.booking.appointment_segments[0].team_member_id

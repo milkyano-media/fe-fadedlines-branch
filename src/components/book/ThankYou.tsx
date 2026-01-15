@@ -5,13 +5,16 @@ import {
   ClockHistory,
   ChevronRight,
   ReplyFill,
-  XCircleFill
+  XCircleFill,
+  Check,
+  X
 } from 'react-bootstrap-icons';
 import Logo from '@/components/react-svg/logo';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import CancelationBar from '@/assets/book/cancelation_bar.svg';
 import {
   AlertDialog,
+  AlertDialogAction,
   AlertDialogCancel,
   AlertDialogContent,
   AlertDialogDescription,
@@ -22,13 +25,56 @@ import {
 import { useEffect, useState } from 'react';
 import { useGtm } from '../hooks/UseGtm';
 import { BarberDetailResponse } from '@/interfaces/BookingInterface';
-import { getBarberDetail } from '@/utils/barberApi';
+import { getBarberDetail, cancelBooking } from '@/utils/barberApi';
+import Spinner from '@/components/web/Spinner';
 
 const ThankYouPage = () => {
   const location = useLocation();
+  const navigate = useNavigate();
   const { sendEvent } = useGtm();
   const [barberName, setBarberName] = useState<string>('');
   const [thankYouTime, setThankYouTime] = useState<string>('');
+  const [cancelDialog, setCancelDialog] = useState(false);
+  const [cancelLoading, setCancelLoading] = useState(false);
+  const [cancelStatus, setCancelStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+  const [isCancelled, setIsCancelled] = useState(false);
+
+  const handleCancelBooking = async () => {
+    const bookingId = localStorage.getItem('booking_id');
+    const bookingVersion = localStorage.getItem('booking_version');
+
+    if (!bookingId || !bookingVersion) {
+      console.error('Missing booking_id or booking_version');
+      setCancelStatus('error');
+      return;
+    }
+
+    setCancelLoading(true);
+    setCancelStatus('loading');
+
+    try {
+      await cancelBooking(bookingId, parseInt(bookingVersion, 10));
+      setCancelStatus('success');
+      setIsCancelled(true);
+
+      // Clear booking data from localStorage
+      localStorage.removeItem('booking_id');
+      localStorage.removeItem('booking_version');
+
+      setTimeout(() => {
+        setCancelLoading(false);
+        setCancelDialog(false);
+        // Navigate to home after successful cancellation
+        navigate('/home');
+      }, 2000);
+    } catch (error) {
+      console.error('Error canceling booking:', error);
+      setCancelStatus('error');
+      setTimeout(() => {
+        setCancelLoading(false);
+      }, 1500);
+    }
+  };
 
   useEffect(() => {
     const handleThankYouPage = async () => {
@@ -153,6 +199,8 @@ const ThankYouPage = () => {
     month?: number;
   }
   const [dialog, setDialog] = useState(false);
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  // const _unused = dialog; // Keep for reschedule functionality
   let bookedItems = [];
   let formattedDate = '';
   let dateObject: ContactInfo = {};
@@ -241,6 +289,7 @@ const ThankYouPage = () => {
         alt='gradient top'
         className='absolute bottom-0 left-0 w-8/12 '
       />
+      {/* Reschedule Dialog */}
       <AlertDialog open={dialog} onOpenChange={setDialog}>
         <AlertDialogContent>
           <AlertDialogHeader>
@@ -251,7 +300,7 @@ const ThankYouPage = () => {
               <div className='w-8/12 h-full flex justify-center items-center text-lg py-4 text-center mx-auto'>
                 <h4>
                   {' '}
-                  Please check your email for cancelation and resechedule
+                  Please check your email for reschedule options
                 </h4>
               </div>{' '}
             </AlertDialogDescription>
@@ -259,6 +308,52 @@ const ThankYouPage = () => {
           <AlertDialogFooter className='flex sm:justify-center sm:items-center  w-full'>
             <AlertDialogCancel>Continue</AlertDialogCancel>
           </AlertDialogFooter>
+        </AlertDialogContent>
+      </AlertDialog>
+
+      {/* Cancel Booking Dialog */}
+      <AlertDialog open={cancelDialog} onOpenChange={setCancelDialog}>
+        <AlertDialogContent>
+          <AlertDialogHeader>
+            <AlertDialogTitle className='text-center'>
+              {cancelLoading ? 'Canceling Booking' : 'Cancel Booking'}
+            </AlertDialogTitle>
+            <AlertDialogDescription>
+              {cancelLoading ? (
+                cancelStatus === 'loading' ? (
+                  <Spinner />
+                ) : cancelStatus === 'success' ? (
+                  <div className='flex justify-center items-center p-4 md:p-12 animate-scaleIn'>
+                    <div className='p-1 rounded-full border border-lime'>
+                      <Check className='h-24 w-auto md:h-24 md:w-24 text-lime' />
+                    </div>
+                  </div>
+                ) : cancelStatus === 'error' ? (
+                  <div className='flex justify-center items-center p-4 md:p-12 animate-scaleIn'>
+                    <div className='p-1 rounded-full border border-red-600'>
+                      <X className='h-24 w-auto md:h-24 md:w-24 text-red-600' />
+                    </div>
+                  </div>
+                ) : null
+              ) : (
+                <div className='w-10/12 h-full flex flex-col justify-center items-center text-lg py-4 text-center mx-auto gap-2'>
+                  <h4>Are you sure you want to cancel this booking?</h4>
+                  <p className='text-sm text-stone-400'>This action cannot be undone.</p>
+                </div>
+              )}
+            </AlertDialogDescription>
+          </AlertDialogHeader>
+          {!cancelLoading && (
+            <AlertDialogFooter className='flex sm:justify-center sm:items-center w-full gap-2'>
+              <AlertDialogCancel>Keep Booking</AlertDialogCancel>
+              <AlertDialogAction
+                onClick={handleCancelBooking}
+                className='bg-red-600 hover:bg-red-700'
+              >
+                Yes, Cancel Booking
+              </AlertDialogAction>
+            </AlertDialogFooter>
+          )}
         </AlertDialogContent>
       </AlertDialog>
       <div className='relative z-40 w-full'>
@@ -306,12 +401,13 @@ const ThankYouPage = () => {
                 </div>
                 <div className='text-center flex flex-col text-xs gap-3 items-center justify-center'>
                   <Button
-                    onClick={() => setDialog(true)}
-                    className=' w-full bg-[#036901] text-stone-50 h-fit py-4 rounded-xl font-light'
+                    onClick={() => setCancelDialog(true)}
+                    disabled={isCancelled}
+                    className=' w-full bg-[#036901] text-stone-50 h-fit py-4 rounded-xl font-light disabled:opacity-50'
                   >
                     <XCircleFill className='text-stone-50 w-6 h-auto' />
                   </Button>
-                  Cancel
+                  {isCancelled ? 'Cancelled' : 'Cancel'}
                 </div>
                 <div className='text-center flex flex-col text-xs gap-3 items-center justify-center'>
                   <Link to={'/barbers'} className='w-full h-full'>
