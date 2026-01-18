@@ -152,7 +152,9 @@ const BookList = () => {
 
       // Handle different URL patterns
       parts[1] === "meta" ? (barber = parts[2]) : (barber = parts[1]);
-      parts[1] === "meta" ? (type = "M") : (type = "O");
+      // DISABLED: Type filtering - now showing all items without "(O)" filter
+      // parts[1] === "meta" ? (type = "M") : (type = "O");
+      type = ""; // No filtering by type
 
       const isBookingPath =
         parts.includes("book") || parts.includes("services");
