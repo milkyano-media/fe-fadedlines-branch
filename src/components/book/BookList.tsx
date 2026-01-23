@@ -14,10 +14,11 @@ import Logo from "@/components/react-svg/logo";
 import { ChevronDown, ChevronUp } from "lucide-react";
 import IconNavbarGreen from "@/assets/svg/icon-navbar-green.svg";
 
-// Bentleigh barbers: Anthony, EJ, and Jamie (based on Square API data)
+// Bentleigh barbers: Anthony, EJ, Jamie, and Sam (based on Square API data)
 import Anthony from "@/assets/web/barbers/booking-list/anth-book.jpeg";
 import Ej from "@/assets/web/barbers/booking-list/ej-book.jpeg";
 import Jamie from "@/assets/web/barbers/booking-list/jamie-book.jpeg";
+import Sam from "@/assets/web/barbers/booking-list/sam-book.png";
 import LineBottomBorder from "@/assets/book/line-bottom-border.svg";
 import InstagramIcon from "@/assets/book/mdi_instagram.svg";
 
@@ -26,6 +27,7 @@ const barberImages: { [key: string]: string } = {
   ANTH: Anthony, // Handle both "Anthony" and "Anth" variations
   EJ: Ej,
   JAMIE: Jamie,
+  SAM: Sam,
 };
 
 const BookList = () => {
@@ -44,11 +46,12 @@ const BookList = () => {
     ) => {
       const barberServices: BarberServices = { data: [] };
 
-      // Bentleigh barber sort order: Anthony, EJ, Jamie
+      // Bentleigh barber sort order: Anthony, EJ, Jamie, Sam
       const sortOrder = [
         "ANTHONY", // Will match "Anthony", "ANTHONY", "Anth", etc.
         "EJ",
         "JAMIE",
+        "SAM",
       ];
 
       // 1. Use all available profiles
@@ -61,6 +64,7 @@ const BookList = () => {
           "anthony": ["ANTHONY", "ANTH"],
           "ej": ["EJ"],
           "jamie": ["JAMIE"],
+          "sam": ["SAM"],
         };
 
         const searchAliases = barberAliases[specificBarber.toLowerCase()] || [specificBarber.toUpperCase()];
@@ -170,6 +174,7 @@ const BookList = () => {
         barber === "anthony" ||
         barber === "ej" ||
         barber === "jamie" ||
+        barber === "sam" ||
         barber === "book"
       ) {
         query = "all";
