@@ -10,11 +10,13 @@ import useEmblaCarousel from "embla-carousel-react";
 import Anthony from "@/assets/web/barbers/anth.png";
 import Ej from "@/assets/web/barbers/ej.png";
 import Jamie from "@/assets/web/barbers/jamie.png";
+import Sam from "@/assets/web/barbers/sam.png";
 
 // Barber gallery images for carousel and grid thumbnails
 import AnthonyGallery from "@/assets/web/barbers/barbers-gallery/anth.png";
 import EjGallery from "@/assets/web/barbers/barbers-gallery/ej.png";
 import JamieGallery from "@/assets/web/barbers/barbers-gallery/jamie.png";
+import SamGallery from "@/assets/web/barbers/barbers-gallery/sam.png";
 
 // Social media and other icons
 import Logo from "@/assets/web/icons/logo.svg";
@@ -131,6 +133,13 @@ export default function Home() {
             thumbnail: JamieGallery,
             link: generateRoute("/jamie"),
             displayName: "JAMIE",
+            landing: false,
+        },
+        {
+            svg: Sam,
+            thumbnail: SamGallery,
+            link: generateRoute("/sam"),
+            displayName: "SAM",
             landing: false,
         },
     ];
@@ -460,7 +469,7 @@ export default function Home() {
                                         actualBarberIndex === index
                                             ? "ring-2 md:ring-4 ring-[#33FF00] scale-100"
                                             : "hover:opacity-80 hover:scale-105"
-                                    }`}
+                                    } ${index === 3 ? "col-start-2" : ""}`}
                                 >
                                     <img
                                         src={barber.thumbnail}
@@ -481,7 +490,7 @@ export default function Home() {
 
                         {/* Horizontal line (only if there are more than 3 barbers) */}
                         {galleryBarbers.length > 3 && (
-                            <div className="absolute left-0 top-[33.33%] w-full h-[1px] md:h-[2px] bg-[#33FF00] pointer-events-none" style={{ transform: 'translateY(-0.5px)' }}></div>
+                            <div className="absolute left-0 top-[50%] w-full h-[1px] md:h-[2px] bg-[#33FF00] pointer-events-none" style={{ transform: 'translateY(-0.5px)' }}></div>
                         )}
                     </div>
                 </div>
