@@ -1,62 +1,8 @@
-import TiktokAboutUs from "@/assets/web/about-us/about_us_tiktok.png";
+import AnthonyAboutUs from "@/assets/web/about-us/about_us_anthony.png";
+import AboutUsBg from "@/assets/web/about-us/about_us_bg.jpg";
 import plus from "@/assets/web/about-us/plus.svg";
-import BgHero2 from "@/assets/web/home/hero.svg";
-import {
-    AlertDialog,
-    AlertDialogAction,
-    AlertDialogContent,
-    AlertDialogDescription,
-    AlertDialogFooter,
-    AlertDialogHeader,
-    AlertDialogTitle,
-    AlertDialogTrigger,
-} from "@/components/ui/alert-dialog";
-import { Button } from "@/components/ui/button";
 import Layout from "@/components/web/WebLayout";
-import { Facebook, Instagram, Tiktok, Youtube } from "react-bootstrap-icons";
 import { Helmet } from "react-helmet-async";
-
-const SocialMediaLinks: React.FC = () => {
-    const socialMedia = [
-        {
-            name: "Instagram",
-            icon: Instagram,
-            url: "https://www.instagram.com/fadedlinesbarbershop",
-        },
-        {
-            name: "Facebook",
-            icon: Facebook,
-            url: "https://www.facebook.com/p/Faded-Lines-Barbershop-100066737611092/",
-        },
-        {
-            name: "Tittok",
-            icon: Tiktok,
-            url: "https://www.tiktok.com/@faded_lines",
-        },
-        {
-            name: "Youtube",
-            icon: Youtube,
-            url: "https://www.youtube.com/@Faded_Lines",
-        },
-    ];
-
-    return (
-        <div className="flex space-x-4">
-            {socialMedia.map((item, index) => (
-                <a
-                    key={index}
-                    href={item.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-2xl text-[#42FF00] hover:text-[#6ed449]"
-                >
-                    <item.icon className="w-8 h-auto" />
-                    <span className="sr-only">{item.name}</span>
-                </a>
-            ))}
-        </div>
-    );
-};
 
 export default function AboutUs() {
     return (
@@ -82,7 +28,7 @@ export default function AboutUs() {
                     alt="hero image"
                     width={500}
                     height={500}
-                    src={BgHero2}
+                    src={AboutUsBg}
                     className="top-0 absolute w-full h-full object-cover"
                 />
                 <div className="top-0 absolute w-full h-full object-cover z-0 bg-gradient-to-b from-concrete-dark-80/80 to-concrete-dark-80" />
@@ -106,7 +52,7 @@ export default function AboutUs() {
                 <div className="md:w-1/3">
                     <img
                         alt="background about us"
-                        src="https://s3.milkyano.com/milkyano/fadedlines-bentleigh/about-us/anthony.JPG"
+                        src={AnthonyAboutUs}
                         className="hover:scale-110 transform transition-transform ease-out duration-500 cursor-pointer delay-75"
                     />
                 </div>
@@ -157,42 +103,7 @@ export default function AboutUs() {
                 </div>
             </section>
 
-            <section className="flex flex-col md:flex-row relative px-4 tracking-wider md:justify-center md:items-center gap-12 md:gap-0 py-12 md:py-24">
-                <div className="md:w-4/12 flex flex-col gap-8 md:pl-24">
-                    <h3 className="text-4xl flex flex-col font-extrabold w-8/12">
-                        WE ARE WELL KNOWN ON
-                        <span className="text-lime">TIKTOK</span>
-                    </h3>
-                    <p className="text-sm font-light md:w-8/12">
-                        Still doubt our ability to create the best haircuts in Melbourne? Check our Tiktok and see for
-                        yourself.
-                    </p>
-
-                    <AlertDialog>
-                        <AlertDialogTrigger asChild>
-                            <Button className="border absolute md:relative bottom-[.5rem] md:bottom-[1rem] w-max px-7 py-5 rounded-lg border-[#184937] hover:border-white text-lime bg-transparent backdrop-blur-md z-30 transform hover:scale-110 transition-transform duration-400 ease-in-out hover:shadow-md hover:bg-lime hover:shadow-lime text-xs md:text-base hover:text-white">
-                                FOLLOW US
-                            </Button>
-                        </AlertDialogTrigger>
-                        <AlertDialogContent className="flex flex-col items-center justify-center">
-                            <AlertDialogHeader>
-                                <AlertDialogTitle className="pb-2">Find Us Here</AlertDialogTitle>
-                                <AlertDialogDescription className="py-4 flex justify-center">
-                                    <SocialMediaLinks />
-                                </AlertDialogDescription>
-                            </AlertDialogHeader>
-                            <AlertDialogFooter className="flex items-center sm:justify-center w-full px-4">
-                                <AlertDialogAction>Continue</AlertDialogAction>
-                            </AlertDialogFooter>
-                        </AlertDialogContent>
-                    </AlertDialog>
-                </div>
-                <div className="w-10/12 md:w-fit flex self-center md:self-start">
-                    <img alt="background about us" src={TiktokAboutUs} className="" />
-                </div>
-            </section>
-
-            {/* <section className="container flex flex-col gap-20 mb-40">
+{/* <section className="container flex flex-col gap-20 mb-40">
         <h2>
           Where Haircuts <br />
           Are Done Right.

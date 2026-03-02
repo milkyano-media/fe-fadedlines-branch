@@ -1,7 +1,4 @@
-import ArrowTiktokTrans from "@/assets/web/careers/arrow_tiktok_trans.svg";
 import Clipper from "@/assets/web/careers/clipper.svg";
-import TiktokUpAfter from "@/assets/web/careers/tiktok_after.svg";
-import TiktokUpBefore from "@/assets/web/careers/tiktok_before.svg";
 import {
     AlertDialog,
     AlertDialogContent,
@@ -16,8 +13,7 @@ import Spinner from "@/components/web/Spinner";
 import Layout from "@/components/web/WebLayout";
 import emailjs from "@emailjs/browser";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef, useState } from "react";
+import { useState } from "react";
 import { Check, X } from "react-bootstrap-icons";
 import { Helmet } from "react-helmet-async";
 import { useForm } from "react-hook-form";
@@ -25,7 +21,6 @@ import { useLocation } from "react-router-dom";
 import { z } from "zod";
 
 export default function Careers() {
-    const ref = useRef(null);
     const [isLoading, setIsLoading] = useState(false);
     const [status, setStatus] = useState("loading");
 
@@ -70,12 +65,6 @@ export default function Careers() {
     } else {
         localStorage.setItem("booking_origin", "organic");
     }
-
-    const { scrollYProgress } = useScroll({
-        target: ref,
-    });
-
-    const scaleY = useTransform(scrollYProgress, [0, 1], [1, 0]);
 
     const formSchema = z.object({
         fullName: z.string().min(2).max(50),
@@ -256,46 +245,6 @@ export default function Careers() {
                                 </BookNowButton>
                             </form>
                         </Form>
-                    </div>
-                </section>
-                <section ref={ref}>
-                    <div className=" w-full flex justify-center  relative">
-                        <div className="h-[10rem] w-[1px] bg-[#086600] z-0" />
-                        <motion.div
-                            className="absolute h-[10rem] w-[2px] bg-gradient-to-b from-[#096601] to-[#15ff00] shadow-[0px_0px_70px_2px_#15ff00] origin-top z-10"
-                            style={{ scaleY }}
-                        />
-                    </div>
-                </section>
-                <section className="w-1/2 flex flex-col md:flex-row self-center justify-center items-center relative z-30 py-32 pb-[20rem] gap-8 font-bold text-center">
-                    <div className="flex flex-col gap-4 items-center">
-                        <h3 className="text-3xl rotate-90 md:rotate-0">👉</h3>
-                        <h4>
-                            <span className="text-transparent bg-gradient-to-r from-[#AE0000]  to-[#FF7979] bg-clip-text">
-                                Before
-                            </span>{" "}
-                            working with us{" "}
-                        </h4>
-                        <img
-                            src={TiktokUpBefore}
-                            alt="TiktokUp"
-                            className="w-full hover:scale-105 transform transition-transform ease-out duration-500 cursor-pointer delay-75"
-                        />
-                    </div>
-                    <img src={ArrowTiktokTrans} alt="TiktokUp" className="w-fit rotate-90 md:rotate-0" />
-                    <div className="flex flex-col gap-4 items-center">
-                        <h3 className="text-3xl">👑</h3>
-                        <h4>
-                            <span className="text-transparent bg-gradient-to-r from-[#00FF29]  to-[#B2FFBF] bg-clip-text">
-                                After
-                            </span>{" "}
-                            working with us{" "}
-                        </h4>
-                        <img
-                            src={TiktokUpAfter}
-                            alt="TiktokUp"
-                            className="w-full hover:scale-105 transform transition-transform ease-out duration-500 cursor-pointer delay-75"
-                        />
                     </div>
                 </section>
             </div>
