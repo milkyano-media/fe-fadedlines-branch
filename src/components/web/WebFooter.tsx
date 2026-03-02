@@ -1,4 +1,5 @@
 // import Facebook from "@/assets/web/icons/Facebook.svg";
+import LogoFooter from "@/assets/web/logo-footer.png";
 import Instagram from "@/assets/web/icons/Instagram.svg";
 import Tiktok from "@/assets/web/icons/Tiktok.svg";
 // import Youtube from "@/assets/web/icons/Youtube.svg";
@@ -29,7 +30,7 @@ const WebFooter: React.FC = () => {
                 <div className="container mx-auto py-12 flex flex-col md:flex-row  justify-between relative z-0">
                     <div className="flex flex-col pb-12 md:py-0 gap-10">
                         <img
-                            src="/fadedlines-bentleigh-logo.png"
+                            src={LogoFooter}
                             alt="barber shop faded lines"
                             className="w-[20rem] h-auto"
                         />

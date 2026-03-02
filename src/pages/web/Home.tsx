@@ -1,4 +1,4 @@
-import BgHero2 from "@/assets/web/home/hero.jpeg";
+import BgHero2 from "@/assets/web/home/bg_hero.jpg";
 import BookNowButton from "@/components/web/BookNowButton";
 import Layout from "@/components/web/WebLayout";
 import { Helmet } from "react-helmet-async";
@@ -21,7 +21,7 @@ import SamGallery from "@/assets/web/barbers/barbers-gallery/sam.png";
 import MatteoGallery from "@/assets/web/barbers/barbers-gallery/matteo.png";
 
 // Social media and other icons
-import Logo from "@/assets/web/icons/logo.svg";
+import Logo from "@/assets/web/icons/logo.png";
 import Instagram from "@/assets/web/icons/Instagram.svg";
 import Tiktok from "@/assets/web/icons/Tiktok.svg";
 import Maps from "@/assets/web/icons/Maps.svg";

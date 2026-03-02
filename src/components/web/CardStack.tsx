@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import card1 from "@/assets/card-stack/1.png";
 import card2 from "@/assets/card-stack/2.png";
-import card3 from "@/assets/card-stack/3.jpg";
+import card3 from "@/assets/card-stack/3.png";
 import styles from "@/styles/card.module.css";
 import { animated, to as interpolate, useSprings } from "@react-spring/web";
 import { useState } from "react";
