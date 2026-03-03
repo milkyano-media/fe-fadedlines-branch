@@ -97,7 +97,7 @@ const Header: React.FC = () => {
                     <img
                         src={BentleighLogo}
                         alt="Bentleigh"
-                        className="h-6 md:h-7 w-auto opacity-100"
+                        className="h-8 md:h-7 w-auto opacity-100"
                     />
                 </div>
                 <nav className="hidden lg:block sticky top-0">
