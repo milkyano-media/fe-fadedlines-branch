@@ -1,11 +1,15 @@
 import BgHero2 from "@/assets/web/home/hero.svg";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/web/WebLayout";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { Link, useLocation } from "react-router-dom";
+import { getAllBarber, getAllService } from "@/utils/barberApi";
+import { BarberResponse, ServicesResponse, ServicesItem } from "@/interfaces/BookingInterface";
 
 export default function Barbers() {
+    const [barberMinPrices, setBarberMinPrices] = useState<Record<string, number>>({});
+
     localStorage.removeItem("booking_source");
 
     const location = useLocation();
@@ -81,18 +85,71 @@ export default function Barbers() {
             svg: "https://s3.milkyano.com/milkyano/fadedlines-bentleigh/barbers/anth1.png",
             link: generateRoute("/anthony"),
             landing: false,
+            slug: "anthony",
         },
         {
             svg: "https://s3.milkyano.com/milkyano/fadedlines-bentleigh/barbers/ej1.png",
             link: generateRoute("/ej"),
             landing: false,
+            slug: "ej",
         },
         {
             svg: "https://s3.milkyano.com/milkyano/fadedlines-bentleigh/barbers/jamie1.png",
             link: generateRoute("/jamie"),
             landing: false,
+            slug: "jamie",
         },
     ];
+
+    useEffect(() => {
+        const barberAliases: Record<string, string[]> = {
+            anthony: ["ANTHONY", "ANTH"],
+            ej: ["EJ"],
+            jamie: ["JAMIE"],
+        };
+
+        const fetchPrices = async () => {
+            try {
+                const [fetchedBarbers, fetchedServices]: [BarberResponse, ServicesResponse] = await Promise.all([
+                    getAllBarber(),
+                    getAllService("all", ""),
+                ]);
+
+                const prices: Record<string, number> = {};
+
+                for (const [slug, aliases] of Object.entries(barberAliases)) {
+                    const barberProfile = fetchedBarbers?.team_member_booking_profiles?.find((p) =>
+                        aliases.some((a) => p.display_name.toUpperCase().includes(a))
+                    );
+
+                    if (!barberProfile) continue;
+
+                    const services: ServicesItem[] = fetchedServices?.objects?.filter((service) => {
+                        const serviceName = service.item_data.name.toUpperCase();
+                        const nameMatch = aliases.some((a) => serviceName.includes(`BY ${a}`));
+                        const idMatch = service.item_data.variations.some((v) =>
+                            v.item_variation_data.team_member_ids?.includes(barberProfile.team_member_id)
+                        );
+                        return nameMatch && idMatch;
+                    }) ?? [];
+
+                    const servicePrices = services
+                        .map((s) => s.item_data.variations[0].item_variation_data.price_money.amount)
+                        .filter((p) => p > 0);
+
+                    if (servicePrices.length > 0) {
+                        prices[slug] = Math.min(...servicePrices) / 100;
+                    }
+                }
+
+                setBarberMinPrices(prices);
+            } catch {
+                // silently fail — badge just won't show
+            }
+        };
+
+        fetchPrices();
+    }, []);
 
     useEffect(() => {
         // Create a new style element
@@ -165,11 +222,24 @@ export default function Barbers() {
                             key={index}
                             className="w-full md:w-[300px] py-6 flex flex-col justify-center items-center relative mx-10"
                         >
-                            <img
-                                src={barber.svg}
-                                alt={`Svg ${index}`}
-                                className="h-[400px] md:h-[450px] transition-transform duration-500 ease-in-out hover:scale-110 z-30 px-4 md:px-0 mb-12"
-                            />
+                            <div className="relative px-4 md:px-0">
+                                <img
+                                    src={barber.svg}
+                                    alt={`Svg ${index}`}
+                                    className="h-[400px] md:h-[450px] transition-transform duration-500 ease-in-out hover:scale-110 z-30 mb-12"
+                                />
+                                {barberMinPrices[barber.slug] !== undefined && (
+                                    <span
+                                        className={`absolute top-3 z-40 bg-black/75 text-lime text-xs font-bold px-3 py-1.5 rounded-xl border border-lime/50 backdrop-blur-sm tracking-wide ${
+                                            index % 2 === 0 ? "left-7 md:left-3" : "right-7 md:right-3"
+                                        }`}
+                                    >
+                                        from ${barberMinPrices[barber.slug] % 1 === 0
+                                            ? barberMinPrices[barber.slug]
+                                            : barberMinPrices[barber.slug].toFixed(2)}
+                                    </span>
+                                )}
+                            </div>
                             <Button className="border absolute md:relative bottom-[.5rem] md:bottom-[1rem] px-7 py-5 rounded-lg border-[#184937] hover:border-white text-lime bg-transparent backdrop-blur-md z-30 transform hover:scale-110 transition-transform duration-400 ease-in-out hover:shadow-md hover:bg-lime hover:shadow-lime text-xs md:text-base hover:text-white">
                                 LEARN MORE
                             </Button>

@@ -5,6 +5,8 @@ import { Helmet } from "react-helmet-async";
 import { Link, useLocation } from "react-router-dom";
 import { useEffect, useState, useRef, useCallback } from "react";
 import useEmblaCarousel from "embla-carousel-react";
+import { getAllBarber, getAllService } from "@/utils/barberApi";
+import { BarberResponse, ServicesResponse, ServicesItem } from "@/interfaces/BookingInterface";
 
 // Barber images for preview
 import Anthony from "@/assets/web/barbers/anth.png";
@@ -59,6 +61,7 @@ export default function Home() {
 
     // Gallery state management
     const [selectedBarber, setSelectedBarber] = useState(0);
+    const [barberMinPrices, setBarberMinPrices] = useState<Record<string, number>>({});
     const previewImageRef = useRef<HTMLDivElement>(null);
     const bookNowButtonRef = useRef<HTMLDivElement>(null);
 
@@ -124,6 +127,7 @@ export default function Home() {
             link: generateRoute("/anthony"),
             displayName: "ANTH",
             landing: true,
+            slug: "anthony",
         },
         {
             svg: Ej,
@@ -131,6 +135,7 @@ export default function Home() {
             link: generateRoute("/ej"),
             displayName: "EJ",
             landing: true,
+            slug: "ej",
         },
         {
             svg: Jamie,
@@ -138,6 +143,7 @@ export default function Home() {
             link: generateRoute("/jamie"),
             displayName: "JAMIE",
             landing: false,
+            slug: "jamie",
         },
         {
             svg: Matteo,
@@ -145,6 +151,7 @@ export default function Home() {
             link: generateRoute("/matteo"),
             displayName: "MATTEO",
             landing: false,
+            slug: "matteo",
         },
         {
             svg: Sam,
@@ -152,6 +159,7 @@ export default function Home() {
             link: generateRoute("/sam"),
             displayName: "SAM",
             landing: false,
+            slug: "sam",
         },
         {
             svg: Mikey,
@@ -159,6 +167,7 @@ export default function Home() {
             link: generateRoute("/mikey"),
             displayName: "MIKEY",
             landing: false,
+            slug: "mikey",
         },
     ];
 
@@ -169,6 +178,7 @@ export default function Home() {
         name: barber.displayName,
         link: barber.link,
         landing: barber.landing,
+        slug: barber.slug,
     }));
 
     // Duplicate barbers for carousel infinite loop (3x for smooth scrolling)
@@ -182,6 +192,59 @@ export default function Home() {
         if (!emblaApi) return;
         setSelectedBarber(emblaApi.selectedScrollSnap());
     }, [emblaApi]);
+
+    useEffect(() => {
+        const barberAliases: Record<string, string[]> = {
+            anthony: ["ANTHONY", "ANTH"],
+            ej: ["EJ"],
+            jamie: ["JAMIE"],
+            matteo: ["MATTEO"],
+            sam: ["SAM"],
+            mikey: ["MIKEY"],
+        };
+
+        const fetchPrices = async () => {
+            try {
+                const [fetchedBarbers, fetchedServices]: [BarberResponse, ServicesResponse] = await Promise.all([
+                    getAllBarber(),
+                    getAllService("all", ""),
+                ]);
+
+                const prices: Record<string, number> = {};
+
+                for (const [slug, aliases] of Object.entries(barberAliases)) {
+                    const barberProfile = fetchedBarbers?.team_member_booking_profiles?.find((p) =>
+                        aliases.some((a) => p.display_name.toUpperCase().includes(a))
+                    );
+
+                    if (!barberProfile) continue;
+
+                    const services: ServicesItem[] = fetchedServices?.objects?.filter((service) => {
+                        const serviceName = service.item_data.name.toUpperCase();
+                        const nameMatch = aliases.some((a) => serviceName.includes(`BY ${a}`));
+                        const idMatch = service.item_data.variations.some((v) =>
+                            v.item_variation_data.team_member_ids?.includes(barberProfile.team_member_id)
+                        );
+                        return nameMatch && idMatch;
+                    }) ?? [];
+
+                    const servicePrices = services
+                        .map((s) => s.item_data.variations[0].item_variation_data.price_money.amount)
+                        .filter((p) => p > 0);
+
+                    if (servicePrices.length > 0) {
+                        prices[slug] = Math.min(...servicePrices) / 100;
+                    }
+                }
+
+                setBarberMinPrices(prices);
+            } catch {
+                // silently fail — badge just won't show
+            }
+        };
+
+        fetchPrices();
+    }, []);
 
     useEffect(() => {
         if (!emblaApi) return;
@@ -483,18 +546,31 @@ export default function Home() {
                                 <div
                                     key={index}
                                     onClick={(e) => handleThumbnailClick(index + galleryBarbers.length, e)}
-                                    className={`aspect-square overflow-hidden rounded-md md:rounded-lg transition-all duration-200 cursor-pointer relative ${
-                                        actualBarberIndex === index
-                                            ? "ring-2 md:ring-4 ring-[#33FF00] scale-100"
-                                            : "hover:opacity-80 hover:scale-105"
+                                    className={`aspect-square cursor-pointer relative transition-all duration-200 ${
+                                        actualBarberIndex === index ? "scale-100" : "hover:scale-105"
                                     } ${galleryBarbers.length === 4 && index === 3 ? "col-start-2" : ""}`}
                                 >
-                                    <img
-                                        src={barber.thumbnail}
-                                        alt={barber.name}
-                                        className="w-full h-full object-cover pointer-events-none"
-                                        loading="lazy"
-                                    />
+                                    <div className={`w-full h-full overflow-hidden rounded-md md:rounded-lg ${
+                                        actualBarberIndex === index ? "ring-2 md:ring-4 ring-[#33FF00] opacity-100" : "hover:opacity-80"
+                                    }`}>
+                                        <img
+                                            src={barber.thumbnail}
+                                            alt={barber.name}
+                                            className="w-full h-full object-cover pointer-events-none"
+                                            loading="lazy"
+                                        />
+                                    </div>
+                                    {barberMinPrices[barber.slug] !== undefined && (
+                                        <span
+                                            className={`absolute -top-2.5 z-10 bg-black/75 text-lime text-xs md:text-sm font-bold px-2 md:px-3 py-1 md:py-1.5 rounded-lg border border-lime/50 backdrop-blur-sm tracking-wide pointer-events-none shadow-md shadow-black/60 ${
+                                                index < 3 ? "-left-2.5" : "-right-2.5"
+                                            }`}
+                                        >
+                                            ${barberMinPrices[barber.slug] % 1 === 0
+                                                ? barberMinPrices[barber.slug]
+                                                : barberMinPrices[barber.slug].toFixed(2)}
+                                        </span>
+                                    )}
                                 </div>
                             ))}
                         </div>
