@@ -160,13 +160,11 @@ const BookList = () => {
       let specificBarber = null;
       let barber;
       let query;
-      let type;
-
       // Handle different URL patterns
       parts[1] === "meta" ? (barber = parts[2]) : (barber = parts[1]);
       // DISABLED: Type filtering - now showing all items without "(O)" filter
       // parts[1] === "meta" ? (type = "M") : (type = "O");
-      type = ""; // No filtering by type
+      const type = ""; // No filtering by type
 
       const isBookingPath =
         parts.includes("book") || parts.includes("services");
@@ -295,7 +293,7 @@ const BookList = () => {
           </div>
         ) : (
           <div className="space-y-16 md:space-y-24">
-            {barberServices?.data.map((item) => (
+            {barberServices?.data.filter((item) => !item.barber.display_name.toUpperCase().includes("MIKEY")).map((item) => (
               <div key={item.barber.team_member_id} className="relative">
                 <div className="flex flex-col md:grid md:grid-cols-[380px,1fr] gap-6 md:gap-12">
                   {/* Barber Image Section */}
