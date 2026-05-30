@@ -34,6 +34,11 @@ const barberImages: { [key: string]: string } = {
   MIKEY: MikeyBook,
 };
 
+const barberInstagram: { [key: string]: string } = {
+  ANTHONY: "@anth.cuts",
+  ANTH: "@anth.cuts",
+};
+
 const BookList = () => {
   const location = useLocation();
   const navigate = useNavigate();
@@ -226,6 +231,16 @@ const BookList = () => {
     return null;
   };
 
+  const getBarberInstagram = (displayName: string): string => {
+    const fromName = displayName.match(/@[^\s)]+/)?.[0];
+    if (fromName) return fromName;
+    const upperName = displayName.toUpperCase();
+    for (const [key, value] of Object.entries(barberInstagram)) {
+      if (upperName.includes(key)) return value;
+    }
+    return "";
+  };
+
   const extractPriceRange = (services: ServicesItem[]) => {
     const prices = services
       .map((service) => {
@@ -325,12 +340,7 @@ const BookList = () => {
                                 className="w-[14px] h-[14px]"
                               />
                               <p className="text-[13px] font-medium font-inter text-white/90">
-                                {(() => {
-                                  const ig =
-                                    item.barber.display_name
-                                      .match(/@[^\s)]+/)?.[0] || "";
-                                  return ig;
-                                })()}
+                                {getBarberInstagram(item.barber.display_name)}
                               </p>
                             </div>
                             {(item.barber.display_name.includes("(Available Now)") ||
@@ -382,12 +392,7 @@ const BookList = () => {
                                   className="w-[14px] h-[14px]"
                                 />
                                 <p className="text-[13px] font-medium font-inter text-white/90">
-                                  {(() => {
-                                    const ig =
-                                      item.barber.display_name
-                                        .match(/@[^\s)]+/)?.[0] || "";
-                                    return ig;
-                                  })()}
+                                  {getBarberInstagram(item.barber.display_name)}
                                 </p>
                               </div>
                               {(item.barber.display_name.includes("(Available Now)") ||
