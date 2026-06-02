@@ -14,6 +14,7 @@ import Ej from "@/assets/web/barbers/ej.png";
 import Jamie from "@/assets/web/barbers/jamie.png";
 import Sam from "@/assets/web/barbers/sam.png";
 import Matteo from "@/assets/web/barbers/matteo.png";
+import Luka from "@/assets/web/barbers/luka.png";
 
 // Barber gallery images for carousel and grid thumbnails
 import AnthonyGallery from "@/assets/web/barbers/barbers-gallery/anth.png";
@@ -21,6 +22,7 @@ import EjGallery from "@/assets/web/barbers/barbers-gallery/ej.png";
 import JamieGallery from "@/assets/web/barbers/barbers-gallery/jamie.png";
 import SamGallery from "@/assets/web/barbers/barbers-gallery/sam.png";
 import MatteoGallery from "@/assets/web/barbers/barbers-gallery/matteo.png";
+import LukaGallery from "@/assets/web/barbers/barbers-gallery/luka.png";
 
 // Social media and other icons
 import Logo from "@/assets/web/icons/logo.png";
@@ -159,6 +161,14 @@ export default function Home() {
             landing: false,
             slug: "sam",
         },
+        {
+            svg: Luka,
+            thumbnail: LukaGallery,
+            link: generateRoute("/luka"),
+            displayName: "LUKA",
+            landing: false,
+            slug: "luka",
+        },
     ];
 
     // Transform barberSvgs into gallery-friendly format
@@ -190,6 +200,7 @@ export default function Home() {
             jamie: ["JAMIE"],
             matteo: ["MATTEO"],
             sam: ["SAM"],
+            luka: ["LUKA"],
         };
 
         const fetchPrices = async () => {

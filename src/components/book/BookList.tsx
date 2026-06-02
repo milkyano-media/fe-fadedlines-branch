@@ -21,6 +21,7 @@ import Jamie from "@/assets/web/barbers/booking-list/jamie-book.jpeg";
 import Sam from "@/assets/web/barbers/booking-list/sam-book.png";
 import Matteo from "@/assets/web/barbers/booking-list/matteo-book.jpeg";
 import MikeyBook from "@/assets/web/barbers/booking-list/mikey-book.jpeg";
+import LukaBook from "@/assets/web/barbers/booking-list/luka-book.jpeg";
 import LineBottomBorder from "@/assets/book/line-bottom-border.svg";
 import InstagramIcon from "@/assets/book/mdi_instagram.svg";
 
@@ -32,6 +33,7 @@ const barberImages: { [key: string]: string } = {
   SAM: Sam,
   MATTEO: Matteo,
   MIKEY: MikeyBook,
+  LUKA: LukaBook,
 };
 
 const barberInstagram: { [key: string]: string } = {
@@ -63,6 +65,7 @@ const BookList = () => {
         "SAM",
         "MATTEO",
         "MIKEY",
+        "LUKA",
       ];
 
       // 1. Use all available profiles
@@ -78,6 +81,7 @@ const BookList = () => {
           "sam": ["SAM"],
           "matteo": ["MATTEO"],
           "mikey": ["MIKEY"],
+          "luka": ["LUKA"],
         };
 
         const searchAliases = barberAliases[specificBarber.toLowerCase()] || [specificBarber.toUpperCase()];
