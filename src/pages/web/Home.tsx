@@ -15,6 +15,7 @@ import Jamie from "@/assets/web/barbers/jamie.png";
 import Sam from "@/assets/web/barbers/sam.png";
 import Matteo from "@/assets/web/barbers/matteo.png";
 import Luka from "@/assets/web/barbers/luka.png";
+import Ben from "@/assets/web/barbers/ben.png";
 
 // Barber gallery images for carousel and grid thumbnails
 import AnthonyGallery from "@/assets/web/barbers/barbers-gallery/anth.png";
@@ -23,6 +24,7 @@ import JamieGallery from "@/assets/web/barbers/barbers-gallery/jamie.png";
 import SamGallery from "@/assets/web/barbers/barbers-gallery/sam.png";
 import MatteoGallery from "@/assets/web/barbers/barbers-gallery/matteo.png";
 import LukaGallery from "@/assets/web/barbers/barbers-gallery/luka.png";
+import BenGallery from "@/assets/web/barbers/barbers-gallery/ben.png";
 
 // Social media and other icons
 import Logo from "@/assets/web/icons/logo.png";
@@ -169,6 +171,14 @@ export default function Home() {
             landing: false,
             slug: "luka",
         },
+        {
+            svg: Ben,
+            thumbnail: BenGallery,
+            link: generateRoute("/ben"),
+            displayName: "BEN",
+            landing: false,
+            slug: "ben",
+        },
     ];
 
     // Transform barberSvgs into gallery-friendly format
@@ -201,6 +211,7 @@ export default function Home() {
             matteo: ["MATTEO"],
             sam: ["SAM"],
             luka: ["LUKA"],
+            ben: ["BEN"],
         };
 
         const fetchPrices = async () => {
@@ -548,7 +559,7 @@ export default function Home() {
                                     onClick={(e) => handleThumbnailClick(index + galleryBarbers.length, e)}
                                     className={`aspect-square cursor-pointer relative transition-all duration-200 ${
                                         actualBarberIndex === index ? "scale-100" : "hover:scale-105"
-                                    } ${galleryBarbers.length === 4 && index === 3 ? "col-start-2" : ""}`}
+                                    } ${galleryBarbers.length % 3 === 1 && index === galleryBarbers.length - 1 ? "col-start-2" : ""}`}
                                 >
                                     <div className={`w-full h-full overflow-hidden rounded-md md:rounded-lg ${
                                         actualBarberIndex === index ? "ring-2 md:ring-4 ring-[#33FF00] opacity-100" : "hover:opacity-80"
@@ -582,10 +593,17 @@ export default function Home() {
                         {/* Vertical line between column 2 and 3 */}
                         <div className="absolute top-0 left-[66.66%] w-[1px] md:w-[2px] h-full bg-[#33FF00] pointer-events-none" style={{ transform: 'translateX(-0.5px)' }}></div>
 
-                        {/* Horizontal line (only if there are more than 3 barbers) */}
-                        {galleryBarbers.length > 3 && (
-                            <div className="absolute left-0 top-[50%] w-full h-[1px] md:h-[2px] bg-[#33FF00] pointer-events-none" style={{ transform: 'translateY(-0.5px)' }}></div>
-                        )}
+                        {/* Horizontal line(s) between each row of barbers */}
+                        {Array.from({ length: Math.ceil(galleryBarbers.length / 3) - 1 }).map((_, i) => (
+                            <div
+                                key={i}
+                                className="absolute left-0 w-full h-[1px] md:h-[2px] bg-[#33FF00] pointer-events-none"
+                                style={{
+                                    top: `${((i + 1) / Math.ceil(galleryBarbers.length / 3)) * 100}%`,
+                                    transform: 'translateY(-0.5px)',
+                                }}
+                            ></div>
+                        ))}
                     </div>
                 </div>
             </section>
