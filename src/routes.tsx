@@ -66,6 +66,7 @@ const bookRoutes = [
     { path: "mikey/book/services", component: BookList },
     { path: "luka/book/services", component: BookList },
     { path: "ben/book/services", component: BookList },
+    { path: "callum/book/services", component: BookList },
     // { path: "rafael/book/services", component: BookList },
 ];
 
@@ -78,6 +79,7 @@ const appointmentRoutes = [
     { path: "mikey/book/appointment", component: BookAppointment },
     { path: "luka/book/appointment", component: BookAppointment },
     { path: "ben/book/appointment", component: BookAppointment },
+    { path: "callum/book/appointment", component: BookAppointment },
     // { path: "rafael/book/appointment", component: BookAppointment },
     { path: "emman/book/appointment", component: BookAppointment },
     // { path: "mustafa/book/appointment", component: BookAppointment },
@@ -92,6 +94,7 @@ const contactInfoRoutes = [
     { path: "mikey/book/contact-info", component: BookContactInfo },
     { path: "luka/book/contact-info", component: BookContactInfo },
     { path: "ben/book/contact-info", component: BookContactInfo },
+    { path: "callum/book/contact-info", component: BookContactInfo },
     // { path: "rafael/book/contact-info", component: BookContactInfo },
 ];
 
@@ -104,6 +107,7 @@ const ThankYouRoutes = [
     { path: "mikey/book/thank-you", component: ThankYou },
     { path: "luka/book/thank-you", component: ThankYou },
     { path: "ben/book/thank-you", component: ThankYou },
+    { path: "callum/book/thank-you", component: ThankYou },
     // { path: "rafael/book/thank-you", component: ThankYou },
 ];
 

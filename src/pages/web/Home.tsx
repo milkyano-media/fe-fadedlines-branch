@@ -16,6 +16,7 @@ import Sam from "@/assets/web/barbers/sam.png";
 import Matteo from "@/assets/web/barbers/matteo.png";
 import Luka from "@/assets/web/barbers/luka.png";
 import Ben from "@/assets/web/barbers/ben.png";
+import Callum from "@/assets/web/barbers/callum.png";
 
 // Barber gallery images for carousel and grid thumbnails
 import AnthonyGallery from "@/assets/web/barbers/barbers-gallery/anth.png";
@@ -25,6 +26,7 @@ import SamGallery from "@/assets/web/barbers/barbers-gallery/sam.png";
 import MatteoGallery from "@/assets/web/barbers/barbers-gallery/matteo.png";
 import LukaGallery from "@/assets/web/barbers/barbers-gallery/luka.png";
 import BenGallery from "@/assets/web/barbers/barbers-gallery/ben.png";
+import CallumGallery from "@/assets/web/barbers/barbers-gallery/callum.png";
 
 // Social media and other icons
 import Logo from "@/assets/web/icons/logo.png";
@@ -122,7 +124,48 @@ export default function Home() {
     };
 
     // Barber gallery data
+    // Grid/carousel order: Ben, Luka, Sam, Callum, Jamie, Anth, Ej, Matteo
     const barberSvgs = [
+        {
+            svg: Ben,
+            thumbnail: BenGallery,
+            link: generateRoute("/ben"),
+            displayName: "BEN",
+            landing: false,
+            slug: "ben",
+        },
+        {
+            svg: Luka,
+            thumbnail: LukaGallery,
+            link: generateRoute("/luka"),
+            displayName: "LUKA",
+            landing: false,
+            slug: "luka",
+        },
+        {
+            svg: Sam,
+            thumbnail: SamGallery,
+            link: generateRoute("/sam"),
+            displayName: "SAM",
+            landing: false,
+            slug: "sam",
+        },
+        {
+            svg: Callum,
+            thumbnail: CallumGallery,
+            link: generateRoute("/callum"),
+            displayName: "CALLUM",
+            landing: false,
+            slug: "callum",
+        },
+        {
+            svg: Jamie,
+            thumbnail: JamieGallery,
+            link: generateRoute("/jamie"),
+            displayName: "JAMIE",
+            landing: false,
+            slug: "jamie",
+        },
         {
             svg: Anthony,
             thumbnail: AnthonyGallery,
@@ -140,44 +183,12 @@ export default function Home() {
             slug: "ej",
         },
         {
-            svg: Jamie,
-            thumbnail: JamieGallery,
-            link: generateRoute("/jamie"),
-            displayName: "JAMIE",
-            landing: false,
-            slug: "jamie",
-        },
-        {
             svg: Matteo,
             thumbnail: MatteoGallery,
             link: generateRoute("/matteo"),
             displayName: "MATTEO",
             landing: false,
             slug: "matteo",
-        },
-        {
-            svg: Sam,
-            thumbnail: SamGallery,
-            link: generateRoute("/sam"),
-            displayName: "SAM",
-            landing: false,
-            slug: "sam",
-        },
-        {
-            svg: Luka,
-            thumbnail: LukaGallery,
-            link: generateRoute("/luka"),
-            displayName: "LUKA",
-            landing: false,
-            slug: "luka",
-        },
-        {
-            svg: Ben,
-            thumbnail: BenGallery,
-            link: generateRoute("/ben"),
-            displayName: "BEN",
-            landing: false,
-            slug: "ben",
         },
     ];
 
@@ -212,6 +223,7 @@ export default function Home() {
             sam: ["SAM"],
             luka: ["LUKA"],
             ben: ["BEN"],
+            callum: ["CALLUM"],
         };
 
         const fetchPrices = async () => {
@@ -574,7 +586,10 @@ export default function Home() {
                                     {barberMinPrices[barber.slug] !== undefined && (
                                         <span
                                             className={`absolute -top-2.5 z-10 bg-black/75 text-lime text-xs md:text-sm font-bold px-2 md:px-3 py-1 md:py-1.5 rounded-lg border border-lime/50 backdrop-blur-sm tracking-wide pointer-events-none shadow-md shadow-black/60 ${
-                                                index < 3 ? "-left-2.5" : "-right-2.5"
+                                                index < 3 ||
+                                                Math.floor(index / 3) === Math.ceil(galleryBarbers.length / 3) - 1
+                                                    ? "-left-2.5"
+                                                    : "-right-2.5"
                                             }`}
                                         >
                                             ${barberMinPrices[barber.slug] % 1 === 0

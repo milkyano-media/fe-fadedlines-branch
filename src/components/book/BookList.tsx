@@ -23,6 +23,7 @@ import Matteo from "@/assets/web/barbers/booking-list/matteo-book.jpeg";
 import MikeyBook from "@/assets/web/barbers/booking-list/mikey-book.jpeg";
 import LukaBook from "@/assets/web/barbers/booking-list/luka-book.jpeg";
 import BenBook from "@/assets/web/barbers/booking-list/ben.png";
+import CallumBook from "@/assets/web/barbers/booking-list/callum.png";
 import LineBottomBorder from "@/assets/book/line-bottom-border.svg";
 import InstagramIcon from "@/assets/book/mdi_instagram.svg";
 
@@ -36,6 +37,7 @@ const barberImages: { [key: string]: string } = {
   MIKEY: MikeyBook,
   LUKA: LukaBook,
   BEN: BenBook,
+  CALLUM: CallumBook,
 };
 
 const barberInstagram: { [key: string]: string } = {
@@ -60,16 +62,17 @@ const BookList = () => {
     ) => {
       const barberServices: BarberServices = { data: [] };
 
-      // Bentleigh barber sort order: Anthony, EJ, Jamie, Sam, Matteo
+      // Bentleigh barber sort order: Ben, Luka, Sam, Callum, Jamie, Anth, EJ, Matteo
       const sortOrder = [
+        "BEN",
+        "LUKA",
+        "SAM",
+        "CALLUM",
+        "JAMIE",
         "ANTHONY", // Will match "Anthony", "ANTHONY", "Anth", etc.
         "EJ",
-        "JAMIE",
-        "SAM",
         "MATTEO",
         "MIKEY",
-        "LUKA",
-        "BEN",
       ];
 
       // 1. Use all available profiles
@@ -87,6 +90,7 @@ const BookList = () => {
           "mikey": ["MIKEY"],
           "luka": ["LUKA"],
           "ben": ["BEN"],
+          "callum": ["CALLUM"],
         };
 
         const searchAliases = barberAliases[specificBarber.toLowerCase()] || [specificBarber.toUpperCase()];
