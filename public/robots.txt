@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+
+# Booking funnel: thin, session-specific pages with no search value.
+# Thank-you pages must never be indexed.
+Disallow: /book/
+Disallow: /*/book/
+
+# Maintenance page is already noindex, but keep crawlers off it entirely.
+Disallow: /maintenance
+
+Sitemap: https://www.fadedlinesbentleigh.com.au/sitemap.xml

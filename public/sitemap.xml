@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Canonical public pages only. Deliberately excluded:
+  - /meta/* duplicates (analytics-only mirrors of every route)
+  - /home (duplicate of /)
+  - /book/* funnel and /maintenance (see robots.txt)
+  - /barbers and /rafael (routes commented out in routes.tsx)
+  Update lastmod when a page's content actually changes.
+-->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc>https://www.fadedlinesbentleigh.com.au/</loc>
+        <lastmod>2026-08-13</lastmod>
+    </url>
+    <url>
+        <loc>https://www.fadedlinesbentleigh.com.au/gallery</loc>
+        <lastmod>2026-08-13</lastmod>
+    </url>
+    <url>
+        <loc>https://www.fadedlinesbentleigh.com.au/about-us</loc>
+        <lastmod>2026-08-13</lastmod>
+    </url>
+    <url>
+        <loc>https://www.fadedlinesbentleigh.com.au/contact</loc>
+        <lastmod>2026-08-13</lastmod>
+    </url>
+    <url>
+        <loc>https://www.fadedlinesbentleigh.com.au/careers</loc>
+        <lastmod>2026-08-13</lastmod>
+    </url>
+    <url>
+        <loc>https://www.fadedlinesbentleigh.com.au/anthony</loc>
+        <lastmod>2026-08-13</lastmod>
+    </url>
+    <url>
+        <loc>https://www.fadedlinesbentleigh.com.au/ej</loc>
+        <lastmod>2026-08-13</lastmod>
+    </url>
+    <url>
+        <loc>https://www.fadedlinesbentleigh.com.au/privacy-policy</loc>
+        <lastmod>2026-08-13</lastmod>
+    </url>
+</urlset>
