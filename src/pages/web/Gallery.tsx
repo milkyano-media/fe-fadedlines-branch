@@ -76,19 +76,19 @@ export default function GalleriesPage() {
     return (
         <Layout>
             <Helmet>
-                <title>Gallery - Fadelines Barber Shop</title>
+                <title>Gallery | Fadedlines Bentleigh</title>
                 <meta
                     name="description"
-                    content="Fadelines - A premier barber shop offering top-notch haircuts and styles."
+                    content="Fades, tapers and beard work from the chairs at Fadedlines Bentleigh, Centre Rd, Bentleigh VIC."
                 />
-                <meta property="og:title" content="Fadelines Barber Shop" />
+                <meta property="og:site_name" content="Fadedlines Bentleigh" />
+                <meta property="og:title" content="Gallery | Fadedlines Bentleigh" />
                 <meta
                     property="og:description"
-                    content="Fadelines - A premier barber shop offering top-notch haircuts and styles."
+                    content="Fades, tapers and beard work from the chairs at Fadedlines Bentleigh, Centre Rd, Bentleigh VIC."
                 />
-                <meta property="og:img" content="URL to Fadelines' preview img" />
-                <meta property="og:url" content="URL to Fadelines' website" />
-                <meta name="twitter:card" content="summary_large_img" />
+                <meta property="og:image" content="/fadedlines-bentleigh-logo.png" />
+                <meta name="twitter:card" content="summary_large_image" />
             </Helmet>
 
             <div className="flex flex-col text-stone-50 w-full relative mt-10">

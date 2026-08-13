@@ -106,18 +106,18 @@ export default function Contacts() {
     return (
         <Layout>
             <Helmet>
-                <title>Contact - Fadelines Barber Shop</title>
+                <title>Contact Us | Fadedlines Bentleigh</title>
                 <meta
                     name="description"
-                    content="Fadelines - A premier barber shop offering top-notch haircuts and styles."
+                    content="Get in touch with Fadedlines Bentleigh. Find us at Shop 7, 271-275 Centre Rd, Bentleigh VIC 3204."
                 />
-                <meta property="og:title" content="Fadelines Barber Shop" />
+                <meta property="og:site_name" content="Fadedlines Bentleigh" />
+                <meta property="og:title" content="Contact Us | Fadedlines Bentleigh" />
                 <meta
                     property="og:description"
-                    content="Fadelines - A premier barber shop offering top-notch haircuts and styles."
+                    content="Get in touch with Fadedlines Bentleigh. Find us at Shop 7, 271-275 Centre Rd, Bentleigh VIC 3204."
                 />
-                <meta property="og:image" content="URL to Fadelines' preview image" />
-                <meta property="og:url" content="URL to Fadelines' website" />
+                <meta property="og:image" content="/fadedlines-bentleigh-logo.png" />
                 <meta name="twitter:card" content="summary_large_image" />
             </Helmet>
 

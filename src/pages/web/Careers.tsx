@@ -105,18 +105,18 @@ export default function Careers() {
     return (
         <Layout>
             <Helmet>
-                <title>Careers - Fadelines Barber Shop</title>
+                <title>Careers | Fadedlines Bentleigh</title>
                 <meta
                     name="description"
-                    content="Fadelines - A premier barber shop offering top-notch haircuts and styles."
+                    content="Join the team at Fadedlines Bentleigh. Barber and apprentice roles at our Centre Rd, Bentleigh VIC shop."
                 />
-                <meta property="og:title" content="Fadelines Barber Shop" />
+                <meta property="og:site_name" content="Fadedlines Bentleigh" />
+                <meta property="og:title" content="Careers | Fadedlines Bentleigh" />
                 <meta
                     property="og:description"
-                    content="Fadelines - A premier barber shop offering top-notch haircuts and styles."
+                    content="Join the team at Fadedlines Bentleigh. Barber and apprentice roles at our Centre Rd, Bentleigh VIC shop."
                 />
-                <meta property="og:image" content="URL to Fadelines' preview image" />
-                <meta property="og:url" content="URL to Fadelines' website" />
+                <meta property="og:image" content="/fadedlines-bentleigh-logo.png" />
                 <meta name="twitter:card" content="summary_large_image" />
             </Helmet>
 

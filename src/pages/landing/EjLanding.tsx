@@ -94,23 +94,21 @@ export default function EjLanding() {
   return (
     <LandingLayout>
       <Helmet>
-        <title>
-          ej Fadelines
-        </title>
+        <title>Ej | Barber at Fadedlines Bentleigh</title>
         <meta
           name="description"
-          content={`Ej Fadelines BEST BARBER IN MELBOURNE - ${description}`}
+          content={`Book Ej at Fadedlines Bentleigh - ${description}`}
         />
+        <meta property="og:site_name" content="Fadedlines Bentleigh" />
         <meta
           property="og:title"
-          content="Ej Fadelines BEST BARBER IN MELBOURNE"
+          content="Ej | Barber at Fadedlines Bentleigh"
         />
         <meta
           property="og:description"
-          content={`Ej Fadelines BEST BARBER IN MELBOURNE - ${description}`}
+          content={`Book Ej at Fadedlines Bentleigh - ${description}`}
         />
-        <meta property="og:image" content="URL to Fadelines' preview image" />
-        <meta property="og:url" content="URL to Fadelines' website" />
+        <meta property="og:image" content="/fadedlines-bentleigh-logo.png" />
         <meta name="twitter:card" content="summary_large_image" />
       </Helmet>
 

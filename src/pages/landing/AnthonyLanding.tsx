@@ -110,21 +110,21 @@ export default function AnthonyLanding() {
   return (
     <LandingLayout>
       <Helmet>
-        <title>anthony Fadelines BEST BARBER/HAIRDRESSER IN MELBOURNE</title>
+        <title>Anthony | Barber at Fadedlines Bentleigh</title>
         <meta
           name="description"
-          content={`Anthony Fadelines BEST BARBER IN MELBOURNE - ${description}`}
+          content={`Book Anthony at Fadedlines Bentleigh - ${description}`}
         />
+        <meta property="og:site_name" content="Fadedlines Bentleigh" />
         <meta
           property="og:title"
-          content="Anthony Fadelines BEST BARBER IN MELBOURNE"
+          content="Anthony | Barber at Fadedlines Bentleigh"
         />
         <meta
           property="og:description"
-          content={`Anthony Fadelines BEST BARBER IN MELBOURNE - ${description}`}
+          content={`Book Anthony at Fadedlines Bentleigh - ${description}`}
         />
-        <meta property="og:image" content="URL to Fadelines' preview image" />
-        <meta property="og:url" content="URL to Fadelines' website" />
+        <meta property="og:image" content="/fadedlines-bentleigh-logo.png" />
         <meta name="twitter:card" content="summary_large_image" />
       </Helmet>
 

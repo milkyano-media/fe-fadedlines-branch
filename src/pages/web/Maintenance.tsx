@@ -6,7 +6,7 @@ const Maintenance: React.FC = () => {
   return (
     <>
       <Helmet>
-        <title>Under Maintenance - Fadedlines Barbershop</title>
+        <title>Under Maintenance | Fadedlines Bentleigh</title>
         <meta name="description" content="We're currently performing scheduled maintenance. We'll be back soon!" />
         <meta name="robots" content="noindex, nofollow" />
       </Helmet>

@@ -8,18 +8,18 @@ export default function AboutUs() {
     return (
         <Layout>
             <Helmet>
-                <title>About Us - Fadelines Barber Shop</title>
+                <title>About Us | Fadedlines Bentleigh</title>
                 <meta
                     name="description"
-                    content="Fadelines - A premier barber shop offering top-notch haircuts and styles."
+                    content="The story behind Fadedlines Bentleigh - a barbershop on Centre Rd, Bentleigh VIC, built around precision fades and sharp haircuts."
                 />
-                <meta property="og:title" content="Fadelines Barber Shop" />
+                <meta property="og:site_name" content="Fadedlines Bentleigh" />
+                <meta property="og:title" content="About Us | Fadedlines Bentleigh" />
                 <meta
                     property="og:description"
-                    content="Fadelines - A premier barber shop offering top-notch haircuts and styles."
+                    content="The story behind Fadedlines Bentleigh - a barbershop on Centre Rd, Bentleigh VIC, built around precision fades and sharp haircuts."
                 />
-                <meta property="og:image" content="URL to Fadelines' preview image" />
-                <meta property="og:url" content="URL to Fadelines' website" />
+                <meta property="og:image" content="/fadedlines-bentleigh-logo.png" />
                 <meta name="twitter:card" content="summary_large_image" />
             </Helmet>
 

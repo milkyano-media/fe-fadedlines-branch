@@ -175,19 +175,19 @@ export default function Barbers() {
     return (
         <Layout>
             <Helmet>
-                <title>Barbers - Fadelines Barber Shop</title>
+                <title>Our Barbers | Fadedlines Bentleigh</title>
                 <meta
                     name="description"
-                    content="Fadelines - A premier barber shop offering top-notch haircuts and styles."
+                    content="Meet the barbers at Fadedlines Bentleigh. Book your fade, haircut or beard trim at 271-275 Centre Rd, Bentleigh VIC."
                 />
-                <meta property="og:title" content="Fadelines Barber Shop" />
+                <meta property="og:site_name" content="Fadedlines Bentleigh" />
+                <meta property="og:title" content="Our Barbers | Fadedlines Bentleigh" />
                 <meta
                     property="og:description"
-                    content="Fadelines - A premier barber shop offering top-notch haircuts and styles."
+                    content="Meet the barbers at Fadedlines Bentleigh. Book your fade, haircut or beard trim at 271-275 Centre Rd, Bentleigh VIC."
                 />
-                <meta property="og:img" content="URL to Fadelines' preview img" />
-                <meta property="og:url" content="URL to Fadelines' website" />
-                <meta name="twitter:card" content="summary_large_img" />
+                <meta property="og:image" content="/fadedlines-bentleigh-logo.png" />
+                <meta name="twitter:card" content="summary_large_image" />
             </Helmet>
 
             <section className="flex flex-col justify-center items-center relative pt-40 bg-concrete-dark-80">

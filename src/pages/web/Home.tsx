@@ -38,6 +38,30 @@ import GoogleReview from "@/assets/web/icons/GoogleReview.svg";
 const isBookingRedirect = import.meta.env.VITE_IS_BOOKING_REDIRECT;
 const bookingRedirectUrl = import.meta.env.VITE_BOOKING_REDIRECT_URL;
 
+// Tells Google the official business name for this site, so search results show
+// "Fadedlines Bentleigh" instead of falling back to the generic brand name.
+const localBusinessSchema = {
+    "@context": "https://schema.org",
+    "@type": "HairSalon",
+    name: "Fadedlines Bentleigh",
+    alternateName: "Fadedlines Barbershop Bentleigh",
+    image: "/fadedlines-bentleigh-logo.png",
+    address: {
+        "@type": "PostalAddress",
+        streetAddress: "Shop 7, 271-275 Centre Rd",
+        addressLocality: "Bentleigh",
+        addressRegion: "VIC",
+        postalCode: "3204",
+        addressCountry: "AU",
+    },
+    sameAs: ["https://www.instagram.com/fadedlinesbentleigh", "https://www.tiktok.com/@fadedlinesbentleigh"],
+    openingHoursSpecification: [
+        { "@type": "OpeningHoursSpecification", dayOfWeek: ["Monday", "Tuesday", "Wednesday"], opens: "12:00", closes: "20:00" },
+        { "@type": "OpeningHoursSpecification", dayOfWeek: ["Thursday", "Friday"], opens: "10:00", closes: "20:00" },
+        { "@type": "OpeningHoursSpecification", dayOfWeek: ["Saturday"], opens: "10:00", closes: "17:00" },
+    ],
+};
+
 export const generateLink = (text: string): JSX.Element => {
     const customize: boolean = isBookingRedirect === "false" || false;
     const squareLink: string =
@@ -340,19 +364,20 @@ export default function Home() {
     return (
         <Layout>
             <Helmet>
-                <title>Home - Fadelines Barber Shop</title>
+                <title>Fadedlines Bentleigh | Barbershop in Bentleigh, Melbourne</title>
                 <meta
                     name="description"
-                    content="Fadelines - A premier barber shop offering top-notch haircuts and styles."
+                    content="Fadedlines Bentleigh - barbershop at 271-275 Centre Rd, Bentleigh VIC. Book fades, haircuts and beard trims with Melbourne's top barbers."
                 />
-                <meta property="og:title" content="Fadelines Barber Shop" />
+                <meta property="og:site_name" content="Fadedlines Bentleigh" />
+                <meta property="og:title" content="Fadedlines Bentleigh | Barbershop in Bentleigh, Melbourne" />
                 <meta
                     property="og:description"
-                    content="Fadelines - A premier barber shop offering top-notch haircuts and styles."
+                    content="Fadedlines Bentleigh - barbershop at 271-275 Centre Rd, Bentleigh VIC. Book fades, haircuts and beard trims with Melbourne's top barbers."
                 />
-                <meta property="og:image" content="URL to Fadelines' preview image" />
-                <meta property="og:url" content="URL to Fadelines' website" />
+                <meta property="og:image" content="/fadedlines-bentleigh-logo.png" />
                 <meta name="twitter:card" content="summary_large_image" />
+                <script type="application/ld+json">{JSON.stringify(localBusinessSchema)}</script>
             </Helmet>
 
             <section className="flex flex-col justify-center items-center relative pt-24 md:pt-32">

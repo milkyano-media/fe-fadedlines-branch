@@ -17,7 +17,7 @@ const WebLayout: React.FC<{ children: ReactNode }> = ({ children }) => {
 
     return (
         <div className="font-poppins">
-            <h1 className="hidden">Faded Lines Barber Shop</h1>
+            <h1 className="hidden">Fadedlines Bentleigh</h1>
             <WebHeader />
             <main className="flex flex-col bg-concrete-dark-80">{children}</main>
             <WebFooter />

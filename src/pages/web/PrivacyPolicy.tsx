@@ -8,18 +8,18 @@ export default function PrivacyPolicy() {
   return (
     <Layout>
       <Helmet>
-        <title>Privacy Policy - Fadelines Barber Shop</title>
+        <title>Privacy Policy | Fadedlines Bentleigh</title>
         <meta
           name="description"
-          content="Fadelines - A premier barber shop offering top-notch haircuts and styles."
+          content="How Fadedlines Bentleigh collects, uses and protects your personal information."
         />
-        <meta property="og:title" content="Fadelines Barber Shop" />
+        <meta property="og:site_name" content="Fadedlines Bentleigh" />
+        <meta property="og:title" content="Privacy Policy | Fadedlines Bentleigh" />
         <meta
           property="og:description"
-          content="Fadelines - A premier barber shop offering top-notch haircuts and styles."
+          content="How Fadedlines Bentleigh collects, uses and protects your personal information."
         />
-        <meta property="og:image" content="URL to Fadelines' preview image" />
-        <meta property="og:url" content="URL to Fadelines' website" />
+        <meta property="og:image" content="/fadedlines-bentleigh-logo.png" />
         <meta name="twitter:card" content="summary_large_image" />
       </Helmet>
       <div className="flex flex-col text-stone-50 bg-black w-full relative tracking-wider">

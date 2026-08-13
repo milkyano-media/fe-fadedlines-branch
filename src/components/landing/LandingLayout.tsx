@@ -19,7 +19,7 @@ const LandingLayout: React.FC<{ children: ReactNode }> = ({ children }) => {
 
   return (
     <div className="font-poppins" style={{ minHeight: "100vh" }}>
-      <h1 className="hidden">Faded Lines Barber Shop</h1>
+      <h1 className="hidden">Fadedlines Bentleigh</h1>
       <LandingHeader />
       <main>{children}</main>
       <LandingFooter />
