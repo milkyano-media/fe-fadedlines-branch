@@ -17,6 +17,7 @@ import Matteo from "@/assets/web/barbers/matteo.png";
 import Luka from "@/assets/web/barbers/luka.png";
 import Ben from "@/assets/web/barbers/ben.png";
 import Callum from "@/assets/web/barbers/callum.png";
+import Ollie from "@/assets/web/barbers/ollie.webp";
 
 // Barber gallery images for carousel and grid thumbnails
 import AnthonyGallery from "@/assets/web/barbers/barbers-gallery/anth.png";
@@ -27,6 +28,7 @@ import MatteoGallery from "@/assets/web/barbers/barbers-gallery/matteo.png";
 import LukaGallery from "@/assets/web/barbers/barbers-gallery/luka.png";
 import BenGallery from "@/assets/web/barbers/barbers-gallery/ben.png";
 import CallumGallery from "@/assets/web/barbers/barbers-gallery/callum.png";
+import OllieGallery from "@/assets/web/barbers/barbers-gallery/ollie.webp";
 
 // Social media and other icons
 import Logo from "@/assets/web/icons/logo.png";
@@ -148,7 +150,7 @@ export default function Home() {
     };
 
     // Barber gallery data
-    // Grid/carousel order: Ben, Luka, Sam, Callum, Jamie, Anth, Ej, Matteo
+    // Grid/carousel order: Ben, Luka, Sam, Callum, Jamie, Anth, Ej, Matteo, Ollie
     const barberSvgs = [
         {
             svg: Ben,
@@ -214,6 +216,14 @@ export default function Home() {
             landing: false,
             slug: "matteo",
         },
+        {
+            svg: Ollie,
+            thumbnail: OllieGallery,
+            link: generateRoute("/ollie"),
+            displayName: "OLLIE",
+            landing: false,
+            slug: "ollie",
+        },
     ];
 
     // Transform barberSvgs into gallery-friendly format
@@ -248,6 +258,7 @@ export default function Home() {
             luka: ["LUKA"],
             ben: ["BEN"],
             callum: ["CALLUM"],
+            ollie: ["OLLIE"],
         };
 
         const fetchPrices = async () => {
