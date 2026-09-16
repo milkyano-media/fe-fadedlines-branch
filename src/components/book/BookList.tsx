@@ -25,6 +25,7 @@ import LukaBook from "@/assets/web/barbers/booking-list/luka-book.jpeg";
 import BenBook from "@/assets/web/barbers/booking-list/ben.png";
 import CallumBook from "@/assets/web/barbers/booking-list/callum.png";
 import OllieBook from "@/assets/web/barbers/booking-list/ollie-book.webp";
+import JeremyBook from "@/assets/web/barbers/booking-list/jeremy-book.webp";
 import LineBottomBorder from "@/assets/book/line-bottom-border.svg";
 import InstagramIcon from "@/assets/book/mdi_instagram.svg";
 
@@ -40,12 +41,14 @@ const barberImages: { [key: string]: string } = {
   BEN: BenBook,
   CALLUM: CallumBook,
   OLLIE: OllieBook,
+  JEREMY: JeremyBook,
 };
 
 const barberInstagram: { [key: string]: string } = {
   ANTHONY: "@anth.cuts",
   ANTH: "@anth.cuts",
   BEN: "@bmcutzzz",
+  JEREMY: "@jeyblends",
 };
 
 const BookList = () => {
@@ -64,8 +67,9 @@ const BookList = () => {
     ) => {
       const barberServices: BarberServices = { data: [] };
 
-      // Bentleigh barber sort order: Ben, Luka, Sam, Callum, Jamie, Anth, EJ, Matteo, Ollie
+      // Bentleigh barber sort order: Jeremy, Ben, Luka, Sam, Callum, Jamie, Anth, EJ, Matteo, Ollie
       const sortOrder = [
+        "JEREMY",
         "BEN",
         "LUKA",
         "SAM",
@@ -95,6 +99,7 @@ const BookList = () => {
           "ben": ["BEN"],
           "callum": ["CALLUM"],
           "ollie": ["OLLIE"],
+          "jeremy": ["JEREMY"],
         };
 
         const searchAliases = barberAliases[specificBarber.toLowerCase()] || [specificBarber.toUpperCase()];
