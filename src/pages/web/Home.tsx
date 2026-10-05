@@ -152,7 +152,7 @@ export default function Home() {
     };
 
     // Barber gallery data
-    // Grid/carousel order: Jeremy, Ben, Luka, Sam, Callum, Jamie, Anth, Ej, Matteo, Ollie
+    // Grid/carousel order: Jeremy, Ben, Luka, Sam, Anth, Jamie, Ej, Matteo, Callum, Ollie
     const barberSvgs = [
         {
             svg: Jeremy,
@@ -187,12 +187,12 @@ export default function Home() {
             slug: "sam",
         },
         {
-            svg: Callum,
-            thumbnail: CallumGallery,
-            link: generateRoute("/callum"),
-            displayName: "CALLUM",
-            landing: false,
-            slug: "callum",
+            svg: Anthony,
+            thumbnail: AnthonyGallery,
+            link: generateRoute("/anthony"),
+            displayName: "ANTH",
+            landing: true,
+            slug: "anthony",
         },
         {
             svg: Jamie,
@@ -201,14 +201,6 @@ export default function Home() {
             displayName: "JAMIE",
             landing: false,
             slug: "jamie",
-        },
-        {
-            svg: Anthony,
-            thumbnail: AnthonyGallery,
-            link: generateRoute("/anthony"),
-            displayName: "ANTH",
-            landing: true,
-            slug: "anthony",
         },
         {
             svg: Ej,
@@ -225,6 +217,14 @@ export default function Home() {
             displayName: "MATTEO",
             landing: false,
             slug: "matteo",
+        },
+        {
+            svg: Callum,
+            thumbnail: CallumGallery,
+            link: generateRoute("/callum"),
+            displayName: "CALLUM",
+            landing: false,
+            slug: "callum",
         },
         {
             svg: Ollie,

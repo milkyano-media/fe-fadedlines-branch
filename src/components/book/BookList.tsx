@@ -67,17 +67,17 @@ const BookList = () => {
     ) => {
       const barberServices: BarberServices = { data: [] };
 
-      // Bentleigh barber sort order: Jeremy, Ben, Luka, Sam, Callum, Jamie, Anth, EJ, Matteo, Ollie
+      // Bentleigh barber sort order: Jeremy, Ben, Luka, Sam, Anth, Jamie, EJ, Matteo, Callum, Ollie
       const sortOrder = [
         "JEREMY",
         "BEN",
         "LUKA",
         "SAM",
-        "CALLUM",
-        "JAMIE",
         "ANTHONY", // Will match "Anthony", "ANTHONY", "Anth", etc.
+        "JAMIE",
         "EJ",
         "MATTEO",
+        "CALLUM",
         "OLLIE",
         "MIKEY",
       ];
