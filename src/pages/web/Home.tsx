@@ -19,6 +19,7 @@ import Ben from "@/assets/web/barbers/ben.png";
 import Callum from "@/assets/web/barbers/callum.png";
 import Ollie from "@/assets/web/barbers/ollie.webp";
 import Jeremy from "@/assets/web/barbers/jeremy.webp";
+import Harry from "@/assets/web/barbers/harry.webp";
 
 // Barber gallery images for carousel and grid thumbnails
 import AnthonyGallery from "@/assets/web/barbers/barbers-gallery/anth.png";
@@ -31,6 +32,7 @@ import BenGallery from "@/assets/web/barbers/barbers-gallery/ben.png";
 import CallumGallery from "@/assets/web/barbers/barbers-gallery/callum.png";
 import OllieGallery from "@/assets/web/barbers/barbers-gallery/ollie.webp";
 import JeremyGallery from "@/assets/web/barbers/barbers-gallery/jeremy.webp";
+import HarryGallery from "@/assets/web/barbers/barbers-gallery/harry.webp";
 
 // Social media and other icons
 import Logo from "@/assets/web/icons/logo.png";
@@ -152,7 +154,7 @@ export default function Home() {
     };
 
     // Barber gallery data
-    // Grid/carousel order: Jeremy, Ben, Luka, Sam, Anth, Jamie, Ej, Matteo, Callum, Ollie
+    // Grid/carousel order: Jeremy, Ben, Luka, Sam, Anth, Jamie, Ej, Matteo, Callum, Ollie, Harry
     const barberSvgs = [
         {
             svg: Jeremy,
@@ -234,6 +236,14 @@ export default function Home() {
             landing: false,
             slug: "ollie",
         },
+        {
+            svg: Harry,
+            thumbnail: HarryGallery,
+            link: generateRoute("/harry"),
+            displayName: "HARRY",
+            landing: false,
+            slug: "harry",
+        },
     ];
 
     // Transform barberSvgs into gallery-friendly format
@@ -270,6 +280,7 @@ export default function Home() {
             callum: ["CALLUM"],
             ollie: ["OLLIE"],
             jeremy: ["JEREMY"],
+            harry: ["HARRY"],
         };
 
         const fetchPrices = async () => {
