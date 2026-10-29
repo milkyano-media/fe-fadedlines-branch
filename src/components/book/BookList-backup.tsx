@@ -12,9 +12,9 @@ import Logo from "@/components/react-svg/logo";
 import { ChevronDown, ChevronUp } from "lucide-react";
 
 // Bentleigh barbers: Anthony, EJ, and Jamie (based on Square API data)
-import Anthony from "@/assets/web/barbers/booking-list/anth-book.jpeg";
-import Ej from "@/assets/web/barbers/booking-list/ej-book.jpeg";
-import Jamie from "@/assets/web/barbers/booking-list/jamie-book.jpeg";
+import Anthony from "@/assets/web/barbers/booking-list/anth-book.webp";
+import Ej from "@/assets/web/barbers/booking-list/ej-book.webp";
+import Jamie from "@/assets/web/barbers/booking-list/jamie-book.webp";
 
 const barberImages: { [key: string]: string } = {
   ANTHONY: Anthony,

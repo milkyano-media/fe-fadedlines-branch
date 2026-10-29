@@ -1,4 +1,4 @@
-import AnthonyAboutUs from "@/assets/web/about-us/about_us_anthony.png";
+import AnthonyAboutUs from "@/assets/web/about-us/about_us_anthony.webp";
 import AboutUsBg from "@/assets/web/about-us/about_us_bg.jpg";
 import plus from "@/assets/web/about-us/plus.svg";
 import Layout from "@/components/web/WebLayout";

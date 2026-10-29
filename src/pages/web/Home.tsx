@@ -9,27 +9,27 @@ import { getAllBarber, getAllService } from "@/utils/barberApi";
 import { BarberResponse, ServicesResponse, ServicesItem } from "@/interfaces/BookingInterface";
 
 // Barber images for preview
-import Anthony from "@/assets/web/barbers/anth.png";
-import Ej from "@/assets/web/barbers/ej.png";
-import Jamie from "@/assets/web/barbers/jamie.png";
-import Sam from "@/assets/web/barbers/sam.png";
-import Matteo from "@/assets/web/barbers/matteo.png";
-import Luka from "@/assets/web/barbers/luka.png";
-import Ben from "@/assets/web/barbers/ben.png";
-import Callum from "@/assets/web/barbers/callum.png";
+import Anthony from "@/assets/web/barbers/anth.webp";
+import Ej from "@/assets/web/barbers/ej.webp";
+import Jamie from "@/assets/web/barbers/jamie.webp";
+import Sam from "@/assets/web/barbers/sam.webp";
+import Matteo from "@/assets/web/barbers/matteo.webp";
+import Luka from "@/assets/web/barbers/luka.webp";
+import Ben from "@/assets/web/barbers/ben.webp";
+import Callum from "@/assets/web/barbers/callum.webp";
 import Ollie from "@/assets/web/barbers/ollie.webp";
 import Jeremy from "@/assets/web/barbers/jeremy.webp";
 import Harry from "@/assets/web/barbers/harry.webp";
 
 // Barber gallery images for carousel and grid thumbnails
-import AnthonyGallery from "@/assets/web/barbers/barbers-gallery/anth.png";
-import EjGallery from "@/assets/web/barbers/barbers-gallery/ej.png";
-import JamieGallery from "@/assets/web/barbers/barbers-gallery/jamie.png";
-import SamGallery from "@/assets/web/barbers/barbers-gallery/sam.png";
-import MatteoGallery from "@/assets/web/barbers/barbers-gallery/matteo.png";
-import LukaGallery from "@/assets/web/barbers/barbers-gallery/luka.png";
-import BenGallery from "@/assets/web/barbers/barbers-gallery/ben.png";
-import CallumGallery from "@/assets/web/barbers/barbers-gallery/callum.png";
+import AnthonyGallery from "@/assets/web/barbers/barbers-gallery/anth.webp";
+import EjGallery from "@/assets/web/barbers/barbers-gallery/ej.webp";
+import JamieGallery from "@/assets/web/barbers/barbers-gallery/jamie.webp";
+import SamGallery from "@/assets/web/barbers/barbers-gallery/sam.webp";
+import MatteoGallery from "@/assets/web/barbers/barbers-gallery/matteo.webp";
+import LukaGallery from "@/assets/web/barbers/barbers-gallery/luka.webp";
+import BenGallery from "@/assets/web/barbers/barbers-gallery/ben.webp";
+import CallumGallery from "@/assets/web/barbers/barbers-gallery/callum.webp";
 import OllieGallery from "@/assets/web/barbers/barbers-gallery/ollie.webp";
 import JeremyGallery from "@/assets/web/barbers/barbers-gallery/jeremy.webp";
 import HarryGallery from "@/assets/web/barbers/barbers-gallery/harry.webp";

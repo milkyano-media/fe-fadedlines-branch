@@ -15,15 +15,14 @@ import { ChevronDown, ChevronUp } from "lucide-react";
 import IconNavbarGreen from "@/assets/svg/icon-navbar-green.svg";
 
 // Bentleigh barbers: Anthony, EJ, Jamie, Sam, and Matteo (based on Square API data)
-import Anthony from "@/assets/web/barbers/booking-list/anth-book.jpeg";
-import Ej from "@/assets/web/barbers/booking-list/ej-book.jpeg";
-import Jamie from "@/assets/web/barbers/booking-list/jamie-book.jpeg";
-import Sam from "@/assets/web/barbers/booking-list/sam-book.png";
-import Matteo from "@/assets/web/barbers/booking-list/matteo-book.jpeg";
-import MikeyBook from "@/assets/web/barbers/booking-list/mikey-book.jpeg";
-import LukaBook from "@/assets/web/barbers/booking-list/luka-book.jpeg";
-import BenBook from "@/assets/web/barbers/booking-list/ben.png";
-import CallumBook from "@/assets/web/barbers/booking-list/callum.png";
+import Anthony from "@/assets/web/barbers/booking-list/anth-book.webp";
+import Ej from "@/assets/web/barbers/booking-list/ej-book.webp";
+import Jamie from "@/assets/web/barbers/booking-list/jamie-book.webp";
+import Sam from "@/assets/web/barbers/booking-list/sam-book.webp";
+import Matteo from "@/assets/web/barbers/booking-list/matteo-book.webp";
+import LukaBook from "@/assets/web/barbers/booking-list/luka-book.webp";
+import BenBook from "@/assets/web/barbers/booking-list/ben-book.webp";
+import CallumBook from "@/assets/web/barbers/booking-list/callum-book.webp";
 import OllieBook from "@/assets/web/barbers/booking-list/ollie-book.webp";
 import JeremyBook from "@/assets/web/barbers/booking-list/jeremy-book.webp";
 import HarryBook from "@/assets/web/barbers/booking-list/harry-book.webp";
@@ -37,7 +36,6 @@ const barberImages: { [key: string]: string } = {
   JAMIE: Jamie,
   SAM: Sam,
   MATTEO: Matteo,
-  MIKEY: MikeyBook,
   LUKA: LukaBook,
   BEN: BenBook,
   CALLUM: CallumBook,
