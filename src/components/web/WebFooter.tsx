@@ -130,11 +130,6 @@ const WebFooter: React.FC = () => {
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link to="/careers" className="hover:text-white">
-                                        CAREERS
-                                    </Link>
-                                </li>
-                                <li>
                                     <a
                                         href="https://app.squareup.com/appointments/book/jy2gksgbixkv5v/LEWYVQ46HQREW/start"
                                         className="hover:text-white"
@@ -160,12 +155,12 @@ const WebFooter: React.FC = () => {
                             <ul className="flex flex-col font-light gap-2 text-stone-400">
                                 <li>
                                     <Link to={getMapsLink()} target="_blank" className="hover:text-white">
-                                        Monday 12 PM - 8 PM
+                                        Monday 12 PM - 6 PM
                                     </Link>
                                 </li>
                                 <li>
                                     <Link to={getMapsLink()} target="_blank" className="hover:text-white">
-                                        Tuesday 12 PM - 8 PM
+                                        Tuesday 12 PM - 7 PM
                                     </Link>
                                 </li>
                                 <li>
@@ -175,17 +170,17 @@ const WebFooter: React.FC = () => {
                                 </li>
                                 <li>
                                     <Link to={getMapsLink()} target="_blank" className="hover:text-white">
-                                        Thursday 10 AM - 8 PM
+                                        Thursday 11 AM - 8 PM
                                     </Link>
                                 </li>
                                 <li>
                                     <Link to={getMapsLink()} target="_blank" className="hover:text-white">
-                                        Friday 10 AM - 8 PM
+                                        Friday 10 AM - 6 PM
                                     </Link>
                                 </li>
                                 <li>
                                     <Link to={getMapsLink()} target="_blank" className="hover:text-white">
-                                        Saturday 10 AM - 5 PM
+                                        Saturday 9 AM - 4 PM
                                     </Link>
                                 </li>
                                 <li>

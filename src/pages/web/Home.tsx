@@ -62,9 +62,12 @@ const localBusinessSchema = {
     },
     sameAs: ["https://www.instagram.com/fadedlinesbentleigh", "https://www.tiktok.com/@fadedlinesbentleigh"],
     openingHoursSpecification: [
-        { "@type": "OpeningHoursSpecification", dayOfWeek: ["Monday", "Tuesday", "Wednesday"], opens: "12:00", closes: "20:00" },
-        { "@type": "OpeningHoursSpecification", dayOfWeek: ["Thursday", "Friday"], opens: "10:00", closes: "20:00" },
-        { "@type": "OpeningHoursSpecification", dayOfWeek: ["Saturday"], opens: "10:00", closes: "17:00" },
+        { "@type": "OpeningHoursSpecification", dayOfWeek: ["Monday"], opens: "12:00", closes: "18:00" },
+        { "@type": "OpeningHoursSpecification", dayOfWeek: ["Tuesday"], opens: "12:00", closes: "19:00" },
+        { "@type": "OpeningHoursSpecification", dayOfWeek: ["Wednesday"], opens: "12:00", closes: "20:00" },
+        { "@type": "OpeningHoursSpecification", dayOfWeek: ["Thursday"], opens: "11:00", closes: "20:00" },
+        { "@type": "OpeningHoursSpecification", dayOfWeek: ["Friday"], opens: "10:00", closes: "18:00" },
+        { "@type": "OpeningHoursSpecification", dayOfWeek: ["Saturday"], opens: "09:00", closes: "16:00" },
     ],
 };
 

@@ -4,7 +4,7 @@ import EjLanding from "@/pages/landing/EjLanding";
 // import RafaelLanding from "@/pages/landing/RafaelLanding";
 import AboutUs from "@/pages/web/AboutUs";
 // import Barbers from "@/pages/web/Barbers";
-import Careers from "@/pages/web/Careers";
+// import Careers from "@/pages/web/Careers";
 import Contacts from "@/pages/web/Contacts";
 import Gallery from "@/pages/web/Gallery";
 import Home from "@/pages/web/Home";
@@ -25,7 +25,7 @@ const webRoutes = [
     // { path: "barbers", component: Barbers },
     { path: "gallery", component: Gallery },
     { path: "about-us", component: AboutUs },
-    { path: "careers", component: Careers },
+    // { path: "careers", component: Careers },
     { path: "contact", component: Contacts },
     { path: "privacy-policy", component: PrivacyPolicy },
     { path: "maintenance", component: Maintenance },
@@ -41,7 +41,7 @@ const metaWebRoutes = [
     // { path: "meta/barbers", component: Barbers },
     { path: "meta/gallery", component: Gallery },
     { path: "meta/about-us", component: AboutUs },
-    { path: "meta/careers", component: Careers },
+    // { path: "meta/careers", component: Careers },
     { path: "meta/contact", component: Contacts },
     { path: "meta/privacy-policy", component: PrivacyPolicy },
     { path: "meta/maintenance", component: Maintenance },

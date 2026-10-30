@@ -36,7 +36,7 @@ const links = [
     // { to: "/barbers", label: "Barbers" },
     { to: "/gallery", label: "Gallery" },
     { to: "/about-us", label: "About Us" },
-    { to: "/careers", label: "Careers" },
+    // { to: "/careers", label: "Careers" },
     { to: "/contact", label: "Contact" },
 ];
 
@@ -130,16 +130,6 @@ const Header: React.FC = () => {
                                 }`}
                             >
                                 ABOUT US
-                            </Link>
-                        </li>
-                        <li>
-                            <Link
-                                to={generateRoute("/careers")}
-                                className={`text-md uppercase font-bold px-4 hover:text-white ${
-                                    location.pathname === "/careers" ? "text-white" : ""
-                                }`}
-                            >
-                                Careers
                             </Link>
                         </li>
                         <li>
