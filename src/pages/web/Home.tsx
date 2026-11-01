@@ -21,7 +21,7 @@ import Ollie from "@/assets/web/barbers/ollie.webp";
 import Jeremy from "@/assets/web/barbers/jeremy.webp";
 import Harry from "@/assets/web/barbers/harry.webp";
 
-// Barber gallery images for carousel and grid thumbnails
+// Barber gallery images (with name label) for grid
 import AnthonyGallery from "@/assets/web/barbers/barbers-gallery/anth.webp";
 import EjGallery from "@/assets/web/barbers/barbers-gallery/ej.webp";
 import JamieGallery from "@/assets/web/barbers/barbers-gallery/jamie.webp";
@@ -33,6 +33,19 @@ import CallumGallery from "@/assets/web/barbers/barbers-gallery/callum.webp";
 import OllieGallery from "@/assets/web/barbers/barbers-gallery/ollie.webp";
 import JeremyGallery from "@/assets/web/barbers/barbers-gallery/jeremy.webp";
 import HarryGallery from "@/assets/web/barbers/barbers-gallery/harry.webp";
+
+// Square head-aligned thumbnails (no name label) for carousel
+import AnthonyThumb from "@/assets/web/barbers/home-thumbnails/anth.webp";
+import EjThumb from "@/assets/web/barbers/home-thumbnails/ej.webp";
+import JamieThumb from "@/assets/web/barbers/home-thumbnails/jamie.webp";
+import SamThumb from "@/assets/web/barbers/home-thumbnails/sam.webp";
+import MatteoThumb from "@/assets/web/barbers/home-thumbnails/matteo.webp";
+import LukaThumb from "@/assets/web/barbers/home-thumbnails/luka.webp";
+import BenThumb from "@/assets/web/barbers/home-thumbnails/ben.webp";
+import CallumThumb from "@/assets/web/barbers/home-thumbnails/callum.webp";
+import OllieThumb from "@/assets/web/barbers/home-thumbnails/ollie.webp";
+import JeremyThumb from "@/assets/web/barbers/home-thumbnails/jeremy.webp";
+import HarryThumb from "@/assets/web/barbers/home-thumbnails/harry.webp";
 
 // Social media and other icons
 import Logo from "@/assets/web/icons/logo.png";
@@ -162,6 +175,7 @@ export default function Home() {
         {
             svg: Jeremy,
             thumbnail: JeremyGallery,
+            carouselThumb: JeremyThumb,
             link: generateRoute("/jeremy"),
             displayName: "JEREMY",
             landing: false,
@@ -170,6 +184,7 @@ export default function Home() {
         {
             svg: Ben,
             thumbnail: BenGallery,
+            carouselThumb: BenThumb,
             link: generateRoute("/ben"),
             displayName: "BEN",
             landing: false,
@@ -178,6 +193,7 @@ export default function Home() {
         {
             svg: Luka,
             thumbnail: LukaGallery,
+            carouselThumb: LukaThumb,
             link: generateRoute("/luka"),
             displayName: "LUKA",
             landing: false,
@@ -186,6 +202,7 @@ export default function Home() {
         {
             svg: Sam,
             thumbnail: SamGallery,
+            carouselThumb: SamThumb,
             link: generateRoute("/sam"),
             displayName: "SAM",
             landing: false,
@@ -194,6 +211,7 @@ export default function Home() {
         {
             svg: Anthony,
             thumbnail: AnthonyGallery,
+            carouselThumb: AnthonyThumb,
             link: generateRoute("/anthony"),
             displayName: "ANTH",
             landing: true,
@@ -202,6 +220,7 @@ export default function Home() {
         {
             svg: Jamie,
             thumbnail: JamieGallery,
+            carouselThumb: JamieThumb,
             link: generateRoute("/jamie"),
             displayName: "JAMIE",
             landing: false,
@@ -210,6 +229,7 @@ export default function Home() {
         {
             svg: Ej,
             thumbnail: EjGallery,
+            carouselThumb: EjThumb,
             link: generateRoute("/ej"),
             displayName: "EJ",
             landing: true,
@@ -218,6 +238,7 @@ export default function Home() {
         {
             svg: Matteo,
             thumbnail: MatteoGallery,
+            carouselThumb: MatteoThumb,
             link: generateRoute("/matteo"),
             displayName: "MATTEO",
             landing: false,
@@ -226,6 +247,7 @@ export default function Home() {
         {
             svg: Callum,
             thumbnail: CallumGallery,
+            carouselThumb: CallumThumb,
             link: generateRoute("/callum"),
             displayName: "CALLUM",
             landing: false,
@@ -234,6 +256,7 @@ export default function Home() {
         {
             svg: Ollie,
             thumbnail: OllieGallery,
+            carouselThumb: OllieThumb,
             link: generateRoute("/ollie"),
             displayName: "OLLIE",
             landing: false,
@@ -242,6 +265,7 @@ export default function Home() {
         {
             svg: Harry,
             thumbnail: HarryGallery,
+            carouselThumb: HarryThumb,
             link: generateRoute("/harry"),
             displayName: "HARRY",
             landing: false,
@@ -253,6 +277,7 @@ export default function Home() {
     const galleryBarbers = barberSvgs.map((barber) => ({
         image: barber.svg,
         thumbnail: barber.thumbnail,
+        carouselThumb: barber.carouselThumb,
         name: barber.displayName,
         link: barber.link,
         landing: barber.landing,
@@ -547,7 +572,7 @@ export default function Home() {
                                                     : ""
                                             }`}>
                                                 <img
-                                                    src={barber.thumbnail}
+                                                    src={barber.carouselThumb}
                                                     alt={barber.name}
                                                     className="w-full h-full object-cover"
                                                 />
