@@ -92,11 +92,11 @@ export default function GalleriesPage() {
             </Helmet>
 
             <div className="flex flex-col text-stone-50 w-full relative mt-10">
-                <section className="bg-concrete-dark-80 py-12 pt-32 px-0 container pr-0 md:pr-4 relative z-30 flex gap-12 justify-center items-center flex-col md:flex-row overflow-hidden">
+                <section className="bg-transparent py-12 pt-32 px-0 container pr-0 md:pr-4 relative z-30 flex gap-12 justify-center items-center flex-col md:flex-row overflow-hidden">
                     <div className="w-full md:w-10/12 flex flex-col justify-end md:pb-24 h-full">
-                        <h3 className="text-3xl md:text-4xl font-extrabold tracking-wider flex flex-col  md:gap-2 text-center md:text-right">
+                        <h3 className="font-display text-5xl md:text-6xl font-normal tracking-wide leading-tight flex flex-col md:gap-2 text-center md:text-right">
                             <span>BE OUR NEXT</span>
-                            <span className="text-transparent bg-lime bg-clip-text">MASTERPIECE</span>
+                            <span className="text-transparent bg-gradient-to-b from-white to-[#B5B2AB] bg-clip-text">MASTERPIECE</span>
                         </h3>
                         <div className="self-center md:self-end mt-6">
                             <a href="https://book.squareup.com/appointments/jy2gksgbixkv5v/location/LEWYVQ46HQREW/start">
@@ -107,19 +107,19 @@ export default function GalleriesPage() {
                         </div>
                     </div>
                     <div className="relative w-full min-h-[25rem] md:min-h-[40rem]">
-                        <div className="absolute inset-0 overflow-hidden bg-concrete-dark-70">
+                        <div className="absolute inset-0 overflow-hidden bg-concrete-dark-70 rounded-2xl border border-white/20">
                             <div className="bg-concrete-dark-70 w-full h-full flex justify-end md:justify-center items-center rotate-[10deg] md:rotate-[12deg]">
                                 <CardStack />
                             </div>
                         </div>
-                        <div className="absolute inset-0 bg-gradient-to-r from-black via-transparent to-black opacity-50 pointer-events-none"></div>
+                        <div className="absolute inset-0 bg-gradient-to-r from-concrete-base via-transparent to-concrete-base opacity-60 pointer-events-none"></div>
                     </div>
                 </section>
 
                 <div className=" w-full flex justify-center py-12 relative">
-                    <div className="h-40 w-[1px] bg-[#086600] z-0" />
+                    <div className="h-40 w-[1px] bg-white/20 z-0" />
                     <motion.div
-                        className="absolute h-[18rem] w-[2px] bg-gradient-to-b from-[#096601] to-[#15ff00] shadow-[0px_0px_70px_2px_#15ff00] origin-top z-10"
+                        className="absolute h-[18rem] w-[2px] bg-gradient-to-b from-white/30 to-white shadow-[0px_0px_40px_2px_rgba(255,255,255,0.45)] origin-top z-10"
                         style={{ scaleY }}
                     />
                 </div>
@@ -127,10 +127,10 @@ export default function GalleriesPage() {
                 <section className="relative z-[99999999] pb-[10rem] md:pb-[30rem] pt-12">
                     <section className=" w-full relative flex flex-col items-center text-center  container">
                         <div className="w-full px-4 md:px-0 flex flex-col gap-4 ">
-                            <h3 className="text-2xl md:text-3xl tracking-wider font-extrabold w-full md:w-1/3 mx-auto font-poppins">
+                            <h3 className="font-display text-4xl md:text-5xl tracking-wide font-normal leading-tight w-full md:w-1/2 mx-auto">
                                 WE'VE DONE ALL
                                 <br />
-                                <span className="text-transparent bg-lime bg-clip-text">YOU EVER NEED</span>
+                                <span className="text-transparent bg-gradient-to-b from-white to-[#B5B2AB] bg-clip-text">YOU EVER NEED</span>
                             </h3>
                         </div>
                     </section>

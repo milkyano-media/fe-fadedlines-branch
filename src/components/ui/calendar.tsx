@@ -50,37 +50,34 @@ function Calendar({
         showOutsideDays={showOutsideDays}
         className={cn("p-3", className)}
         classNames={{
-          months: "flex flex-col sm:flex-row space-y-4 sm:space-x-4 sm:space-y-0 w-full",
-          month: "space-y-4",
-          caption: "flex justify-between pt-1 relative items-center mb-8",
-          caption_label: "text-sm font-medium uppercase",
-          nav: "space-x-1 flex items-center",
+          months: "flex flex-col w-full",
+          month: "space-y-4 w-full",
+          caption: "flex justify-between pt-1 pb-2 relative items-center mb-4 border-b border-white/60",
+          caption_label: "font-display text-lg uppercase tracking-wide text-[#F0F0F0]",
+          nav: "space-x-2 flex items-center",
           nav_button: cn(
             buttonVariants({ variant: "outline" }),
-            "h-7 w-7 bg-transparent p-0 opacity-50 hover:opacity-100 disabled:opacity-20 disabled:pointer-events-none",
-
+            "h-8 w-8 bg-[#2B2B2B] border border-white/60 text-[#F0F0F0] p-0 rounded-md hover:bg-[#4A4A4A] hover:text-white disabled:opacity-30 disabled:pointer-events-none",
           ),
           nav_button_previous: "",
           nav_button_next: "",
-          table: "w-full border-collapse space-y-1",
-          head_row: "inline-table w-full",
+          table: "w-full border-collapse",
+          head_row: "flex w-full gap-1.5",
           head_cell:
-            "text-muted-foreground rounded-md w-9 font-normal text-[0.8rem]",
-          row: "inline-table w-full mt-2",
-          cell: "h-9 w-9 text-center text-sm p-0 relative [&:has([aria-selected].day-range-end)]:rounded-r-md [&:has([aria-selected].day-outside)]:bg-accent/50 [&:has([aria-selected])]:bg-accent first:[&:has([aria-selected])]:rounded-l-md last:[&:has([aria-selected])]:rounded-r-md focus-within:relative focus-within:z-20",
+            "flex-1 text-center text-[#F0F0F0]/80 font-body font-normal text-sm",
+          row: "flex w-full mt-1.5 gap-1.5",
+          cell: "flex-1 h-11 md:h-12 text-center text-sm p-0 relative focus-within:relative focus-within:z-20",
           day: cn(
-            buttonVariants({ variant: "ghost" }),
-            "h-full w-full p-0 font-normal aria-selected:opacity-100",
-            "bg-transparent text-[#33FF00] hover:bg-white hover:text-black border-2 border-[#33FF00]",
-            "aria-selected:bg-white aria-selected:text-black"
+            "inline-flex items-center justify-center h-full w-full p-0 rounded-lg font-body text-base transition-colors",
+            "bg-[#2B2B2B] text-[#F0F0F0] border border-white/10 hover:bg-[#4A4A4A]",
           ),
           day_range_end: "day-range-end",
           day_selected:
-            "!bg-white !text-black hover:!bg-white hover:!text-black focus:!bg-white focus:!text-black border-2 border-gray-400",
-          day_today: "bg-transparent text-[#33FF00] font-bold border-4 border-[#33FF00]",
+            "!bg-[#2B2B2B] !text-white !border-2 !border-white hover:!bg-[#2B2B2B]",
+          day_today: "!bg-[#E3E0DA] !text-[#2B2B2B] font-semibold hover:!bg-[#E3E0DA]",
           day_outside:
-            "day-outside text-muted-foreground opacity-30 bg-transparent hover:bg-transparent aria-selected:bg-transparent",
-          day_disabled: "bg-transparent text-red-400 opacity-90 cursor-not-allowed hover:bg-white hover:text-black border-2 border-red-400",
+            "day-outside !bg-[#4A4A4A] !text-[#9A9A96] !border-transparent opacity-60",
+          day_disabled: "!bg-[#4A4A4A] !text-[#9A9A96] !border-transparent opacity-60 cursor-not-allowed hover:!bg-[#4A4A4A]",
           day_range_middle:
             "aria-selected:bg-accent aria-selected:text-accent-foreground",
           day_hidden: "invisible",

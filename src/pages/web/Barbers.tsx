@@ -190,15 +190,17 @@ export default function Barbers() {
                 <meta name="twitter:card" content="summary_large_image" />
             </Helmet>
 
-            <section className="flex flex-col justify-center items-center relative pt-40 bg-concrete-dark-80">
-                <img
-                    alt="hero image"
-                    width={500}
-                    height={500}
-                    src={BgHero2}
-                    className="top-0 absolute w-full h-full object-cover"
-                />
-                <div className="top-0 absolute w-full h-full object-cover z-0 bg-gradient-to-b from-concrete-dark-80/80 to-concrete-dark-80" />
+            <section className="flex flex-col justify-center items-center relative pt-40 bg-transparent">
+                <div className="hero-fade top-0 absolute w-full h-full z-0">
+                    <img
+                        alt="hero image"
+                        width={500}
+                        height={500}
+                        src={BgHero2}
+                        className="w-full h-full object-cover"
+                    />
+                    <div className="top-0 absolute w-full h-full bg-gradient-to-b from-black/50 via-black/30 to-black/20" />
+                </div>
                 <div className="flex flex-col justify-center items-center text-center gap-6 z-10">
                     <div className="flex flex-col mb-12">
                         <h2>MEET OUR</h2>

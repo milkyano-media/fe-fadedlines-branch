@@ -2,10 +2,8 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useId, useState } from 'react'
 import { Button } from '@/components/ui/button';
-import GradientTop from "@/assets/landing/book_circle_top.svg"
-import GradientBottom from "@/assets/landing/book_circle_bottom.svg"
 import { Calendar } from "@/components/ui/calendar"
-import Logo from "@/components/react-svg/logo"
+import LogoImg from "@/assets/web/icons/logo.png"
 import { Link, useLocation } from 'react-router-dom';
 import { format } from "date-fns";
 import moment from 'moment-timezone';
@@ -219,26 +217,23 @@ const BookAppointment = () => {
   const timesOfDayWithAppointments = updateTimesOfDayWithAppointments();
 
   return (
-    <section className="relative bg-[#010401] flex flex-col p-4 py-12 items-center md:items-start justify-center z-30 md:px-40 min-h-screen gap-0"  >
-      <div className='flex flex-col justify-center items-center absolute left-6 top-6'>
-        <Link to={"/home"}  >
-          <Logo className='w-48 md:w-[12rem] h-auto opacity-90 ' />
+    <section className="relative bg-transparent flex flex-col px-4 pt-28 pb-12 items-center md:items-start justify-center z-30 md:px-40 min-h-screen gap-0 font-body text-[#F0F0F0]"  >
+      <div
+        className="fixed top-0 left-0 right-0 z-50 px-6 py-4 flex items-center justify-center border-b-[0.5px] border-white/60 shadow-lg shadow-black/20 backdrop-blur-md"
+        style={{ background: "rgba(74, 74, 74, 0.8)" }}
+      >
+        <Link to={"/home"}>
+          <img src={LogoImg} alt="Fadedlines Bentleigh" className="h-16 w-auto" />
         </Link>
       </div>
-      <img src={GradientTop} alt="gradient top" className='absolute top-0 right-0 w-5/12 ' />
-      <img src={GradientBottom} alt="gradient top" className='absolute bottom-0 left-0 w-8/12 ' />
       {
         !isLoading && unavailableDates ? (
           <>
-            <section className='grid grid-cols-1 md:grid-cols-3 gap-4 relative z-40 w-full pt-12 md:pt-0'>
-              <div className='absolute top-24 md:top-12 h-8 w-full px-4'>
-                <hr className='absolute top-0 left-0 w-[10rem] h-[3px] bg-[#42FF00] transform  z-10' />
-                <hr className='absolute top-[1px] left-0 w-full h-[2px] bg-[#038101] z-0 opacity-50' />
-              </div>
+            <section className='grid grid-cols-1 md:grid-cols-3 gap-4 relative z-40 w-full'>
               <div className='col-span-2'>
                 <Calendar
                   mode="single"
-                  className="rounded-md border-none p-0 py-3 mr-4"
+                  className="rounded-md border-none p-0 py-3 md:mr-4"
                   selected={selectedDate}
                   onSelect={handleDayPickerSelect}
                   month={month}
@@ -246,9 +241,9 @@ const BookAppointment = () => {
                   fromMonth={new Date()}
                   disabledDates={unavailableDates} />
               </div>
-              <div className='flex flex-col rounded-3xl p-4 '>
-                <h3>Appointment Summary</h3>
-                <div className='flex flex-col gap-2 border-[1px]  border-t border-stone-400 p-3 rounded-xl text-sm mt-12'>
+              <div className='flex flex-col rounded-3xl py-4 md:p-4'>
+                <h3 className='font-display text-5xl md:text-4xl font-normal leading-tight'>Appointment Summary</h3>
+                <div className='flex flex-col gap-2 border border-white/70 bg-[#2B2B2B] p-4 rounded-xl text-sm mt-6'>
                   {bookedItems.length > 0 ? (
                     bookedItems.map((item) => (
                       <div key={item.id}>
@@ -272,11 +267,11 @@ const BookAppointment = () => {
 
               </div>
             </section>
-            <section className=" flex flex-col relative z-40 px-4 w-full text-start gap-2 md:gap-4 text-stone-300 text-xs mt-8 ">
+            <section className=" flex flex-col relative z-40 px-4 w-full text-start gap-2 md:gap-4 text-[#F0F0F0] text-sm mt-8 ">
               <div>
-                <label htmlFor={inputId} className=''>
+                <label htmlFor={inputId} className='font-display text-lg'>
                   {isValidDate ? (
-                    <strong>{format(inputValue, "EEEE, MMMM d")}</strong>
+                    <span>{format(inputValue, "EEEE, MMMM d")}</span>
                   ) : (
                     <strong>Please select a valid date</strong>
                   )}
@@ -289,13 +284,13 @@ const BookAppointment = () => {
                   timesOfDayWithAppointments.length > 0 ? (
                     timesOfDayWithAppointments.map(timeOfDay => (
                       <div key={timeOfDay.title} className='flex flex-col gap-2'>
-                        <h3>{timeOfDay.title}</h3>
-                        <ul className='flex gap-4 w-full flex-wrap'>
+                        <h3 className='font-display text-5xl md:text-4xl font-normal leading-tight'>{timeOfDay.title}</h3>
+                        <ul className='flex gap-3 w-full flex-wrap'>
                           {timeOfDay.appointments.length > 0 ? (
                             timeOfDay.appointments.map((appointment, index) => (
                               <Button
                                 key={index}
-                                className='w-fit text-xs h-fit py-1 rounded'
+                                className='w-fit text-xs h-fit py-1.5 px-4 rounded bg-[#C4C4C0] text-[#2B2B2B] font-medium hover:bg-[#E3E0DA]'
                                 onClick={() => {
                                   localStorage.setItem('appointmentStartAt', appointment.start_at);
                                   localStorage.setItem('selectedAppointment', appointment.readable_time);
@@ -321,7 +316,7 @@ const BookAppointment = () => {
                         setInputValue(format(nextAvailable, 'MM/dd/yyyy'))
                         findAvailabilityByDate(nextAvailable)
                       }}
-                      className='w-[100%] lg:w-[60%]'>Go to next available</Button>
+                      className='w-[100%] lg:w-[60%] bg-[#C4C4C0] text-[#2B2B2B] hover:bg-[#E3E0DA]'>Go to next available</Button>
                     <p className=' font-large'>No availability until {format(nextAvailable, "EEEE, MMMM d")}</p>
                   </>
 

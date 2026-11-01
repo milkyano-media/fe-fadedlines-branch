@@ -417,14 +417,17 @@ export default function Home() {
             </Helmet>
 
             <section className="flex flex-col justify-center items-center relative pt-24 md:pt-32">
-                <img
-                    alt="hero image"
-                    width={500}
-                    height={500}
-                    src={BgHero2}
-                    className="top-0 absolute w-full h-full object-cover"
-                />
-                <div className="top-0 absolute w-full h-full object-cover z-0 bg-gradient-to-b from-concrete-dark-80/80 to-concrete-dark-80" />
+                <div className="hero-fade top-0 absolute w-full h-full z-0">
+                    <img
+                        alt="hero image"
+                        width={500}
+                        height={500}
+                        src={BgHero2}
+                        className="w-full h-full object-cover"
+                    />
+                    <div className="top-0 absolute w-full h-full bg-gradient-to-b from-black/60 via-black/35 to-black/20" />
+                    <div className="top-0 absolute w-full h-full bg-[radial-gradient(ellipse_at_50%_55%,rgba(0,0,0,0.55),transparent_60%)]" />
+                </div>
                 <div className="flex flex-col justify-center items-center text-center gap-6 z-10">
                     <div className="flex flex-col mt-8">
                         <img
@@ -506,16 +509,16 @@ export default function Home() {
                         </a>
                     </div>
 
-                    <svg className="w-7 mt-20" viewBox="0 0 55 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg className="w-7 mt-20 animate-bounce opacity-90" viewBox="0 0 55 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path
                             d="M50.582 0.216618L54.9987 4.63745L30.9279 28.7166C30.5422 29.1048 30.0835 29.4128 29.5783 29.623C29.0731 29.8332 28.5313 29.9414 27.9841 29.9414C27.4369 29.9414 26.8951 29.8332 26.3899 29.623C25.8847 29.4128 25.4261 29.1048 25.0404 28.7166L0.957032 4.63745L5.3737 0.220782L27.9779 22.8208L50.582 0.216618Z"
-                            fill="#33FF00"
+                            fill="#E3E0DA"
                         />
                     </svg>
                 </div>
             </section>
 
-            <section className="relative z-20 w-full flex flex-col justify-center md:max-w-screen-xl mx-auto pt-0 pb-0 md:pt-2 md:pb-[4rem] mb-[-2rem] md:mb-0 bg-concrete-dark-80">
+            <section className="relative z-20 w-full flex flex-col justify-center md:max-w-screen-xl mx-auto pt-0 pb-0 md:pt-2 md:pb-[4rem] mb-[-2rem] md:mb-0 bg-transparent">
                 <div className="container mx-auto px-2 md:px-8 scale-[90%] md:scale-100 origin-top">
                     {/* BARBER NAME CAROUSEL HEADER */}
                     <div
@@ -533,14 +536,14 @@ export default function Home() {
                                             onClick={() => handleNameClick(index)}
                                             className={`relative flex flex-col items-center gap-1 md:gap-2 px-3 md:px-6 py-1 transition-all duration-500 cursor-pointer ${
                                                 selectedBarber === index
-                                                    ? "text-[#33FF00]"
-                                                    : "text-stone-500"
+                                                    ? "text-white"
+                                                    : "text-[#9A9A96]"
                                             }`}
                                         >
                                             {/* Thumbnail Image */}
-                                            <div className={`w-20 h-20 md:w-32 md:h-32 rounded-md overflow-hidden ${
+                                            <div className={`w-20 h-20 md:w-32 md:h-32 rounded-lg overflow-hidden border border-white/20 ${
                                                 selectedBarber === index
-                                                    ? "ring-2 ring-[#33FF00]"
+                                                    ? "ring-2 ring-white"
                                                     : ""
                                             }`}>
                                                 <img
@@ -552,17 +555,17 @@ export default function Home() {
 
                                             {/* Barber Name with underline wrapper */}
                                             <div className="relative pb-0">
-                                                <span className="text-lg md:text-4xl font-bold font-poppins whitespace-nowrap">
+                                                <span className="text-lg md:text-4xl font-normal font-display tracking-wide whitespace-nowrap">
                                                     {barber.name}
                                                 </span>
 
-                                                {/* GREEN UNDERLINE for active */}
+                                                {/* UNDERLINE for active */}
                                                 {selectedBarber === index && (
-                                                    <div className="absolute bottom-[-8px] md:bottom-[-10px] left-0 right-0 h-[2px] md:h-[4px] bg-[#33FF00]"></div>
+                                                    <div className="absolute bottom-[-8px] md:bottom-[-10px] left-0 right-0 h-[2px] md:h-[4px] bg-white"></div>
                                                 )}
                                             </div>
 
-                                            {/* DIMMED GREEN SPOTLIGHT GRADIENT EFFECT */}
+                                            {/* DIMMED WHITE SPOTLIGHT GRADIENT EFFECT */}
                                             {selectedBarber === index && (
                                                 <>
                                                     <div className="absolute inset-0 -z-10 pointer-events-none" style={{ overflow: 'visible' }}>
@@ -572,7 +575,7 @@ export default function Home() {
                                                                 width: '180%',
                                                                 height: '250%',
                                                                 bottom: '-15%',
-                                                                background: "radial-gradient(ellipse 80% 55% at 50% 100%, rgba(51,255,0,0.35) 0%, rgba(51,255,0,0.22) 15%, rgba(51,255,0,0.12) 30%, rgba(51,255,0,0.05) 50%, rgba(51,255,0,0) 75%)",
+                                                                background: "radial-gradient(ellipse 80% 55% at 50% 100%, rgba(255,255,255,0.35) 0%, rgba(255,255,255,0.22) 15%, rgba(255,255,255,0.12) 30%, rgba(255,255,255,0.05) 50%, rgba(255,255,255,0) 75%)",
                                                                 filter: "blur(18px)",
                                                             }}
                                                         />
@@ -584,7 +587,7 @@ export default function Home() {
                                                                 width: '140%',
                                                                 height: '200%',
                                                                 bottom: '-10%',
-                                                                background: "radial-gradient(ellipse 70% 45% at 50% 100%, rgba(51,255,0,0.3) 0%, rgba(51,255,0,0.18) 25%, rgba(51,255,0,0.08) 45%, rgba(51,255,0,0) 70%)",
+                                                                background: "radial-gradient(ellipse 70% 45% at 50% 100%, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0.18) 25%, rgba(255,255,255,0.08) 45%, rgba(255,255,255,0) 70%)",
                                                                 filter: "blur(10px)",
                                                             }}
                                                         />
@@ -601,7 +604,7 @@ export default function Home() {
                     {/* MAIN PREVIEW IMAGE */}
                     <div
                         ref={previewImageRef}
-                        className="max-w-[240px] md:max-w-sm mx-auto mb-4 md:mb-8 overflow-hidden rounded-xl shadow-lg aspect-[0.7]"
+                        className="max-w-[240px] md:max-w-sm mx-auto mb-4 md:mb-8 overflow-hidden rounded-2xl shadow-xl shadow-black/40 aspect-[924/1320]"
                     >
                         <img
                             key={actualBarberIndex}
@@ -611,16 +614,15 @@ export default function Home() {
                         />
                     </div>
 
-                    {/* GREEN DIVIDER LINE WITH CTA BUTTON */}
-                    <div ref={bookNowButtonRef} className="w-full max-w-screen-md mx-auto mb-4 md:mb-6 relative flex items-center justify-center">
-                        <div className="absolute w-full h-[2px] bg-[#33FF00]"></div>
-                        <div className="relative z-10 px-4 bg-concrete-dark-80">
-                            <Link to={`${galleryBarbers[actualBarberIndex].link}/book/services`}>
-                                <BookNowButton className="px-8 md:px-12 py-3 md:py-4">
-                                    BOOK WITH {galleryBarbers[actualBarberIndex].name}
-                                </BookNowButton>
-                            </Link>
-                        </div>
+                    {/* DIVIDER LINE WITH CTA BUTTON */}
+                    <div ref={bookNowButtonRef} className="w-full max-w-screen-md mx-auto mb-4 md:mb-6 flex items-center justify-center gap-4">
+                        <div className="flex-1 h-[1px] bg-white/70"></div>
+                        <Link to={`${galleryBarbers[actualBarberIndex].link}/book/services`}>
+                            <BookNowButton className="px-8 md:px-12 py-3 md:py-4">
+                                BOOK WITH {galleryBarbers[actualBarberIndex].name}
+                            </BookNowButton>
+                        </Link>
+                        <div className="flex-1 h-[1px] bg-white/70"></div>
                     </div>
 
                     {/* THUMBNAIL GRID (3 columns) */}
@@ -635,7 +637,7 @@ export default function Home() {
                                     } ${galleryBarbers.length % 3 === 1 && index === galleryBarbers.length - 1 ? "col-start-2" : ""}`}
                                 >
                                     <div className={`w-full h-full overflow-hidden rounded-md md:rounded-lg ${
-                                        actualBarberIndex === index ? "ring-2 md:ring-4 ring-[#33FF00] opacity-100" : "hover:opacity-80"
+                                        actualBarberIndex === index ? "ring-2 md:ring-4 ring-white opacity-100" : "hover:opacity-80"
                                     }`}>
                                         <img
                                             src={barber.thumbnail}
@@ -646,12 +648,7 @@ export default function Home() {
                                     </div>
                                     {barberMinPrices[barber.slug] !== undefined && (
                                         <span
-                                            className={`absolute -top-2.5 z-10 bg-black/75 text-lime text-xs md:text-sm font-bold px-2 md:px-3 py-1 md:py-1.5 rounded-lg border border-lime/50 backdrop-blur-sm tracking-wide pointer-events-none shadow-md shadow-black/60 ${
-                                                index < 3 ||
-                                                Math.floor(index / 3) === Math.ceil(galleryBarbers.length / 3) - 1
-                                                    ? "-left-2.5"
-                                                    : "-right-2.5"
-                                            }`}
+                                            className="absolute -top-2.5 z-10 bg-[#D9D9D9] text-[#222] text-xs md:text-sm font-bold px-2 md:px-3 py-1 md:py-1.5 rounded-lg border border-white/70 tracking-wide pointer-events-none shadow-md shadow-black/40 -left-2.5"
                                         >
                                             ${barberMinPrices[barber.slug] % 1 === 0
                                                 ? barberMinPrices[barber.slug]
@@ -661,25 +658,6 @@ export default function Home() {
                                 </div>
                             ))}
                         </div>
-
-                        {/* Grid Pattern Divider Lines */}
-                        {/* Vertical line between column 1 and 2 */}
-                        <div className="absolute top-0 left-[33.33%] w-[1px] md:w-[2px] h-full bg-[#33FF00] pointer-events-none" style={{ transform: 'translateX(-0.5px)' }}></div>
-
-                        {/* Vertical line between column 2 and 3 */}
-                        <div className="absolute top-0 left-[66.66%] w-[1px] md:w-[2px] h-full bg-[#33FF00] pointer-events-none" style={{ transform: 'translateX(-0.5px)' }}></div>
-
-                        {/* Horizontal line(s) between each row of barbers */}
-                        {Array.from({ length: Math.ceil(galleryBarbers.length / 3) - 1 }).map((_, i) => (
-                            <div
-                                key={i}
-                                className="absolute left-0 w-full h-[1px] md:h-[2px] bg-[#33FF00] pointer-events-none"
-                                style={{
-                                    top: `${((i + 1) / Math.ceil(galleryBarbers.length / 3)) * 100}%`,
-                                    transform: 'translateY(-0.5px)',
-                                }}
-                            ></div>
-                        ))}
                     </div>
                 </div>
             </section>

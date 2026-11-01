@@ -13,6 +13,10 @@ module.exports = {
             },
         },
         extend: {
+            fontFamily: {
+                display: ['"DM Serif Display"', "serif"],
+                body: ["Inter", "sans-serif"],
+            },
             colors: {
                 border: "hsl(var(--border))",
                 input: "hsl(var(--input))",
@@ -55,6 +59,7 @@ module.exports = {
                     "dark-70": "#2e3034",
                     "dark-80": "#16171a",
                     "dark-90": "#030404",
+                    base: "#515151",
                 },
                 lime: "#33FF00",
             },

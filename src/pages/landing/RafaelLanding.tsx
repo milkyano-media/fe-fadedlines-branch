@@ -123,7 +123,7 @@ export default function RafaelLanding() {
         <meta name="twitter:card" content="summary_large_image" />
       </Helmet>
 
-      <div className="flex flex-col bg-stone-950 w-full h-full relative">
+      <div className="flex flex-col bg-transparent w-full h-full relative">
         <img
           src={Top}
           alt="Vector Top"

@@ -22,7 +22,7 @@ export default function PrivacyPolicy() {
         <meta property="og:image" content="/fadedlines-bentleigh-logo.png" />
         <meta name="twitter:card" content="summary_large_image" />
       </Helmet>
-      <div className="flex flex-col text-stone-50 bg-black w-full relative tracking-wider">
+      <div className="flex flex-col text-stone-50 bg-transparent w-full relative tracking-wider">
         <img
           src={EmeraldFooter}
           alt="EmeraldFooter.svg"

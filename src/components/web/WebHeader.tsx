@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
-import IconNavbarGreen from "@/assets/svg/icon-navbar-green.svg";
-import BentleighLogo from "@/assets/web/bentleigh.png";
+import IconNavbar from "@/assets/svg/icon-navbar-white.svg";
+import Logo from "@/assets/web/icons/logo.png";
 import { Link, useLocation } from "react-router-dom";
 
 import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTrigger } from "@/components/ui/sheet";
@@ -74,10 +74,10 @@ const Header: React.FC = () => {
     return (
         <header
             ref={headerRef}
-            className="text-white shadow-lg shadow-lime/10 border-b-[0.5px] border-lime z-[999999999999999] py-4 sticky top-0 backdrop-blur-md"
+            className="text-white shadow-lg shadow-black/20 border-b-[0.5px] border-white/60 z-[999999999999999] py-4 sticky top-0 backdrop-blur-md"
             style={{
                 marginBottom: `-${height}px`,
-                background: "linear-gradient(180deg, rgba(67, 67, 67, 0.85) 0%, rgba(40, 40, 40, 0.75) 100%)",
+                background: "rgba(71, 71, 71, 0.8)",
             }}
         >
             <div className="container mx-auto flex justify-between items-center relative z-10 border-none px-2 md:px-4">
@@ -86,7 +86,7 @@ const Header: React.FC = () => {
                 <div className="flex flex-col justify-center items-center">
                     <Link to={generateRoute("/home")}>
                         <img
-                            src={IconNavbarGreen}
+                            src={IconNavbar}
                             alt="Fadedlines Barber Shop"
                             className="w-8 md:w-10 h-auto opacity-100"
                         />
@@ -95,9 +95,9 @@ const Header: React.FC = () => {
                 {/* Logo Utama di Tengah - Hanya tampil di mobile */}
                 <div className="lg:hidden absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-0 pointer-events-none">
                     <img
-                        src={BentleighLogo}
-                        alt="Bentleigh"
-                        className="h-8 md:h-7 w-auto opacity-100"
+                        src={Logo}
+                        alt="Fadedlines Bentleigh"
+                        className="h-16 w-auto opacity-100"
                     />
                 </div>
                 <nav className="hidden lg:block sticky top-0">
@@ -145,7 +145,7 @@ const Header: React.FC = () => {
                     </ul>
                 </nav>
                 <nav className="hidden xl:block">
-                    <Button className="px-8 py-5">{generateLink("BOOK NOW")}</Button>
+                    <Button className="px-8 py-5 bg-[#2B2B2B] border border-white/70 text-white shadow-md shadow-black/35 hover:bg-[#F0F0F0] hover:text-[#2B2B2B]">{generateLink("BOOK NOW")}</Button>
                 </nav>
                 <nav className="xl:hidden flex flex-col justify-center" onClick={() => setIsMenuOpen(!isMenuOpen)}>
                     <Sheet open={isMenuOpen} onOpenChange={setIsMenuOpen}>
@@ -240,7 +240,7 @@ const Header: React.FC = () => {
                         <SheetContent side={"top"}>
                             <SheetHeader>
                                 <SheetDescription>
-                                    <ul className="flex flex-col text-stone-600 ">
+                                    <ul className="flex flex-col text-stone-300 ">
                                         {links.map((link) => (
                                             <NavLink key={link.to} to={link.to} label={link.label} />
                                         ))}

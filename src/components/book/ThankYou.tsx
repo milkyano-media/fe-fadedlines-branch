@@ -272,7 +272,7 @@ const ThankYouPage = () => {
   }
 
   return (
-    <section className='relative bg-[#010401] flex flex-col p-4 py-32 items-center md:items-start justify-center z-30 md:px-40 min-h-screen gap-0'>
+    <section className='relative bg-transparent flex flex-col p-4 py-32 items-center md:items-start justify-center z-30 md:px-40 min-h-screen gap-0'>
       <div className='flex flex-col justify-center items-center absolute left-6 top-6'>
         <Link to={'/home'}>
           <Logo className='w-48 md:w-[12rem] h-auto opacity-90 ' />

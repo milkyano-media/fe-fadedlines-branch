@@ -24,25 +24,27 @@ export default function AboutUs() {
             </Helmet>
 
             <section className="flex flex-col justify-center items-center relative pt-40">
-                <img
-                    alt="hero image"
-                    width={500}
-                    height={500}
-                    src={AboutUsBg}
-                    className="top-0 absolute w-full h-full object-cover"
-                />
-                <div className="top-0 absolute w-full h-full object-cover z-0 bg-gradient-to-b from-concrete-dark-80/80 to-concrete-dark-80" />
+                <div className="hero-fade top-0 absolute w-full h-full z-0">
+                    <img
+                        alt="hero image"
+                        width={500}
+                        height={500}
+                        src={AboutUsBg}
+                        className="w-full h-full object-cover"
+                    />
+                    <div className="top-0 absolute w-full h-full bg-gradient-to-b from-black/60 via-black/35 to-black/20" />
+                </div>
                 <div className="flex flex-col justify-center items-center text-center gap-6 z-10">
                     <div className="flex flex-col mb-12">
-                        <h2 className="text-lime">AWARD WINNING</h2>
-                        <h2>BARBERSHOP</h2>
-                        <sub className="mt-6">shop 7-271/275 Centre Rd, Bentleigh VIC 3204, Australia</sub>
+                        <h2 className="font-display font-normal text-5xl md:text-7xl leading-tight text-[#E3E0DA]">AWARD WINNING</h2>
+                        <h2 className="font-display font-normal text-5xl md:text-7xl leading-tight">BARBERSHOP</h2>
+                        <sub className="mt-6 font-body text-sm md:text-base tracking-wide text-[#F0F0F0]/80">shop 7-271/275 Centre Rd, Bentleigh VIC 3204, Australia</sub>
                     </div>
 
-                    <svg className="w-7 mt-20 mb-12" viewBox="0 0 55 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg className="w-7 mt-20 mb-12 animate-bounce opacity-90" viewBox="0 0 55 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path
                             d="M50.582 0.216618L54.9987 4.63745L30.9279 28.7166C30.5422 29.1048 30.0835 29.4128 29.5783 29.623C29.0731 29.8332 28.5313 29.9414 27.9841 29.9414C27.4369 29.9414 26.8951 29.8332 26.3899 29.623C25.8847 29.4128 25.4261 29.1048 25.0404 28.7166L0.957032 4.63745L5.3737 0.220782L27.9779 22.8208L50.582 0.216618Z"
-                            fill="#33FF00"
+                            fill="#E3E0DA"
                         />
                     </svg>
                 </div>
@@ -53,18 +55,18 @@ export default function AboutUs() {
                     <img
                         alt="background about us"
                         src={AnthonyAboutUs}
-                        className="hover:scale-110 transform transition-transform ease-out duration-500 cursor-pointer delay-75"
+                        className="rounded-2xl border border-white/70 shadow-xl shadow-black/40 hover:scale-105 transform transition-transform ease-out duration-500 cursor-pointer delay-75"
                     />
                 </div>
                 <div className="md:w-max flex flex-col justify-center items-center">
-                    <img width={500} height={500} alt="background about us" src={plus} />
+                    <img width={500} height={500} alt="background about us" src={plus} className="grayscale opacity-80" />
 
                     <div className="flex flex-col md:flex-row gap-10 mt-10 md:mt-0 md:w-2/4">
-                        <h2 className="w-full">
+                        <h2 className="w-full font-display font-normal text-5xl leading-tight">
                             Hey, I'm <br />
-                            <span className="text-lime">Anthony</span>
+                            <span className="text-[#E3E0DA]">Anthony</span>
                         </h2>
-                        <p>
+                        <p className="font-body leading-relaxed text-[#F0F0F0]/90">
                             Faded Lines Barbershop wants to bring convenience back into peoples lives. With appointments
                             and Walk-ins. Prices determined by demand and experience.
                         </p>
@@ -73,30 +75,30 @@ export default function AboutUs() {
             </section>
 
             <section className="container flex justify-center py-12 md:py-16">
-                <div className="border border-[#114330] rounded-xl flex flex-col gap-6 md:gap-10 justify-center text-center items-center p-10 md:p-20 md:w-2/3">
+                <div className="border border-white/30 bg-black/20 backdrop-blur-sm shadow-xl shadow-black/30 rounded-2xl flex flex-col gap-6 md:gap-10 justify-center text-center items-center p-10 md:p-20 md:w-2/3">
                     <svg width="60" height="51" viewBox="0 0 60 51" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path
                             d="M0.833496 0.5V9.65C3.46995 9.97708 5.72204 11.0115 7.58975 12.7542C9.34704 14.4979 10.721 16.7312 11.7095 19.4542C12.5877 22.0687 13.0272 24.901 13.0272 27.951H1.82308V50.5H24.8929V30.075C24.8929 23.5396 23.7939 18.2021 21.597 14.0625C19.2908 9.92292 16.3241 6.76354 12.6991 4.58542C9.07308 2.40625 5.11787 1.04375 0.833496 0.5ZM35.2731 0.5V9.65C37.8002 9.97708 39.997 11.0115 41.8647 12.7542C43.622 14.4979 44.995 16.7312 45.9845 19.4542C46.8627 22.0687 47.3022 24.901 47.3022 27.951H36.097V50.5H59.1668V30.075C59.1668 23.5396 58.0679 18.2021 55.871 14.0625C53.5637 9.92292 50.5981 6.76354 46.9731 4.58542C43.3997 2.4247 39.4148 1.03325 35.2731 0.5Z"
-                            fill="#33FF00"
+                            fill="#E3E0DA"
                         />
                     </svg>
 
-                    <h1 className="text-transparent bg-gradient-to-b from-lime to-[#24B300] bg-clip-text">
+                    <h1 className="font-display font-normal text-5xl md:text-6xl leading-tight text-transparent bg-gradient-to-b from-white to-[#B5B2AB] bg-clip-text">
                         Not Luck Of <br />
                         The Draw.
                     </h1>
 
-                    <p className="md:w-2/3">
+                    <p className="md:w-2/3 font-body leading-relaxed text-[#F0F0F0]/90">
                         Faded Lines Barbershop provides great services at a professional standard. Having clients feel
                         welcome where professional barbers create a clean & safe environment to work and be around.
                     </p>
 
-                    <p className="md:w-2/3">
+                    <p className="md:w-2/3 font-body leading-relaxed text-[#F0F0F0]/90">
                         Specializing in all types of hair textures, we will ensure to have you feeling and leaving
                         confident. From traditional styled & dapper haircuts, to smooth razor shaves and close fades.
                     </p>
 
-                    <p className="md:w-2/3">
+                    <p className="md:w-2/3 font-body leading-relaxed text-[#F0F0F0]/90">
                         Our team is committed to giving you a great service with an even better outcome to all your hair
                         necessities.
                     </p>

@@ -46,18 +46,14 @@ function ContactButton({ href, icon, label, value, target }: ContactButtonProps)
             onMouseLeave={() => setIsHovered(false)}
             className="relative cursor-pointer px-6 py-4 text-base rounded-full transition-all duration-300 font-poppins w-96 flex gap-2 items-center"
             style={{
-                backgroundColor: isHovered ? "transparent" : "#19181E",
-                backgroundImage: isHovered ? "linear-gradient(to left, #33FF00, #187700)" : "none",
-                outline: isHovered ? "none" : "2px solid white",
-                outlineOffset: "-2px",
-                color: isHovered ? "#19181E" : "#F0F0F0",
+                backgroundColor: isHovered ? "#F0F0F0" : "#2B2B2B",
+                border: "1px solid rgba(255, 255, 255, 0.7)",
+                color: isHovered ? "#2B2B2B" : "#F0F0F0",
                 fontWeight: isHovered ? 700 : 600,
-                boxShadow: isHovered
-                    ? "0 4px 30px rgba(51, 255, 0, 0.4), 0 5px 0 rgba(7, 59, 0, 1)"
-                    : "0 0 10px rgba(51, 255, 0, 0.4), 0 0 30px rgba(51, 255, 0, 0.3), inset 0 0 16px rgba(51, 255, 0, 0.4)",
+                boxShadow: "0 2px 8px rgba(0, 0, 0, 0.35)",
             }}
         >
-            <div className={isHovered ? "[&_path]:fill-[#19181E] [&_rect]:stroke-[#19181E]" : "[&_path]:fill-white [&_rect]:stroke-white"}>
+            <div className={isHovered ? "[&_path]:fill-[#2B2B2B] [&_rect]:stroke-[#2B2B2B]" : "[&_path]:fill-white [&_rect]:stroke-white"}>
                 {icon}
             </div>
             <div className="flex flex-col gap-2">
@@ -122,17 +118,17 @@ export default function Contacts() {
             </Helmet>
 
             <section className="flex flex-col justify-center items-center relative pt-40">
-                <div className="top-0 absolute w-full h-full object-cover z-0 bg-gradient-to-b from-concrete-dark-80/80 to-concrete-dark-80" />
+                <div className="hero-fade top-0 absolute w-full h-full z-0 bg-gradient-to-b from-black/60 via-black/35 to-black/20" />
                 <div className="flex flex-col justify-center items-center text-center gap-6 z-10">
                     <div className="flex flex-col mb-12">
-                        <h2>HAVE SOME</h2>
-                        <h2 className="text-lime">QUESTIONS?</h2>
+                        <h2 className="font-display font-normal text-5xl md:text-7xl leading-tight">HAVE SOME</h2>
+                        <h2 className="font-display font-normal text-5xl md:text-7xl leading-tight text-[#E3E0DA]">QUESTIONS?</h2>
                     </div>
 
-                    <svg className="w-7 mt-20 mb-12" viewBox="0 0 55 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg className="w-7 mt-20 mb-12 animate-bounce opacity-90" viewBox="0 0 55 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path
                             d="M50.582 0.216618L54.9987 4.63745L30.9279 28.7166C30.5422 29.1048 30.0835 29.4128 29.5783 29.623C29.0731 29.8332 28.5313 29.9414 27.9841 29.9414C27.4369 29.9414 26.8951 29.8332 26.3899 29.623C25.8847 29.4128 25.4261 29.1048 25.0404 28.7166L0.957032 4.63745L5.3737 0.220782L27.9779 22.8208L50.582 0.216618Z"
-                            fill="#33FF00"
+                            fill="#E3E0DA"
                         />
                     </svg>
                 </div>
@@ -147,8 +143,8 @@ export default function Contacts() {
                                 <Spinner />
                             ) : status === "succeeded" ? (
                                 <div className="flex justify-center items-center p-4  md:p-12 animate-scaleIn">
-                                    <div className="p-1  rounded-full border border-lime">
-                                        <Check className="h-24 w-auto md:h-24 md:w-24 text-lime " />
+                                    <div className="p-1  rounded-full border border-[#E3E0DA]">
+                                        <Check className="h-24 w-auto md:h-24 md:w-24 text-[#E3E0DA]" />
                                     </div>
                                 </div>
                             ) : status === "failed" ? (
@@ -171,15 +167,15 @@ export default function Contacts() {
                                 control={form.control}
                                 name="firstName"
                                 render={({ field }) => (
-                                    <FormItem className="w-full flex flex-col justify-center items-center rounded-lg p-3 bg-[#262626] placeholder-[#B3E7C9]">
+                                    <FormItem className="w-full flex flex-col justify-center items-center rounded-xl p-4 bg-[#2B2B2B] border border-white/20">
                                         <FormLabel className="w-full flex justify-start">
-                                            <span className="text-stone-50 font-extrabold text-lg text-start w-full">
+                                            <span className="text-[#F0F0F0] font-body font-medium text-base text-start w-full">
                                                 First Name
                                             </span>
                                         </FormLabel>
                                         <FormControl>
                                             <Input
-                                                className="placeholder:text-[#114330] bg-transparent focus-visible:outline-none"
+                                                className="placeholder:text-[#9A9A96] bg-transparent text-[#F0F0F0] font-body focus-visible:outline-none"
                                                 placeholder="Johnathan"
                                                 {...field}
                                             />
@@ -192,15 +188,15 @@ export default function Contacts() {
                                 control={form.control}
                                 name="lastName"
                                 render={({ field }) => (
-                                    <FormItem className="w-full flex flex-col justify-center items-center rounded-lg p-3 bg-[#262626] placeholder-[#B3E7C9]">
+                                    <FormItem className="w-full flex flex-col justify-center items-center rounded-xl p-4 bg-[#2B2B2B] border border-white/20">
                                         <FormLabel className="w-full flex justify-start">
-                                            <span className="text-stone-50 font-extrabold text-lg text-start w-full">
+                                            <span className="text-[#F0F0F0] font-body font-medium text-base text-start w-full">
                                                 Last Name
                                             </span>
                                         </FormLabel>
                                         <FormControl>
                                             <Input
-                                                className="placeholder:text-[#114330] bg-transparent focus-visible:outline-none"
+                                                className="placeholder:text-[#9A9A96] bg-transparent text-[#F0F0F0] font-body focus-visible:outline-none"
                                                 placeholder="Doe"
                                                 {...field}
                                             />
@@ -213,15 +209,15 @@ export default function Contacts() {
                                 control={form.control}
                                 name="email"
                                 render={({ field }) => (
-                                    <FormItem className="w-full flex flex-col justify-center items-center rounded-lg p-3 bg-[#262626] placeholder-[#B3E7C9]">
+                                    <FormItem className="w-full flex flex-col justify-center items-center rounded-xl p-4 bg-[#2B2B2B] border border-white/20">
                                         <FormLabel className="w-full flex justify-start">
-                                            <span className="text-stone-50 font-extrabold text-lg text-start w-full">
+                                            <span className="text-[#F0F0F0] font-body font-medium text-base text-start w-full">
                                                 Email
                                             </span>
                                         </FormLabel>
                                         <FormControl>
                                             <Input
-                                                className="placeholder:text-[#114330] bg-transparent focus-visible:outline-none"
+                                                className="placeholder:text-[#9A9A96] bg-transparent text-[#F0F0F0] font-body focus-visible:outline-none"
                                                 placeholder="mail@fade.com"
                                                 {...field}
                                             />
@@ -234,15 +230,15 @@ export default function Contacts() {
                                 control={form.control}
                                 name="phone"
                                 render={({ field }) => (
-                                    <FormItem className="w-full flex flex-col justify-center items-center rounded-lg p-3 bg-[#262626] placeholder-[#B3E7C9]">
+                                    <FormItem className="w-full flex flex-col justify-center items-center rounded-xl p-4 bg-[#2B2B2B] border border-white/20">
                                         <FormLabel className="w-full flex justify-start">
-                                            <span className="text-stone-50 font-extrabold text-lg text-start w-full">
+                                            <span className="text-[#F0F0F0] font-body font-medium text-base text-start w-full">
                                                 Phone
                                             </span>
                                         </FormLabel>
                                         <FormControl>
                                             <Input
-                                                className="placeholder:text-[#114330] bg-transparent focus-visible:outline-none"
+                                                className="placeholder:text-[#9A9A96] bg-transparent text-[#F0F0F0] font-body focus-visible:outline-none"
                                                 placeholder="+12555"
                                                 {...field}
                                             />
@@ -256,15 +252,15 @@ export default function Contacts() {
                                     control={form.control}
                                     name="message"
                                     render={({ field }) => (
-                                        <FormItem className="w-full flex flex-col justify-center items-center rounded-lg p-3 bg-[#262626] placeholder-[#B3E7C9]">
+                                        <FormItem className="w-full flex flex-col justify-center items-center rounded-xl p-4 bg-[#2B2B2B] border border-white/20">
                                             <FormLabel className="w-full flex justify-start">
-                                                <span className="text-stone-50 font-extrabold text-lg text-start w-full">
+                                                <span className="text-[#F0F0F0] font-body font-medium text-base text-start w-full">
                                                     Leave us a message
                                                 </span>
                                             </FormLabel>
                                             <FormControl>
                                                 <Textarea
-                                                    className="placeholder:text-[#114330] bg-transparent focus-visible:outline-none"
+                                                    className="placeholder:text-[#9A9A96] bg-transparent text-[#F0F0F0] font-body focus-visible:outline-none"
                                                     placeholder="Type Here..."
                                                     {...field}
                                                 />
@@ -281,8 +277,8 @@ export default function Contacts() {
                     </Form>
                 </div>
 
-                <div className="flex flex-col gap-4 md:w-1/2 items-center md:border-l-2 border-[#114330]">
-                    <h3>OR GET IN TOUCH BY</h3>
+                <div className="flex flex-col gap-4 md:w-1/2 items-center md:border-l border-white/30">
+                    <h3 className="font-display font-normal text-4xl leading-tight text-center">OR GET IN TOUCH BY</h3>
 
                     <div className="flex flex-col gap-6">
                         <ContactButton

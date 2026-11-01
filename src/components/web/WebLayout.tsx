@@ -19,7 +19,7 @@ const WebLayout: React.FC<{ children: ReactNode }> = ({ children }) => {
         <div className="font-poppins">
             <h1 className="hidden">Fadedlines Bentleigh</h1>
             <WebHeader />
-            <main className="flex flex-col bg-concrete-dark-80">{children}</main>
+            <main className="flex flex-col bg-transparent">{children}</main>
             <WebFooter />
         </div>
     );

@@ -23,18 +23,11 @@ export default function BookNowButton({
       onMouseLeave={() => setIsHovered(false)}
       className={`relative cursor-pointer px-8 md:px-12 py-3 md:py-4 text-base md:text-lg rounded-xl transition-all duration-300 font-poppins ${className}`}
       style={{
-        backgroundColor: isHovered ? "transparent" : "#19181E",
-        backgroundImage: isHovered
-          ? "linear-gradient(to left, #33FF00, #187700)"
-          : "none",
-        border: "none",
-        outline: isHovered ? "none" : "2px solid white",
-        outlineOffset: "-2px",
-        color: isHovered ? "#19181E" : "#F0F0F0",
+        backgroundColor: isHovered ? "#F0F0F0" : "#2B2B2B",
+        border: "1px solid rgba(255, 255, 255, 0.7)",
+        color: isHovered ? "#2B2B2B" : "#F0F0F0",
         fontWeight: isHovered ? 700 : 600,
-        boxShadow: isHovered
-          ? "0 4px 30px rgba(51, 255, 0, 0.4), 0 5px 0 rgba(7, 59, 0, 1)"
-          : "0 0 10px rgba(51, 255, 0, 0.4), 0 0 30px rgba(51, 255, 0, 0.3), inset 0 0 16px rgba(51, 255, 0, 0.4)",
+        boxShadow: "0 2px 8px rgba(0, 0, 0, 0.35)",
       }}
     >
       {children}

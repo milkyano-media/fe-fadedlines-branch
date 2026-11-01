@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Button } from "@/components/ui/button";
+
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import BookingListButton from "@/components/book/BookingListButton";
 import {
@@ -10,9 +10,9 @@ import {
 } from "@/interfaces/BookingInterface";
 import { getAllBarber, getAllService } from "@/utils/barberApi";
 import Spinner from "../web/Spinner";
-import Logo from "@/components/react-svg/logo";
-import { ChevronDown, ChevronUp } from "lucide-react";
-import IconNavbarGreen from "@/assets/svg/icon-navbar-green.svg";
+import Logo from "@/assets/web/icons/logo.png";
+import { ChevronDown } from "lucide-react";
+import IconNavbar from "@/assets/svg/icon-navbar-white.svg";
 
 // Bentleigh barbers: Anthony, EJ, Jamie, Sam, and Matteo (based on Square API data)
 import Anthony from "@/assets/web/barbers/booking-list/anth-book.webp";
@@ -26,7 +26,6 @@ import CallumBook from "@/assets/web/barbers/booking-list/callum-book.webp";
 import OllieBook from "@/assets/web/barbers/booking-list/ollie-book.webp";
 import JeremyBook from "@/assets/web/barbers/booking-list/jeremy-book.webp";
 import HarryBook from "@/assets/web/barbers/booking-list/harry-book.webp";
-import LineBottomBorder from "@/assets/book/line-bottom-border.svg";
 import InstagramIcon from "@/assets/book/mdi_instagram.svg";
 
 const barberImages: { [key: string]: string } = {
@@ -301,23 +300,26 @@ const BookList = () => {
   };
 
   return (
-    <section className="relative bg-[#010401] min-h-screen">
-      <div className="fixed top-0 left-0 right-0 z-50 bg-black px-6 py-4 flex items-center justify-between md:justify-start border-b border-[#1CFF21] md:border-b-0">
+    <section className="relative bg-transparent min-h-screen">
+      <div
+        className="fixed top-0 left-0 right-0 z-50 h-16 md:h-[72px] px-6 flex items-center justify-between border-b-[0.5px] border-white/60 shadow-lg shadow-black/20 backdrop-blur-md"
+        style={{ background: "rgba(74, 74, 74, 0.8)" }}
+      >
         {/* Left: Home icon (visible on mobile) */}
         <div className="flex items-center md:hidden">
           <Link to="/home">
             <img
-              src={IconNavbarGreen}
+              src={IconNavbar}
               alt="Home"
               className="w-8 h-auto opacity-100"
             />
           </Link>
         </div>
 
-        {/* Center: Main logo (centered on mobile, left-aligned on desktop) */}
-        <div className="absolute left-1/2 -translate-x-1/2 md:static md:translate-x-0">
+        {/* Center: Main logo (always centered) */}
+        <div className="absolute left-1/2 -translate-x-1/2">
           <Link to="/home">
-            <Logo className="w-48 md:w-[12rem] h-auto opacity-90" />
+            <img src={Logo} alt="Fadedlines Bentleigh" className="h-11 md:h-12 w-auto" />
           </Link>
         </div>
 
@@ -325,7 +327,7 @@ const BookList = () => {
         <div className="w-8 md:hidden"></div>
       </div>
 
-      <div className="max-w-5xl mx-auto px-4 py-24">
+      <div className="max-w-5xl mx-auto px-4 pt-24 pb-16 md:pt-32 md:pb-24">
         {isLoading ? (
           <div className="flex flex-col items-center justify-center gap-6 min-h-[calc(100vh-12rem)] md:min-h-[calc(100vh-8rem)] md:pt-16">
             <h3 className="text-xl font-bold text-white">Loading data...</h3>
@@ -338,106 +340,38 @@ const BookList = () => {
                 <div className="flex flex-col md:grid md:grid-cols-[380px,1fr] gap-6 md:gap-12">
                   {/* Barber Image Section */}
                   <div className="relative">
-                    {/* Mobile: Card with green border and info overlay */}
-                    <div className="md:hidden w-[85%] mx-auto relative">
-                      {/* Green border container with curved bottom */}
-                      <div className="relative rounded-[20px] overflow-visible ring-1 ring-[#1CFF21]">
-                        <div className="relative rounded-[20px] overflow-hidden bg-black">
-                        {/* Image */}
-                        <div className="aspect-[1/1] overflow-hidden">
-                          <img
-                            src={getBarberImage(item.barber.display_name) ?? undefined}
-                            alt={item.barber.display_name}
-                            className="w-full h-full object-cover"
-                          />
-                        </div>
-
-                        {/* Info section with green background at bottom */}
-                        <div className="absolute bottom-0 left-0 right-0 bg-[#063307]/80 px-5 py-4 rounded-b-[18px]">
-                          <h2 className="text-[32px] font-extrabold font-inter text-white uppercase mb-1.5">
-                            {item.barber.display_name.split(" ")[0]}
-                          </h2>
-                          <div className="flex items-center justify-between">
-                            <div className="flex items-center gap-2">
-                              <img
-                                src={InstagramIcon}
-                                alt="Instagram"
-                                className="w-[14px] h-[14px]"
-                              />
-                              <p className="text-[13px] font-medium font-inter text-white/90">
-                                {getBarberInstagram(item.barber.display_name)}
-                              </p>
-                            </div>
-                            {(item.barber.display_name.includes("(Available Now)") ||
-                              item.barber.display_name.toLowerCase().includes("available now") ||
-                              item.barber.is_bookable) && (
-                              <span className="text-xs text-[#00FF00] border border-[#00FF00] px-2 py-1 rounded-full">
-                                Available Now
-                              </span>
-                            )}
-                          </div>
-                        </div>
-                        </div>
-
-                        {/* Curved bottom border with glow effect */}
-                        <div className="absolute -bottom-[11px] left-1/2 -translate-x-1/2 w-56">
-                          <img
-                            src={LineBottomBorder}
-                            alt=""
-                            className="w-full h-auto"
-                          />
-                        </div>
+                    {/* Barber card: photo on top, info panel below */}
+                    <div className="w-[85%] md:w-[380px] mx-auto rounded-[20px] overflow-hidden border border-white/70 bg-[#C4C4C0]">
+                      <div className="aspect-[1/1] md:aspect-[3/4] overflow-hidden">
+                        <img
+                          src={getBarberImage(item.barber.display_name) ?? undefined}
+                          alt={item.barber.display_name}
+                          className="w-full h-full object-cover"
+                        />
                       </div>
-                    </div>
 
-                    {/* Desktop: Card with green border and info overlay (same as mobile) */}
-                    <div className="hidden md:block w-[380px] mx-auto relative">
-                      {/* Green border container with curved bottom */}
-                      <div className="relative rounded-[20px] overflow-visible ring-1 ring-[#1CFF21]">
-                        <div className="relative rounded-[20px] overflow-hidden bg-black">
-                          {/* Image */}
-                          <div className="aspect-[3/4] overflow-hidden">
+                      <div className="px-5 py-4">
+                        <h2 className="text-[32px] font-extrabold font-inter text-[#2B2B2B] uppercase mb-1.5">
+                          {item.barber.display_name.split(" ")[0]}
+                        </h2>
+                        <div className="flex items-center justify-between">
+                          <div className="flex items-center gap-2">
                             <img
-                              src={getBarberImage(item.barber.display_name) ?? undefined}
-                              alt={item.barber.display_name}
-                              className="w-full h-full object-cover"
+                              src={InstagramIcon}
+                              alt="Instagram"
+                              className="w-[14px] h-[14px] brightness-0 opacity-80"
                             />
+                            <p className="text-[13px] font-medium font-inter text-[#2B2B2B]/90">
+                              {getBarberInstagram(item.barber.display_name)}
+                            </p>
                           </div>
-
-                          {/* Info section with green background at bottom */}
-                          <div className="absolute bottom-0 left-0 right-0 bg-[#063307]/80 px-5 py-4 rounded-b-[18px]">
-                            <h2 className="text-[32px] font-extrabold font-inter text-white uppercase mb-1.5">
-                              {item.barber.display_name.split(" ")[0]}
-                            </h2>
-                            <div className="flex items-center justify-between">
-                              <div className="flex items-center gap-2">
-                                <img
-                                  src={InstagramIcon}
-                                  alt="Instagram"
-                                  className="w-[14px] h-[14px]"
-                                />
-                                <p className="text-[13px] font-medium font-inter text-white/90">
-                                  {getBarberInstagram(item.barber.display_name)}
-                                </p>
-                              </div>
-                              {(item.barber.display_name.includes("(Available Now)") ||
-                                item.barber.display_name.toLowerCase().includes("available now") ||
-                                item.barber.is_bookable) && (
-                                <span className="text-xs text-[#00FF00] border border-[#00FF00] px-2 py-1 rounded-full">
-                                  Available Now
-                                </span>
-                              )}
-                            </div>
-                          </div>
-                        </div>
-
-                        {/* Curved bottom border with glow effect */}
-                        <div className="absolute -bottom-[11.5px] left-1/2 -translate-x-1/2 w-56">
-                          <img
-                            src={LineBottomBorder}
-                            alt=""
-                            className="w-full h-auto"
-                          />
+                          {(item.barber.display_name.includes("(Available Now)") ||
+                            item.barber.display_name.toLowerCase().includes("available now") ||
+                            item.barber.is_bookable) && (
+                            <span className="text-xs font-inter text-[#2B2B2B] bg-[#B0B0AB] border border-[#2B2B2B]/25 px-2 py-1 rounded-full">
+                              Available Now
+                            </span>
+                          )}
                         </div>
                       </div>
                     </div>
@@ -448,38 +382,83 @@ const BookList = () => {
 
                     {/* Services Section */}
                     <div className="w-full">
-                      {/* Desktop: Dropdown Button */}
-                      <Button
-                        onClick={() =>
-                          toggleBarberServices(item.barber.team_member_id)
-                        }
-                        className="hidden md:flex w-full bg-black hover:bg-zinc-900 text-white justify-between h-14 md:h-16 py-4 md:py-5 border border-[#1CFF21] rounded-lg"
-                      >
-                        <span className="flex items-center gap-3">
-                          <span className="text-lg md:text-xl font-semibold">View Services</span>
-                          <span className="text-sm md:text-base text-gray-400">
-                            {extractPriceRange(item.services)} AUD
+                      {/* Desktop: Dropdown card (header + collapsible list) */}
+                      <div className="hidden md:block rounded-[20px] overflow-hidden border border-white/70 bg-[#C4C4C0] shadow-lg shadow-black/20">
+                        <button
+                          type="button"
+                          onClick={() =>
+                            toggleBarberServices(item.barber.team_member_id)
+                          }
+                          aria-expanded={expandedBarber === item.barber.team_member_id}
+                          className="w-full flex items-center justify-between px-6 py-5 text-[#2B2B2B] hover:bg-[#BBBBB6] transition-colors"
+                        >
+                          <span className="flex flex-col items-start gap-1">
+                            <span className="text-xl font-extrabold font-inter uppercase tracking-wide">
+                              View Services
+                            </span>
+                            <span className="text-sm font-inter text-[#2B2B2B]/70">
+                              {item.services.length} services · {extractPriceRange(item.services)} AUD
+                            </span>
                           </span>
-                        </span>
-                        {expandedBarber === item.barber.team_member_id ? (
-                          <ChevronUp className="ml-2 h-5 w-5 md:h-6 md:w-6" />
-                        ) : (
-                          <ChevronDown className="ml-2 h-5 w-5 md:h-6 md:w-6" />
-                        )}
-                      </Button>
+                          <span className="flex items-center justify-center h-10 w-10 rounded-full bg-[#2B2B2B] text-[#F0F0F0]">
+                            <ChevronDown
+                              className={`h-5 w-5 transition-transform duration-300 ${
+                                expandedBarber === item.barber.team_member_id ? "rotate-180" : ""
+                              }`}
+                            />
+                          </span>
+                        </button>
+
+                        <div
+                          className={`grid transition-[grid-template-rows] duration-300 ease-out ${
+                            expandedBarber === item.barber.team_member_id
+                              ? "grid-rows-[1fr]"
+                              : "grid-rows-[0fr]"
+                          }`}
+                        >
+                          <div className="overflow-hidden">
+                            <ul className="border-t border-[#2B2B2B]/15 divide-y divide-[#2B2B2B]/15">
+                              {item.services.map((service) => (
+                                <li
+                                  key={service.id}
+                                  className="flex items-center gap-6 px-6 py-4 hover:bg-[#BBBBB6] transition-colors"
+                                >
+                                  <div className="flex-1 min-w-0">
+                                    <h3 className="text-[#2B2B2B] text-base font-semibold font-inter truncate">
+                                      {cleanDisplayName(service.item_data.name)}
+                                    </h3>
+                                    <p className="text-[#2B2B2B]/70 text-sm font-inter mt-0.5">
+                                      {formatPrice(
+                                        service.item_data.variations[0]
+                                          .item_variation_data.price_money.amount
+                                      )}
+                                    </p>
+                                  </div>
+                                  <BookingListButton
+                                    onClick={() => handleBookNowClick(service)}
+                                    className="md:px-6 md:py-3 md:text-sm md:w-36 flex-shrink-0 tracking-wide"
+                                  >
+                                    BOOK NOW
+                                  </BookingListButton>
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
 
                       {/* Mobile: 2-Column Grid - Always Visible */}
                       <div className="md:hidden w-[85%] mx-auto grid grid-cols-2 gap-3">
                         {item.services.map((service) => (
                           <div
                             key={service.id}
-                            className="bg-zinc-900/30 p-3 flex flex-col gap-2 border border-[#1CFF21] rounded-lg"
+                            className="bg-[#C4C4C0] p-3 flex flex-col gap-2 border border-white/50 rounded-lg"
                           >
                             <div className="flex-1">
-                              <h3 className="text-white text-xs font-bold font-inter text-center">
+                              <h3 className="text-[#2B2B2B] text-xs font-bold font-inter text-center">
                                 {cleanDisplayName(service.item_data.name)}
                               </h3>
-                              <p className="text-zinc-400 text-xs mt-1 text-center">
+                              <p className="text-[#2B2B2B]/80 text-xs mt-1 text-center">
                                 {formatPrice(
                                   service.item_data.variations[0]
                                     .item_variation_data.price_money.amount
@@ -496,37 +475,6 @@ const BookList = () => {
                         ))}
                       </div>
 
-                      {/* Desktop: Expandable Service List */}
-                      {expandedBarber === item.barber.team_member_id && (
-                        <div className="hidden md:block">
-                          {item.services.map((service) => (
-                            <div
-                              key={service.id}
-                              className="bg-black border-b border-[#1CFF21]"
-                            >
-                              <div className="flex flex-col md:flex-row md:items-center gap-4 p-4 md:py-6 md:pl-6 md:pr-0">
-                                <div className="flex-1 md:min-w-0">
-                                  <h3 className="text-white text-base md:text-lg font-medium font-inter text-center md:text-left">
-                                    {cleanDisplayName(service.item_data.name)}
-                                  </h3>
-                                  <p className="text-zinc-400 text-sm mt-1 text-center md:text-left">
-                                    {formatPrice(
-                                      service.item_data.variations[0]
-                                        .item_variation_data.price_money.amount
-                                    )}
-                                  </p>
-                                </div>
-                                <BookingListButton
-                                  onClick={() => handleBookNowClick(service)}
-                                  className="w-full md:w-52 md:h-14 md:flex-shrink-0 whitespace-nowrap"
-                                >
-                                  BOOK NOW
-                                </BookingListButton>
-                              </div>
-                            </div>
-                          ))}
-                        </div>
-                      )}
                     </div>
                   </div>
                 </div>
