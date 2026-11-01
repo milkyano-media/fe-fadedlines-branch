@@ -23,7 +23,7 @@ export default function AboutUs() {
                 <meta name="twitter:card" content="summary_large_image" />
             </Helmet>
 
-            <section className="flex flex-col justify-center items-center relative pt-40">
+            <section className="flex flex-col justify-center items-center relative pt-[34rem] md:pt-[28rem]">
                 <div className="hero-fade top-0 absolute w-full h-full z-0">
                     <img
                         alt="hero image"
@@ -34,14 +34,17 @@ export default function AboutUs() {
                     />
                     <div className="top-0 absolute w-full h-full bg-gradient-to-b from-black/60 via-black/35 to-black/20" />
                 </div>
-                <div className="flex flex-col justify-center items-center text-center gap-6 z-10">
+                <div className="flex flex-col justify-center items-center text-center gap-6 z-10 px-6">
                     <div className="flex flex-col mb-12">
                         <h2 className="font-display font-normal text-5xl md:text-7xl leading-tight text-[#E3E0DA]">AWARD WINNING</h2>
                         <h2 className="font-display font-normal text-5xl md:text-7xl leading-tight">BARBERSHOP</h2>
-                        <sub className="mt-6 font-body text-sm md:text-base tracking-wide text-[#F0F0F0]/80">shop 7-271/275 Centre Rd, Bentleigh VIC 3204, Australia</sub>
+                        <p className="mt-6 font-body text-sm md:text-base leading-relaxed tracking-wide text-[#F0F0F0]/80">
+                            shop 7-271/275 Centre Rd,
+                            <br className="md:hidden" /> Bentleigh VIC 3204, Australia
+                        </p>
                     </div>
 
-                    <svg className="w-7 mt-20 mb-12 animate-bounce opacity-90" viewBox="0 0 55 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg className="w-7 mt-4 mb-12 animate-bounce opacity-90" viewBox="0 0 55 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path
                             d="M50.582 0.216618L54.9987 4.63745L30.9279 28.7166C30.5422 29.1048 30.0835 29.4128 29.5783 29.623C29.0731 29.8332 28.5313 29.9414 27.9841 29.9414C27.4369 29.9414 26.8951 29.8332 26.3899 29.623C25.8847 29.4128 25.4261 29.1048 25.0404 28.7166L0.957032 4.63745L5.3737 0.220782L27.9779 22.8208L50.582 0.216618Z"
                             fill="#E3E0DA"
@@ -59,7 +62,7 @@ export default function AboutUs() {
                     />
                 </div>
                 <div className="md:w-max flex flex-col justify-center items-center">
-                    <img width={500} height={500} alt="background about us" src={plus} className="grayscale opacity-80" />
+                    <img width={500} height={500} alt="background about us" src={plus} className="grayscale" />
 
                     <div className="flex flex-col md:flex-row gap-10 mt-10 md:mt-0 md:w-2/4">
                         <h2 className="w-full font-display font-normal text-5xl leading-tight">

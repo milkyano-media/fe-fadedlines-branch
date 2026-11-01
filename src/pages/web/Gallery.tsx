@@ -107,12 +107,11 @@ export default function GalleriesPage() {
                         </div>
                     </div>
                     <div className="relative w-full min-h-[25rem] md:min-h-[40rem]">
-                        <div className="absolute inset-0 overflow-hidden bg-concrete-dark-70 rounded-2xl border border-white/20">
-                            <div className="bg-concrete-dark-70 w-full h-full flex justify-end md:justify-center items-center rotate-[10deg] md:rotate-[12deg]">
+                        <div className="absolute inset-0 overflow-hidden bg-transparent rounded-2xl border border-white/20">
+                            <div className="w-full h-full flex justify-end md:justify-center items-center rotate-[10deg] md:rotate-[12deg]">
                                 <CardStack />
                             </div>
                         </div>
-                        <div className="absolute inset-0 bg-gradient-to-r from-concrete-base via-transparent to-concrete-base opacity-60 pointer-events-none"></div>
                     </div>
                 </section>
 
