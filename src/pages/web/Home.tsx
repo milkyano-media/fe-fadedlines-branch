@@ -439,7 +439,7 @@ export default function Home() {
             </Helmet>
 
             <section className="relative overflow-hidden">
-                <div className="absolute inset-0 z-0">
+                <div className="absolute inset-0 z-0 [mask-image:linear-gradient(to_bottom,black_65%,transparent)]">
                     <img
                         alt="hero image"
                         width={3376}
