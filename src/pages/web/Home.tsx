@@ -441,26 +441,23 @@ export default function Home() {
                 <script type="application/ld+json">{JSON.stringify(localBusinessSchema)}</script>
             </Helmet>
 
-            <section className="flex flex-col justify-center items-center relative pt-24 md:pt-32">
-                <div className="hero-fade top-0 absolute w-full h-full z-0">
+            <section className="relative overflow-hidden">
+                <div className="absolute inset-0 z-0">
                     <img
                         alt="hero image"
-                        width={500}
-                        height={500}
+                        width={3376}
+                        height={6000}
                         src={BgHero2}
-                        className="w-full h-full object-cover"
+                        className="w-full h-full object-cover object-[50%_53%] md:object-[50%_38%]"
                     />
-                    <div className="top-0 absolute w-full h-full bg-gradient-to-b from-black/60 via-black/35 to-black/20" />
-                    <div className="top-0 absolute w-full h-full bg-[radial-gradient(ellipse_at_50%_55%,rgba(0,0,0,0.55),transparent_60%)]" />
+                    <div className="absolute inset-0 bg-black/55" />
                 </div>
-                <div className="flex flex-col justify-center items-center text-center gap-6 z-10">
-                    <div className="flex flex-col mt-8">
-                        <img
-                            src={Logo}
-                            alt="Fadedlines Barber Shop"
-                            className="w-[20rem] md:w-[25rem] h-auto"
-                        />
-                    </div>
+                <div className="relative z-10 flex flex-col justify-center items-center text-center gap-8 pt-24 pb-14 md:pt-36 md:pb-20">
+                    <img
+                        src={Logo}
+                        alt="Fadedlines Barber Shop"
+                        className="w-[18rem] md:w-[25rem] h-auto"
+                    />
                     <BookNowButton onClick={handleHeroBookNowClick} className="px-14 md:px-16 py-4 md:py-5" />
 
                     <div className="flex gap-4 mt-4">
@@ -533,15 +530,18 @@ export default function Home() {
                             <img alt="Google Review" src={GoogleReview} className="w-12 h-auto" />
                         </a>
                     </div>
-
-                    <svg className="w-7 mt-20 animate-bounce opacity-90" viewBox="0 0 55 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                            d="M50.582 0.216618L54.9987 4.63745L30.9279 28.7166C30.5422 29.1048 30.0835 29.4128 29.5783 29.623C29.0731 29.8332 28.5313 29.9414 27.9841 29.9414C27.4369 29.9414 26.8951 29.8332 26.3899 29.623C25.8847 29.4128 25.4261 29.1048 25.0404 28.7166L0.957032 4.63745L5.3737 0.220782L27.9779 22.8208L50.582 0.216618Z"
-                            fill="#E3E0DA"
-                        />
-                    </svg>
                 </div>
             </section>
+
+            <div className="relative z-20 flex flex-col items-center gap-3 pt-6 pb-4 md:pt-10">
+                <p className="text-xs md:text-sm tracking-[0.4em] text-white/80 uppercase">Meet your barber</p>
+                <svg className="w-5 animate-bounce opacity-80" viewBox="0 0 55 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M50.582 0.216618L54.9987 4.63745L30.9279 28.7166C30.5422 29.1048 30.0835 29.4128 29.5783 29.623C29.0731 29.8332 28.5313 29.9414 27.9841 29.9414C27.4369 29.9414 26.8951 29.8332 26.3899 29.623C25.8847 29.4128 25.4261 29.1048 25.0404 28.7166L0.957032 4.63745L5.3737 0.220782L27.9779 22.8208L50.582 0.216618Z"
+                        fill="#E3E0DA"
+                    />
+                </svg>
+            </div>
 
             <section className="relative z-20 w-full flex flex-col justify-center md:max-w-screen-xl mx-auto pt-0 pb-0 md:pt-2 md:pb-[4rem] mb-[-2rem] md:mb-0 bg-transparent">
                 <div className="container mx-auto px-2 md:px-8 scale-[90%] md:scale-100 origin-top">
@@ -580,7 +580,7 @@ export default function Home() {
 
                                             {/* Barber Name with underline wrapper */}
                                             <div className="relative pb-0">
-                                                <span className="text-lg md:text-4xl font-normal font-display tracking-wide whitespace-nowrap">
+                                                <span className="text-base md:text-2xl font-normal tracking-[0.2em] whitespace-nowrap">
                                                     {barber.name}
                                                 </span>
 
