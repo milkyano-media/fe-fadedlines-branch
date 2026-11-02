@@ -465,7 +465,7 @@ export default function Home() {
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 aria-label={social.label}
-                                className="transition-opacity duration-300 hover:opacity-70 [&>svg]:w-8 [&>svg]:h-8"
+                                className="transition-opacity duration-300 hover:opacity-70 [&>svg]:w-7 [&>svg]:h-7"
                             >
                                 {social.icon}
                             </a>
