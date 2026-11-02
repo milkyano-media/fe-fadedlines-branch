@@ -48,11 +48,8 @@ import JeremyThumb from "@/assets/web/barbers/home-thumbnails/jeremy.webp";
 import HarryThumb from "@/assets/web/barbers/home-thumbnails/harry.webp";
 
 // Social media and other icons
+import { socials } from "@/components/web/socials";
 import Logo from "@/assets/web/icons/logo.png";
-import Instagram from "@/assets/web/icons/Instagram.svg";
-import Tiktok from "@/assets/web/icons/Tiktok.svg";
-import Maps from "@/assets/web/icons/Maps.svg";
-import GoogleReview from "@/assets/web/icons/GoogleReview.svg";
 
 const isBookingRedirect = import.meta.env.VITE_IS_BOOKING_REDIRECT;
 const bookingRedirectUrl = import.meta.env.VITE_BOOKING_REDIRECT_URL;
@@ -452,7 +449,7 @@ export default function Home() {
                     />
                     <div className="absolute inset-0 bg-black/55" />
                 </div>
-                <div className="relative z-10 flex flex-col justify-center items-center text-center gap-8 pt-24 pb-14 md:pt-36 md:pb-20">
+                <div className="relative z-10 flex flex-col justify-center items-center text-center gap-8 pt-24 pb-14 md:pt-36 md:pb-20 md:min-h-[80vh]">
                     <img
                         src={Logo}
                         alt="Fadedlines Barber Shop"
@@ -460,75 +457,19 @@ export default function Home() {
                     />
                     <BookNowButton onClick={handleHeroBookNowClick} className="px-14 md:px-16 py-4 md:py-5" />
 
-                    <div className="flex gap-4 mt-4">
-                        <a
-                            href="https://www.instagram.com/fadedlinesbentleigh"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="transition-all duration-300 hover:scale-110"
-                            style={{
-                                filter: 'drop-shadow(0 0 10px rgba(255, 255, 255, 0.6)) drop-shadow(0 0 20px rgba(255, 255, 255, 0.4)) drop-shadow(0 0 30px rgba(255, 255, 255, 0.2))'
-                            }}
-                            onMouseEnter={(e) => {
-                                e.currentTarget.style.filter = 'drop-shadow(0 0 15px rgba(255, 255, 255, 0.9)) drop-shadow(0 0 25px rgba(255, 255, 255, 0.6)) drop-shadow(0 0 40px rgba(255, 255, 255, 0.3))';
-                            }}
-                            onMouseLeave={(e) => {
-                                e.currentTarget.style.filter = 'drop-shadow(0 0 10px rgba(255, 255, 255, 0.6)) drop-shadow(0 0 20px rgba(255, 255, 255, 0.4)) drop-shadow(0 0 30px rgba(255, 255, 255, 0.2))';
-                            }}
-                        >
-                            <img alt="Instagram" src={Instagram} className="w-12 h-auto" />
-                        </a>
-                        <a
-                            href="https://www.tiktok.com/@fadedlines_bentleigh"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="transition-all duration-300 hover:scale-110"
-                            style={{
-                                filter: 'drop-shadow(0 0 10px rgba(255, 255, 255, 0.6)) drop-shadow(0 0 20px rgba(255, 255, 255, 0.4)) drop-shadow(0 0 30px rgba(255, 255, 255, 0.2))'
-                            }}
-                            onMouseEnter={(e) => {
-                                e.currentTarget.style.filter = 'drop-shadow(0 0 15px rgba(255, 255, 255, 0.9)) drop-shadow(0 0 25px rgba(255, 255, 255, 0.6)) drop-shadow(0 0 40px rgba(255, 255, 255, 0.3))';
-                            }}
-                            onMouseLeave={(e) => {
-                                e.currentTarget.style.filter = 'drop-shadow(0 0 10px rgba(255, 255, 255, 0.6)) drop-shadow(0 0 20px rgba(255, 255, 255, 0.4)) drop-shadow(0 0 30px rgba(255, 255, 255, 0.2))';
-                            }}
-                        >
-                            <img alt="TikTok" src={Tiktok} className="w-12 h-auto" />
-                        </a>
-                        <a
-                            href="https://maps.app.goo.gl/Lav5YxbAz5SKvGCN7"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="transition-all duration-300 hover:scale-110"
-                            style={{
-                                filter: 'drop-shadow(0 0 10px rgba(255, 255, 255, 0.6)) drop-shadow(0 0 20px rgba(255, 255, 255, 0.4)) drop-shadow(0 0 30px rgba(255, 255, 255, 0.2))'
-                            }}
-                            onMouseEnter={(e) => {
-                                e.currentTarget.style.filter = 'drop-shadow(0 0 15px rgba(255, 255, 255, 0.9)) drop-shadow(0 0 25px rgba(255, 255, 255, 0.6)) drop-shadow(0 0 40px rgba(255, 255, 255, 0.3))';
-                            }}
-                            onMouseLeave={(e) => {
-                                e.currentTarget.style.filter = 'drop-shadow(0 0 10px rgba(255, 255, 255, 0.6)) drop-shadow(0 0 20px rgba(255, 255, 255, 0.4)) drop-shadow(0 0 30px rgba(255, 255, 255, 0.2))';
-                            }}
-                        >
-                            <img alt="Google Maps" src={Maps} className="w-12 h-auto" />
-                        </a>
-                        <a
-                            href="https://g.page/r/CeE5XFUFKWxlEBM/review"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="transition-all duration-300 hover:scale-110"
-                            style={{
-                                filter: 'drop-shadow(0 0 10px rgba(255, 255, 255, 0.6)) drop-shadow(0 0 20px rgba(255, 255, 255, 0.4)) drop-shadow(0 0 30px rgba(255, 255, 255, 0.2))'
-                            }}
-                            onMouseEnter={(e) => {
-                                e.currentTarget.style.filter = 'drop-shadow(0 0 15px rgba(255, 255, 255, 0.9)) drop-shadow(0 0 25px rgba(255, 255, 255, 0.6)) drop-shadow(0 0 40px rgba(255, 255, 255, 0.3))';
-                            }}
-                            onMouseLeave={(e) => {
-                                e.currentTarget.style.filter = 'drop-shadow(0 0 10px rgba(255, 255, 255, 0.6)) drop-shadow(0 0 20px rgba(255, 255, 255, 0.4)) drop-shadow(0 0 30px rgba(255, 255, 255, 0.2))';
-                            }}
-                        >
-                            <img alt="Google Review" src={GoogleReview} className="w-12 h-auto" />
-                        </a>
+                    <div className="flex gap-6 mt-2 text-white">
+                        {socials.map((social) => (
+                            <a
+                                key={social.label}
+                                href={social.href}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label={social.label}
+                                className="transition-opacity duration-300 hover:opacity-70 [&>svg]:w-8 [&>svg]:h-8"
+                            >
+                                {social.icon}
+                            </a>
+                        ))}
                     </div>
                 </div>
             </section>
